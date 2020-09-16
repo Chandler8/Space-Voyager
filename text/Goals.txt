@@ -1,0 +1,8 @@
+1. Concept - A couple of sentences to a paragraph explaining your idea
+2. API's - 
+   - Any 3rd party API's your team might be using (Example: OMDB)  
+   - Any npm libraries you are considering using  
+3. Supplemental Material -
+    - User Story
+    - Flow Diagram 
+4. Application Name (Subject to change)
