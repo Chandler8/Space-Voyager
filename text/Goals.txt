@@ -23,3 +23,18 @@
     
 4. Application Name (Subject to change)- 
     - Space Voyager 🚀
+
+
+
+
+    REgister page
+        1. home page    
+            1.mars apis
+            2.ISS api
+            3.astronomy pic of the day api
+            4.space data api
+            5.6 boxes that are interactable 
+
+            4 api calls (each in a different tab)
+            0 on home page
+
