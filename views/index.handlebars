@@ -1,0 +1,68 @@
+{{!-- Header
+<h1 class="text-center">Burger Time</h1>
+
+{{!-- Custom Burger Form --}}
+<div class="grid-x grid-padding-x align-center">
+    <div class="cell small-4">
+        <p class="text-center">Build a Burger Workshop:</p>
+        <form class="create-form">
+            <div class="form-group input-group input-group-rounded">
+                <label for="burger"></label>
+                <input class="input-group-field" type="text" id="burger" name="name" required />
+                <div class="input-group-button">
+                    <button type="submit" class="button primary">
+                        <i class="fi-plus large"></i>
+                    </button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+{{!-- Tables w/ Burger Data --}}
+<div class="grid-x grid-padding-x align-spaced">
+
+    <div class="cell small-4">
+        <table class="unstriped">
+            <thead>
+                <tr>
+                    <th class="text-center">Dinner is Ready!</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{!-- Loop through burger data --}}
+                {{#each burgers}}
+                {{#unless isDevoured}}
+                {{> burgers/burger-block isDevoured=false}}
+                {{/unless}}
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="cell small-4">
+        <img src="/assets/images/burger-other.png" alt="Burger">
+    </div>
+
+    <div class="cell small-4">
+        <table class="unstriped">
+            <thead>
+                <tr>
+                    <th class="text-center">Burgers Devoured</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {{!-- Loops through burgers data --}}
+                {{#each burgers}}
+                {{#if isDevoured}}
+                {{> burgers/burger-block isDevoured=true}}
+                {{/if}}
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</div> --}}
