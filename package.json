@@ -1,0 +1,32 @@
+{
+  "name": "space-voyager",
+  "version": "1.0.0",
+  "description": "\"An exploration of our galaxy\"",
+  "main": "function.js",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "express": "^4.17.1",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chandler8/Space-Voyager.git"
+  },
+  "keywords": [
+    "\"JavaScript",
+    "Node.js",
+    "MySQL\""
+  ],
+  "author": "Chandler Lowrance, Jonathan Davila, Xyra Arroyo, Hailey Nicole",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Chandler8/Space-Voyager/issues"
+  },
+  "homepage": "https://github.com/Chandler8/Space-Voyager#readme"
+}
