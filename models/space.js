@@ -1,18 +1,31 @@
-
-//   // Import ORM
-//   const orm = require('../config/orm.js');
-
-//   const burgers = {
-//     all: (cb) => {
-//       orm.all('burgers', (res) => cb(res));
-//     },
-//     create: (cols, vals, cb) => {
-//       orm.create('burgers', cols, vals, (res) => cb(res));
-//     },
-//     update: (objColsVals, condition, cb) => {
-//       orm.update('burgers', objColsVals, condition, (res) => cb(res));
-//     }
-//   };
+​
+module.exports = function(sequelize, DataTypes) {
+    let SpaceVisitors = sequelize.define("spaceVisitors", {
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            len: [1,20],
+            notEmpty: {
+            args: true,
+            msg: "Please provide your first name"
+            },
+        }
+      },
   
-//   // Export DB functions
-//   module.exports = burgers;
+      lastname: {
+       type: DataTypes.STRING,
+       allowNull: false,
+       validate: {
+         len: [1, 20],
+         notEmpty: {
+           args: true,
+           msg: "Please provide your lastname"
+         },
+       }
+      } 
+        
+      
+    });
+    return SpaceVisitors;
+  };

@@ -1,0 +1,56 @@
+{{!-- This will be our container, and styling below will follow --}}
+
+<div class="jumbotron">
+  <h1 class="display-2 text-center">Solar System</h1>
+</div>
+
+<hr style="border-width: 2px;">
+
+{{!-- Build out APOTD API info here --}}
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+      {{!-- our each loop is going to be here. create carousel-items for each 'bodies' --}}
+    {{#each bodies}}
+    {{#if image_url}}
+    <div class="carousel-item active">
+      <img class="d-block w-100" src={{image_url}} alt="First slide">
+    </div>
+    {{/if}}
+    {{/each}}
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="text-center">
+ <h2>{{englishName}}</h2>
+ <h2>{{density}}</h2>
+</div>
+
+{{#each blahblahblahblah}}
+<div class="text-center">
+   {{this.gravity}}
+   <br>
+   </div>
+
+{{/each}}
+
+<br>
+
+<footer>
+  <div class="bg-dark">
+    <div class="text-center text-light">Data provided courtesy of NASA</div>
+  </div>
+</footer>
