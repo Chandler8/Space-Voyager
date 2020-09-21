@@ -102,9 +102,6 @@ const fetchSolarInfo = async (tickers) => {
     )
 }
 
-//   // })
-//   // return Promise.all(requests)
-// };
 
 app.get('/solar', async function (req, res) {
   const data = await fetchSolarInfo();
@@ -113,51 +110,55 @@ app.get('/solar', async function (req, res) {
   //it would still help us GREATLY if we could figure out how to use url parameters instead of .filter to only get planets
   results.bodies = data.data.bodies
     .filter(body => body.isPlanet && planetList.includes(body.englishName.toUpperCase()))
-    .map(body => addImageURL(body));
+    // .map(body => addImageURL(body));
 
   console.log(results.bodies);
 
   res.render('solar', results);
-  // }
+  
 });
 
 //eventually puth this in its own file
-function addImageURL(bodyObject) {
-  let route;
-  switch (bodyObject.englishName.toUpperCase()) {
-    case "EARTH":
-      route = "/images/earth.gif"
-      break;
-    case "MARS":
-      route = "/images/mars.gif"
-      break;
-    case "SATURN":
-      route = "/images/saturn.gif"
-      break;
-    case "URANUS":
-      route = "/images/uranus.gif"
-      break;
-    case "NEPTUNE":
-      route = "/images/neptune.jpg"
-      break;
-    case "JUPITER":
-      route = "/images/jupiter.gif"
-      break;
-    case "VENUS":
-      route = "/images/venus.gif"
-      break;
-    case "MERCURY":
-      route = "/images/mercury.gif"
-      break;
-  }
+// function addImageURL(bodyObject) {
+//   let route;
+//   switch (bodyObject.englishName.toUpperCase()) {
+//     case "EARTH":
+//       route = "/images/earth.gif"
+//       break;
+//     case "MARS":
+//       route = "/images/mars.gif"
+//       break;
+//     case "SATURN":
+//       route = "/images/saturn.gif"
+//       break;
+//     case "URANUS":
+//       route = "/images/uranus.gif"
+//       break;
+//     case "NEPTUNE":
+//       route = "/images/neptune.jpg"
+//       break;
+//     case "JUPITER":
+//       route = "/images/jupiter.gif"
+//       break;
+//     case "VENUS":
+//       route = "/images/venus.gif"
+//       break;
+//     case "MERCURY":
+//       route = "/images/mercury.gif"
+//       break;
+//   }
 
-  bodyObject.image_url = route;
+//   bodyObject.image_url = route;
 
-  return bodyObject;
-}
+//   return bodyObject;
+// }
 
 
-// Create astro api/search
+
+
+
+
+// Create solar api/search
 app.post('/solar', async function (req, res) {
   var sp = await req.body.solarSearch.split(",");
   const data = await fetchSolarInfo(sp);
