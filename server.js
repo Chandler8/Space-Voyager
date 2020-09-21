@@ -3,6 +3,10 @@ const app = express();
 const axios = require('axios');
 const nodemon = require('nodemon');
 const planetList = ["EARTH", "SATURN", "MARS", "URANUS", "VENUS", "NEPTUNE", "JUPITER", "MERCURY"];
+const api_key = process.env.api_key;
+require('dotenv').config();
+
+
 // Blast off!
 app.use(express.static('public'));
 
@@ -31,6 +35,7 @@ function call_api(finishedAPI) {
     };
   });
 };
+
 
 //multiple API calls
 const fetchApiInfo = async (url) => {
