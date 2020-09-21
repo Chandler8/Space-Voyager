@@ -13,6 +13,13 @@
 </div>
 {{/each}}
 
+   {{#each response}}
+<div class="text-center">
+   {{this.date}}
+   <br>
+   </div>
+   {{/each}}
+
 
 {{#each response}}
 <div class="text-center">
@@ -22,15 +29,25 @@
    {{/each}}
 
 
+<div class="text-center">
+
+<style>.astro{
+  max-width: 100%;
+}
+</style>
+
 {{#each response}}
-  <img src={{this.hdurl}}>
+  <img src={{this.hdurl}} class="astro">
   <br>
   {{/each}}
-
+</div>
 
 <br>
 <footer>
   <div class="bg-dark">
-    <div class="text-center text-light">Data provided courtesy of NASA</div>
+    <div class="text-center text-light">Data and Images provided courtesy of NASA</div>
   </div>
 </footer>
+
+{{!-- Jack please help me get rid of the 5 extra blank images that keep persisting on my page because of the #each loop, thank you --}}
+{{!-- I could get rid of the style class but then my pic gets massive, I need it contained in this manner --}}
