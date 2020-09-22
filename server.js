@@ -24,6 +24,7 @@ app.set('view engine', 'handlebars');
 // Allow server to grab any port, but set 7000 as standard default
 const PORT = process.env.PORT || 8080;
 
+
 // Start Server
 db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, () => {
