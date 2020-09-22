@@ -4,6 +4,7 @@ const axios = require('axios');
 const nodemon = require('nodemon');
 const planetList = ["EARTH", "SATURN", "MARS", "URANUS", "VENUS", "NEPTUNE", "JUPITER", "MERCURY"];
 const api_key = process.env.api_key;
+const db = require('./models');
 require('dotenv').config();
 
 
@@ -115,12 +116,12 @@ app.get('/solar', async function (req, res) {
   //it would still help us GREATLY if we could figure out how to use url parameters instead of .filter to only get planets
   results.bodies = data.data.bodies
     .filter(body => body.isPlanet && planetList.includes(body.englishName.toUpperCase()))
-    // .map(body => addImageURL(body));
+  // .map(body => addImageURL(body));
 
   console.log(results.bodies);
 
   res.render('solar', results);
-  
+
 });
 
 //eventually puth this in its own file
@@ -175,6 +176,8 @@ app.post('/solar', async function (req, res) {
 });
 
 // Start Server
-app.listen(PORT, () => {
-  console.log(`Server listening on: http://localhost:${PORT}`);
+db.sequelize.sync({ force: true }).then(function () {
+  app.listen(PORT, () => {
+    console.log(`Server listening on: http://localhost:${PORT}`);
+  });
 });
