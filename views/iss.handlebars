@@ -1,1 +1,54 @@
 {{!-- This will be our container, and styling below will follow --}}
+
+<div class="jumbotron">
+  <h1 class="display-2 text-center">Astronomy Picture of the Day</h1>
+
+</div>
+<hr style="border-width: 2px;">
+
+{{!-- Build out APOTD API info here --}}
+
+{{#each response}}
+
+<div class="text-center">
+ <h2 class="display-2 text-center"> {{this.title}} </h2>
+</div>
+{{/each}}
+
+   {{#each response}}
+<div class="text-center">
+   {{this.date}}
+   <br>
+   </div>
+   {{/each}}
+
+
+{{#each response}}
+<div class="text-center">
+   {{this.explanation}}
+   <br>
+   </div>
+   {{/each}}
+
+
+<div class="text-center">
+
+<style>.astro{
+  max-width: 100%;
+}
+</style>
+
+{{#each response}}
+  <img src={{this.hdurl}} class="astro">
+  <br>
+  {{/each}}
+</div>
+
+<br>
+<footer>
+  <div class="bg-dark">
+    <div class="text-center text-light">Data and Images provided courtesy of NASA</div>
+  </div>
+</footer>
+
+{{!-- Notes for work in progress --}}
