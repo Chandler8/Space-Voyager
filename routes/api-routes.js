@@ -106,13 +106,50 @@ function solarSystem_api(solarApi) {
     //it would still help us GREATLY if we could figure out how to use url parameters instead of .filter to only get planets
     results.bodies = data.data.bodies
       .filter(body => body.isPlanet && planetList.includes(body.englishName.toUpperCase()))
-    // .map(body => addImageURL(body));
+      .map(body => addImageURL(body));
+    //we can order our array (for example, by distance from the sun) any way we want before the below line of code
+    results.bodies[0].active = true;
   
     console.log(results.bodies);
   
     res.render('solar', results);
   
   });
+
+function addImageURL(bodyObject) {
+  let route;
+  switch (bodyObject.englishName.toUpperCase()) {
+    case "EARTH":
+      route = "/images/earth.jpg"
+      break;
+    case "MARS":
+      route = "/images/mars-1.jpg"
+      break;
+    case "SATURN":
+      route = "/images/saturn.jpg"
+      break;
+    case "URANUS":
+      route = "/images/uranus.webp"
+      break;
+    case "NEPTUNE":
+      route = "/images/neptune.jpg"
+      break;
+    case "JUPITER":
+      route = "/images/jupiter-1.jpg"
+      break;
+    case "VENUS":
+      route = "/images/venus.jpg"
+      break;
+    case "MERCURY":
+      route = "/images/mercury-1.jpg"
+      break;
+  }
+
+  bodyObject.image_url = route;
+
+  return bodyObject;
+}
+
   
   
   // Solar POST route
