@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<!-- Always force latest IE rendering engine or request Chrome Frame -->
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"5e33925808","applicationID":"80617260","transactionName":"JVcPR0MLWApSRU1SExZUCFBQEF0JWRgLXQcDQA==","queueTime":0,"applicationTime":558,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQcPUlZTDxAIVFdTAAMBVg==",licenseKey:"5e33925808",applicationID:"80617260"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(22),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,i.indexOf("dev")!==-1&&(c.dev=!0),i.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&o.on("internal-error",function(t){r(t.stack)}),c.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(23),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),s.xhrWrappable&&t(10),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){c.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(23),a=t(22);e.exports=i;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(s+u,r),o.on(c+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",f="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(19),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url&&(n=t[0].url),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||c),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(22),c=t(23),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],18:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),l=t("loader"),p=t(21),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],19:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],20:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],21:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],22:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],23:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],24:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?s(t,c,o):o()}function n(n,r,i,o){if(!l.aborted||o){t&&t(n,r,i);for(var a=e(i),c=m(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[y[n]];return d&&d.push([x,n,r,a]),a}}function p(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return d[t]=d[t]||i(n)}function v(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var g={},y={},x={on:p,addEventListener:p,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:a,aborted:!1};return x}function o(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(22),u={},d={},l=e.exports=i();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(y,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+b.offset],null,"api"),s("timing",["load",n]);var r=p.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===p.readyState&&o()}function o(){s("mark",["domContent",a()+b.offset],null,"api")}function a(){return R.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-b.offset}var c=(new Date).getTime(),s=t("handle"),f=t(22),u=t("ee"),d=t(20),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1177.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:c,now:a,origin:g,features:{},xhrWrappable:x,userAgent:d};t(15),t(18),p[h]?(p[h]("DOMContentLoaded",o,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",i),l[m]("onload",r)),s("mark",["firstbyte",c],null,"api");var E=0,R=t(24)},{}],"wrap-function":[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var i=t("ee"),o=t(23),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,i){function nrWrapper(){var r,a,c,s;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,i],c])}u(e+"start",[r,a,i],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,i,o){i||(i="");var a,c,s,f="-"===i.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+i:i,o,c))}function u(n,r,i){if(!s||e){var o=s;s=!0;try{t.emit(n,r,i,e)}catch(a){l([a,n,r,i])}s=o}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var i in t)c.call(t,i)&&(e[i]=t[i]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=i),n.inPlace=f,n.flag=a,n}},{}]},{},["loader",2,12,4,3]);</script>
+<!-- Responsiveness -->
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<!-- Favicon -->
+<link href='/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#20468c' href='/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='#ffffff' name='theme-color'>
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="izrwZEJRzBdd5S9/cePzuR9M649tNPxDDWDb3aX6DP9XkjQpVRLzZK8iUY+WQqdrYo3M8U9BbEDjb5I8si7WYg==" />
+<title>NASA Solar System Exploration</title>
+<meta content='NASA Solar System Exploration' property='og:site_name'>
+<meta content='' name='author'>
+<meta content="Planets, Sun, Venus, Earth, Earth's Moon, Moon, Satellite, Robot, Mars, Asteroid, Jupiter, Europa, Saturn, Enceladus, Titan, Uranus, Neptune, Dwarf Planet, Pluto, Eris" name='keywords'>
+<meta content='NASA’s real-time science encyclopedia of deep space exploration. Our scientists and hardworking robots are exploring the wild frontiers of our solar system.' name='description'>
+<meta content='NASA’s real-time science encyclopedia of deep space exploration. Our scientists and hardworking robots are exploring the wild frontiers of our solar system.' property='og:description'>
+<meta content='NASA Solar System Exploration' property='og:title'>
+<meta content='https://solarsystem.nasa.gov/' property='og:url'>
+<meta content='2018-08-31 13:56:09 -0700' property='og:updated_time'>
+<meta content='https://solarsystem.nasa.gov/system/site_config_values/meta_share_images/1_solarsystem_200.jpg' property='og:image'>
+<meta content='https://solarsystem.nasa.gov/system/site_config_values/meta_share_images/1_solarsystem_200.jpg' name='twitter:image'>
+<link href='https://solarsystem.nasa.gov/system/site_config_values/meta_share_images/1_solarsystem_200.jpg' rel='image_src'>
+
+<meta content='386757505155871' property='fb:app_id'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Raleway:300,400' rel='stylesheet'>
+
+<link rel="stylesheet" media="all" href="/assets/public_manifest-36e45b9f03dbcf20145f181f82d3335e4115447061521986fc89d9c543e30d8f.css" />
+<link rel="stylesheet" media="screen" href="/assets/mbcms/vendor/jquery.fancybox3-d5d81bdfc05a59e4ea72bca1d8b7fcc399bd3b61f7c06af95a8a48795df69d7a.css" />
+<link rel="stylesheet" media="screen" href="/assets/mbcms/vendor/jquery.fancybox-thumbs-63891ea3fd7b7f15621befe5cbdf329cd554b2129f7d69a7ea8d7cedb4c98323.css" />
+<link rel="stylesheet" media="print" href="/assets/gulp/print-8f8fee6fd062f161b3d761c1d1f16d49d7f6b94fc5c4450adeb3fcf015497a76.css" />
+<script src="/assets/public_manifest-3d6b0a6f1d655cd265a7ca3b5b5be032feb1124620b2ba07ec4430809cc49a52.js"></script>
+<script src="/assets/mbcms/vendor/jquery.fancybox3-f9c505d41c3766de55b64d8adb02a1561e2fb4d840701f4f9896dd54e087fc67.js"></script>
+<script src="/assets/mbcms/vendor/jquery.fancybox-thumbs3-8b93bd5900393c575e9459f2708458650063093c13045971ec87f8abef9e8eea.js"></script>
+<script src="/assets/mb_manifest-22ab3602d79d887a172e1e6f4f8654f11eef9b7e3d91c68f14dc79ffb6b85df1.js"></script>
+
+</head>
+<body class='io' id='home'>
+<svg display="none" width="0" height="0">
+
+  <symbol id="circle_plus" viewBox="0 0 24 24">
+    <g fill="none" fill-rule="evenodd">
+    <circle cx="12" cy="12" fill="#2aabfe" r="12"/><path d="m7 11.332h4.332v-4.332h1.482v4.332h4.332v1.482h-4.332v4.332h-1.482v-4.332h-4.332z" fill="#fff"/>
+    </g>
+  </symbol>
+  
+  
+  <symbol id="expand_contract_arrow" viewBox="0 0 15 15" >
+    <path d="m28.7594979 15h-.1600174-1.092229-5.221853-.1879104c-.1937826.0205556-.3816929.1027782-.5284979.2525408-.3435236.3435729-.3435236.9000436 0 1.2450848l1.711746 1.7119917c.3435237.343573.3435237.9029802 0 1.2480214l-3.0946489 3.0936247-4.6067401 4.6088695c-.6899834.6886142-.8059594 1.6884995-.117444 2.3771137.6885153.6886141 1.6882572.5740898 2.3767725-.1145243l4.6082083-4.6088695 3.0946489-3.0936248c.3435236-.3435729.9013825-.3435729 1.2463742 0l1.7014697 1.7002456c.3449917.3435729.9013825.3435729 1.2463742 0 .1717619-.1717865.2583768-.3964303.2583768-.6225424h.0058722v-5.3062932-1.1011954-.146826c-.0176166-.3127395-.146805-.6225424-.384629-.8604006-.2378241-.2378582-.5461146-.3670651-.8558731-.383216z" fill="#fff" transform="translate(-15 -15)"/>
+  </symbol>
+
+
+  <symbol id="pause_circle" viewBox="0 0 39 39" >
+    <g fill="none" fill-rule="evenodd">
+      <path d="m0 0h39v39h-39z" />
+      <circle cx="19.5" cy="19.5" r="17.5" stroke="#8f8f8f" stroke-width="2"/>
+      <path d="m2.48675806 0c.0185.00291756.037 0 .0562957 0 .23731721 0 .43007527.17651255.43007527.39441801l-.00019892.00091174v10.16624735c0 .2177231-.19255914.3942356-.43007527.3942356h-2.11258065l-.08668145-.0080097c-.19601235-.0367623-.34359274-.1957182-.34359274-.3862259l.00019892-10.16670322.00874648-.07996622c.04014239-.17976524.21370111-.31490766.42152772-.31490766zm5.88001613 0c.0185.00291756.037 0 .0562957 0 .23731721 0 .43007527.17651255.43007527.39441801l-.00019892.00091174-.00039785 10.16624735c0 .2177231-.19255914.3942356-.43007527.3942356h-2.1121828l-.08668145-.0080097c-.19601235-.0367623-.34359274-.1957182-.34359274-.3862259l.00019892-10.16670322.00874648-.07996622c.04014238-.17976524.2137011-.31490766.42152772-.31490766z" fill="#b9d4f0" fill-rule="nonzero" transform="translate(15 14)"/>
+    </g>
+  </symbol>
+  
+  <symbol id="play_circle" viewBox="0 0 39 39" >
+    <g fill="none" fill-rule="evenodd">
+      <path d="m0 0h39v39h-39z" />
+      <circle cx="19.5" cy="19.5" r="17.5" stroke="#8f8f8f" stroke-width="2"/>
+      <path d="m25 19.5000893c0-.1512083-.0790527-.2811724-.1946298-.3493679l-8.2178118-5.0785984c-.0605404-.0451662-.1339226-.072123-.2133089-.072123-.2066378 0-.3742495.1792362-.3742495.4004252 0 .0155314.0026684.0301703.0043362.0451661l-.0043362 10.1991496c.025517.1997663.1821214.3552591.3742495.3552591.0682121 0 .1312542-.0208871.1862909-.0549848l.0033355.0062483 8.251501-5.0994856-.0033355-.0062483c.1119079-.0692666.1879586-.1972669.1879586-.3454403z" fill="#b9d4f0" fill-rule="nonzero"/>
+    </g>
+  </symbol>
+  
+
+
+</svg>
+
+
+
+<div data-react-class="BrowseHappier" data-react-props="{&quot;gt&quot;:1,&quot;lt&quot;:11}" data-react-cache-id="BrowseHappier-0"></div>
+<div id='main_container'>
+<div id='site_body'>
+<div class='site_header_area'>
+<header class='site_header'>
+<div class='brand_area'>
+<div class='brand1'>
+<a class='nasa_logo' href='/' title='Home'>NASA</a>
+</div>
+<div class='brand2'>
+<a class='top_logo' href='https://science.nasa.gov/' target='_blank'>NASA Science</a>
+<a class='sub_logo' href='/' title='Home'>Solar System Exploration</a>
+</div>
+<img alt='' class='print_only print_logo' src='/assets/logo_nasa_trio_black@2x.png'>
+</div>
+
+<a class='visuallyhidden focusable' href='#page'>Skip Navigation</a>
+<div class='right_header_container'>
+<a class='menu_button' href='javascript:void(0);' id='menu_button'>
+<span class='menu_icon'>
+menu
+</span>
+</a>
+<a class='modal_close' id='modal_close'>
+<span class='modal_close_icon'>
+close modal
+</span>
+</a>
+</div>
+<div class='nav_area'>
+<div id='site_nav_container'>
+<nav data-react-class="Meganav" data-react-props="{&quot;nav_items&quot;:[{&quot;name&quot;:&quot;Solar System&quot;,&quot;link&quot;:&quot;/solar-system/our-solar-system/&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;sections&quot;:[{&quot;items&quot;:[{&quot;name&quot;:&quot;Our Solar System&quot;,&quot;link&quot;:&quot;/solar-system/our-solar-system/overview&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:87},{&quot;name&quot;:&quot;Sun&quot;,&quot;link&quot;:&quot;/solar-system/sun/overview&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:88},{&quot;name&quot;:&quot;Kuiper Belt&quot;,&quot;link&quot;:&quot;/solar-system/kuiper-belt/overview&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:89},{&quot;name&quot;:&quot;Oort Cloud&quot;,&quot;link&quot;:&quot;/solar-system/oort-cloud/overview&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:90},{&quot;name&quot;:&quot;Beyond Our Solar System&quot;,&quot;link&quot;:&quot;/solar-system/beyond/overview&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:91}]}],&quot;id&quot;:55,&quot;meganav_style&quot;:&quot;&quot;,&quot;features&quot;:[],&quot;short_description&quot;:&quot;&quot;},{&quot;name&quot;:&quot;Planets&quot;,&quot;link&quot;:&quot;/planets/overview&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;sections&quot;:[{&quot;items&quot;:[{&quot;name&quot;:&quot;About Planets&quot;,&quot;link&quot;:&quot;/planets/overview&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:131}],&quot;columns&quot;:[{&quot;title&quot;:&quot;PLANETS&quot;,&quot;sub_items&quot;:[{&quot;url&quot;:&quot;/planets/mercury/overview&quot;,&quot;link_text&quot;:&quot;Mercury&quot;},{&quot;url&quot;:&quot;/planets/venus/overview&quot;,&quot;link_text&quot;:&quot;Venus&quot;},{&quot;url&quot;:&quot;/planets/earth/overview&quot;,&quot;link_text&quot;:&quot;Earth&quot;},{&quot;url&quot;:&quot;/planets/mars/overview&quot;,&quot;link_text&quot;:&quot;Mars&quot;},{&quot;url&quot;:&quot;/planets/jupiter/overview&quot;,&quot;link_text&quot;:&quot;Jupiter&quot;},{&quot;url&quot;:&quot;/planets/saturn/overview&quot;,&quot;link_text&quot;:&quot;Saturn&quot;},{&quot;url&quot;:&quot;/planets/uranus/overview&quot;,&quot;link_text&quot;:&quot;Uranus&quot;},{&quot;url&quot;:&quot;/planets/neptune/overview&quot;,&quot;link_text&quot;:&quot;Neptune&quot;}]},{&quot;title&quot;:&quot;DWARF PLANETS&quot;,&quot;sub_items&quot;:[{&quot;url&quot;:&quot;/planets/dwarf-planets/pluto/overview&quot;,&quot;link_text&quot;:&quot;Pluto&quot;},{&quot;url&quot;:&quot;/planets/dwarf-planets/ceres/overview&quot;,&quot;link_text&quot;:&quot;Ceres&quot;},{&quot;url&quot;:&quot;/planets/dwarf-planets/makemake/in-depth&quot;,&quot;link_text&quot;:&quot;Makemake&quot;},{&quot;url&quot;:&quot;/planets/dwarf-planets/haumea/in-depth&quot;,&quot;link_text&quot;:&quot;Haumea&quot;},{&quot;url&quot;:&quot;/planets/dwarf-planets/eris/in-depth&quot;,&quot;link_text&quot;:&quot;Eris&quot;}]},{&quot;title&quot;:&quot;HYPOTHETICAL&quot;,&quot;sub_items&quot;:[{&quot;url&quot;:&quot;/planets/hypothetical-planet-x/in-depth&quot;,&quot;link_text&quot;:&quot;Planet X&quot;}]}]}],&quot;id&quot;:51,&quot;meganav_style&quot;:&quot;&quot;,&quot;features&quot;:[],&quot;short_description&quot;:null},{&quot;name&quot;:&quot;Moons&quot;,&quot;link&quot;:&quot;/moons/overview&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;sections&quot;:[{&quot;items&quot;:[{&quot;name&quot;:&quot;About Moons&quot;,&quot;link&quot;:&quot;/moons/overview&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:132}],&quot;columns&quot;:[{&quot;title&quot;:&quot;BY DESTINATION&quot;,&quot;sub_items&quot;:[{&quot;url&quot;:&quot;/moons/earths-moon/overview&quot;,&quot;link_text&quot;:&quot;Earth (1)&quot;},{&quot;url&quot;:&quot;/moons/mars-moons/overview&quot;,&quot;link_text&quot;:&quot;Mars (2)&quot;},{&quot;url&quot;:&quot;/moons/jupiter-moons/overview&quot;,&quot;link_text&quot;:&quot;Jupiter (79)&quot;},{&quot;url&quot;:&quot;/moons/saturn-moons/overview&quot;,&quot;link_text&quot;:&quot;Saturn (82)&quot;},{&quot;url&quot;:&quot;/moons/uranus-moons/overview&quot;,&quot;link_text&quot;:&quot;Uranus (27)&quot;},{&quot;url&quot;:&quot;/moons/neptune-moons/overview&quot;,&quot;link_text&quot;:&quot;Neptune (14)&quot;},{&quot;url&quot;:&quot;/moons/pluto-moons/overview&quot;,&quot;link_text&quot;:&quot;Pluto (5)&quot;}]}]}],&quot;id&quot;:93,&quot;meganav_style&quot;:&quot;&quot;,&quot;features&quot;:[],&quot;short_description&quot;:&quot;&quot;},{&quot;name&quot;:&quot;Asteroids, Comets \u0026 Meteors&quot;,&quot;link&quot;:&quot;/asteroids-comets-and-meteors/overview&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;sections&quot;:[{&quot;items&quot;:[{&quot;name&quot;:&quot;About Asteroids, Comets \u0026 Meteors&quot;,&quot;link&quot;:&quot;/asteroids-comets-and-meteors/overview&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:133}],&quot;columns&quot;:[{&quot;title&quot;:&quot;BY TYPE&quot;,&quot;sub_items&quot;:[{&quot;url&quot;:&quot;/asteroids-comets-and-meteors/meteors-and-meteorites/overview&quot;,&quot;link_text&quot;:&quot;Meteors \u0026 Meteorites&quot;},{&quot;url&quot;:&quot;/asteroids-comets-and-meteors/asteroids/overview&quot;,&quot;link_text&quot;:&quot;Asteroids&quot;},{&quot;url&quot;:&quot;/asteroids-comets-and-meteors/comets/overview&quot;,&quot;link_text&quot;:&quot;Comets&quot;}]}]}],&quot;id&quot;:101,&quot;meganav_style&quot;:&quot;&quot;,&quot;features&quot;:[],&quot;short_description&quot;:&quot;&quot;},{&quot;name&quot;:&quot;More&quot;,&quot;link&quot;:&quot;/in-progress&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;sections&quot;:[{&quot;items&quot;:[{&quot;name&quot;:&quot;News&quot;,&quot;link&quot;:&quot;/news&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:11},{&quot;name&quot;:&quot;What&#39;s Up: Skywatching Tips from NASA&quot;,&quot;link&quot;:&quot;/whats-up-skywatching-tips-from-nasa&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1709},{&quot;name&quot;:&quot;Resources&quot;,&quot;link&quot;:&quot;/resources&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:108},{&quot;name&quot;:&quot;Raw Images&quot;,&quot;link&quot;:&quot;/raw-images/raw-image-viewer&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1612},{&quot;name&quot;:&quot;People&quot;,&quot;link&quot;:&quot;/people&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:127},{&quot;name&quot;:&quot;Missions&quot;,&quot;link&quot;:&quot;/missions&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:412},{&quot;name&quot;:&quot;Science Goals&quot;,&quot;link&quot;:&quot;/science-goals&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:989},{&quot;name&quot;:&quot;Technology Reports&quot;,&quot;link&quot;:&quot;/technology-reports/2016-senior-review-of-operation-missions&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:109},{&quot;name&quot;:&quot;Kids&quot;,&quot;link&quot;:&quot;/kids&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:154},{&quot;name&quot;:&quot;Interactives&quot;,&quot;link&quot;:&quot;/interactives&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:157},{&quot;name&quot;:&quot;Basics of Space Flight&quot;,&quot;link&quot;:&quot;/basics&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:159},{&quot;name&quot;:&quot;Solar System Ambassadors&quot;,&quot;link&quot;:&quot;/solar-system-ambassadors/&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:80},{&quot;name&quot;:&quot;Scientist for a Day&quot;,&quot;link&quot;:&quot;/scientist-for-a-day&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1629}]}],&quot;id&quot;:58,&quot;meganav_style&quot;:&quot;&quot;,&quot;features&quot;:[],&quot;short_description&quot;:&quot;&quot;},{&quot;name&quot;:&quot;orrery&quot;,&quot;style&quot;:&quot;icon&quot;,&quot;popups&quot;:{&quot;Halley&#39;s Comet&quot;:[{&quot;title&quot;:&quot;1P/Halley&quot;,&quot;link&quot;:&quot;/small-bodies/comets/1p-halley/in-depth&quot;,&quot;description&quot;:&quot;Comet Halley is perhaps the most famous comet.&quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/883_halley_480x320_comets.jpg&quot;}],&quot;Makemake&quot;:[{&quot;title&quot;:&quot;Makemake&quot;,&quot;link&quot;:&quot;/planets/dwarf-planets/makemake/in-depth&quot;,&quot;description&quot;:&quot;It takes 310 Earth years for Makemake to complete one orbit around our Sun.&quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/705_makemake_480x320.jpg&quot;}],&quot;Neptune&quot;:[{&quot;title&quot;:&quot;Neptune&quot;,&quot;link&quot;:&quot;/planets/neptune/overview&quot;,&quot;description&quot;:&quot;Neptune—the eighth and most distant major planet orbiting our Sun—is dark, cold and whipped by supersonic winds. It was the first planet located through mathematical calculations. &quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/90_neptune_480x320.jpg&quot;}],&quot;Haumea&quot;:[{&quot;title&quot;:&quot;Haumea&quot;,&quot;link&quot;:&quot;/planets/dwarf-planets/haumea/in-depth&quot;,&quot;description&quot;:&quot;Haumea is one of the fastest rotating large objects in our solar system.&quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/723_haumea_480x320.jpg&quot;}],&quot;Mercury&quot;:[{&quot;title&quot;:&quot;Mercury&quot;,&quot;link&quot;:&quot;/planets/mercury/overview&quot;,&quot;description&quot;:&quot;Mercury—the smallest planet in our solar system and closest to the Sun—is only slightly larger than Earth&#39;s Moon. Mercury is the fastest planet, zipping around the Sun every 88 Earth days.&quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/2_mercury_480x320_new.jpg&quot;}],&quot;Venus&quot;:[{&quot;title&quot;:&quot;Venus&quot;,&quot;link&quot;:&quot;/planets/venus/overview&quot;,&quot;description&quot;:&quot;Venus spins slowly in the opposite direction from most planets. A thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system.&quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/3_480x320_venus.png&quot;}],&quot;Earth&quot;:[{&quot;title&quot;:&quot;Earth&quot;,&quot;link&quot;:&quot;/planets/earth/overview&quot;,&quot;description&quot;:&quot;Earth—our home planet—is the only place we know of so far that’s inhabited by living things. It&#39;s also the only planet in our solar system with liquid water on the surface.&quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/4_earth_480x320.jpg&quot;},{&quot;title&quot;:&quot;Earth&#39;s Moon&quot;,&quot;link&quot;:&quot;/moons/earths-moon/overview&quot;,&quot;description&quot;:&quot;The fifth largest moon in the solar system, Earth&#39;s moon is the only place beyond Earth where humans have set foot. &quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/5_earth_moon_480x320.jpg&quot;}],&quot;Jupiter&quot;:[{&quot;title&quot;:&quot;Jupiter&quot;,&quot;link&quot;:&quot;/planets/jupiter/overview&quot;,&quot;description&quot;:&quot;Jupiter is more than twice as massive than the other planets of our solar system combined. The giant planet&#39;s Great Red spot is a centuries-old storm bigger than Earth.&quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/9_jupiter_480x320_new.jpg&quot;},{&quot;title&quot;:&quot;Io&quot;,&quot;link&quot;:&quot;/moons/jupiter-moons/io/overview&quot;,&quot;description&quot;:&quot;Io is the most volcanically active body in the solar system.&quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/14_io_480x320_moons.jpg&quot;},{&quot;title&quot;:&quot;Europa&quot;,&quot;link&quot;:&quot;/moons/jupiter-moons/europa/overview&quot;,&quot;description&quot;:&quot;Europa might be the best place to look for environments where life could exist.&quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/15_PIA19048_320.jpg&quot;}],&quot;Saturn&quot;:[{&quot;title&quot;:&quot;Saturn&quot;,&quot;link&quot;:&quot;/planets/saturn/overview&quot;,&quot;description&quot;:&quot;Adorned with a dazzling, complex system of icy rings, Saturn is unique in our solar system. The other giant planets have rings, but none are as spectacular as Saturn&#39;s. &quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/38_saturn_480x320.jpg&quot;},{&quot;title&quot;:&quot;Enceladus&quot;,&quot;link&quot;:&quot;/moons/saturn-moons/enceladus/in-depth&quot;,&quot;description&quot;:&quot;Enceladus is Saturn&#39;s sixth largest moon, but it&#39;s one of the most scientifically compelling bodies in our solar system.&quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/46_enceladus_480x320_moons.jpg&quot;},{&quot;title&quot;:&quot;Titan&quot;,&quot;link&quot;:&quot;/moons/saturn-moons/titan/overview&quot;,&quot;description&quot;:&quot;Saturn’s largest moon, Titan has an earthlike cycle of liquids flowing across its surface.&quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/53_titan_480x320_moons.jpg&quot;}],&quot;Sun&quot;:[{&quot;title&quot;:&quot;Sun&quot;,&quot;link&quot;:&quot;/solar-system/sun/overview&quot;,&quot;description&quot;:&quot;The Sun is a yellow dwarf star, a hot ball of glowing gases at the heart of our solar system. Its gravity holds everything from the biggest planets to tiny debris in its orbit. &quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/1_sun_480x320.jpg&quot;}],&quot;Mars&quot;:[{&quot;title&quot;:&quot;Mars&quot;,&quot;link&quot;:&quot;/planets/mars/overview&quot;,&quot;description&quot;:&quot;Mars is a dusty, cold, desert world with a very thin atmosphere. There is strong evidence Mars was—billions of years ago—wetter and warmer, with a thicker atmosphere.&quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/6_mars_480x320.jpg&quot;}],&quot;Uranus&quot;:[{&quot;title&quot;:&quot;Uranus&quot;,&quot;link&quot;:&quot;/planets/uranus/overview&quot;,&quot;description&quot;:&quot;Uranus—seventh planet from the Sun—rotates at a nearly 90-degree angle from the plane of its orbit. This unique tilt makes Uranus appear to spin on its side.&quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/69_uranus_480x320.jpg&quot;}],&quot;Pluto&quot;:[{&quot;title&quot;:&quot;Pluto&quot;,&quot;link&quot;:&quot;/planets/dwarf-planets/pluto/overview&quot;,&quot;description&quot;:&quot;Pluto is a complex world of ice mountains and frozen plains. Once considered the ninth planet, Pluto is the best known of a new class of worlds called dwarf planets.&quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/99_pluto_480x320.jpg&quot;}],&quot;Ceres&quot;:[{&quot;title&quot;:&quot;Ceres&quot;,&quot;link&quot;:&quot;/planets/dwarf-planets/ceres/overview&quot;,&quot;description&quot;:&quot;Ceres makes up almost a third of the asteroid belt&#39;s total mass, but it is still far smaller than Earth&#39;s Moon. Ceres is heavily cratered with large amounts of ice underground. &quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/704_ceres_480x320.jpg&quot;}],&quot;Eris&quot;:[{&quot;title&quot;:&quot;Eris&quot;,&quot;link&quot;:&quot;/planets/dwarf-planets/eris/in-depth&quot;,&quot;description&quot;:&quot;Eris is one of the largest known dwarf planets in our solar system. It&#39;s about the same size as Pluto, but it is three times farther from the Sun. One orbit takes about 557 years.&quot;,&quot;image&quot;:&quot;/system/stellar_items/list_view_images/724_eris_480x320.jpg&quot;}]}}],&quot;search&quot;:true,&quot;search_placeholder&quot;:{&quot;placeholder&quot;:&quot;search&quot;},&quot;no_redirect&quot;:{&quot;name&quot;:&quot;More&quot;},&quot;orrery_url&quot;:null}" data-react-cache-id="Meganav-0" class="site_nav"></nav>
+</div>
+</div>
+</header>
+</div>
+<div id='sticky_nav_spacer'></div>
+
+<div id='page'>
+<div class='page_cover'></div>
+<div data-react-class="HiPO" data-react-props="{}" data-react-cache-id="HiPO-0"></div>
+<!-- MAIN Carousel / Media Feature -->
+<section class='carousel_dashboard_container'>
+<link rel="stylesheet" media="screen" href="/assets/vendor/masterslider/style/masterslider-5742010b34f49519ec9792babed226ba2ad196ea36d0a2b1975ddf4bbde9b624.css" />
+<link rel="stylesheet" media="screen" href="/assets/vendor/masterslider/style/default/style-151f21ae0588dd208aa4e128fbca4ee975ac7f869d86084b4dc413175d851dc6.css" />
+<script src="/assets/mbcms/public/homepage_carousel_custom_fns-964c08a6a0528d5070f8b57cd926f10ad0ddcb71248bcc53a302ee2ad7ae3489.js"></script>
+<section class='clearfix homepage_carousel main_feature'>
+<div class='master-slider ms-skin-default' id='masterslider'>
+<article class='dark_background left ms-slide revealed slide-1' data-body-class='io' data-delay='8' data-fill-mode='fill'>
+<div class='gradient_container_top'></div>
+<img alt='slide 1 - Io' data-src='/system/feature_items/images/52_fallback_io.jpg' src='/system/feature_items/images/52_fallback_io.jpg'>
+<video data-autopause='true' data-fill-mode='fill' data-loop='true' data-mute='true' muted>
+<source src='/system/feature_items/webm_videos/52_io.webm' type='video/webm'>
+<source src='/system/feature_items/mp4_videos/52_io.m4v' type='video/mp4'>
+</video>
+<div class='floating_text_area left ms-layer revealed' data-duration='300' data-ease='easeOutQuart' data-effect='right(90)' data-resize='false' data-type='text'>
+<h2 class='category_title'>
+Featured Destination
+</h2>
+<h1 class='media_feature_title'>
+<a href='/moons/jupiter-moons/io/overview'>
+Io
+</a>
+<span class='arrow'></span>
+</h1>
+<div class='description'>
+<p>250+ active volcanoes. No known planet or moon has more.</p>
+
+<a class='detail_link' href='/moons/jupiter-moons/io/overview'>
+Explore Io ›
+</a>
+<footer>
+<a class='big_button button' href='/moons/jupiter-moons/io/overview'>
+Explore Io
+</a>
+</footer>
+</div>
+</div>
+
+<div class='gradient_container_bottom'></div>
+</article>
+
+<article class='dark_background left ms-slide revealed slide-2' data-body-class='The Solar System' data-delay='8' data-fill-mode='fill'>
+<div class='gradient_container_top'></div>
+<img alt='slide 2 - Graphic showing eight planets and dwarf planet Pluto.' data-src='/system/feature_items/images/594_planets3x3_pluto_colorMercury_axis_tilt_NOLABELS_1080p.00001_print.jpg' src='/system/feature_items/images/594_planets3x3_pluto_colorMercury_axis_tilt_NOLABELS_1080p.00001_print.jpg'>
+<video data-autopause='true' data-fill-mode='fill' data-loop='true' data-mute='true' muted>
+<source src='/system/feature_items/mp4_videos/594_planets3x3_pluto_colorMercury_axis_tilt_NOLABELS_720p.mp4' type='video/mp4'>
+</video>
+<div class='floating_text_area left ms-layer revealed' data-duration='300' data-ease='easeOutQuart' data-effect='right(90)' data-resize='false' data-type='text'>
+<h2 class='category_title'>
+The Solar System
+</h2>
+<h1 class='media_feature_title'>
+<a href='/solar-system/our-solar-system/overview/'>
+Your Galactic Neighborhood
+</a>
+<span class='arrow'></span>
+</h1>
+<div class='description'>
+<p>A star, eight planets, hundreds of moons, millions of asteroids and comets and much, much more. Note: Worlds shown are&nbsp;<i>not</i> to scale.</p>
+
+<a class='detail_link' href='/solar-system/our-solar-system/overview/'>
+Explore ›
+</a>
+<footer>
+<a class='big_button button' href='/solar-system/our-solar-system/overview/'>
+Explore
+</a>
+</footer>
+</div>
+</div>
+
+<div class='gradient_container_bottom'></div>
+</article>
+
+<article class='dark_background left ms-slide revealed slide-3' data-body-class='jupiter' data-delay='8' data-fill-mode='fill'>
+<div class='gradient_container_top'></div>
+<img alt='slide 3 - Jupiter' data-src='/system/feature_items/images/38_fallback_jupiter.jpg' src='/system/feature_items/images/38_fallback_jupiter.jpg'>
+<video data-autopause='true' data-fill-mode='fill' data-loop='true' data-mute='true' muted>
+<source src='/system/feature_items/webm_videos/38_jupiter.webm' type='video/webm'>
+<source src='/system/feature_items/mp4_videos/38_jupiter.m4v' type='video/mp4'>
+</video>
+<div class='floating_text_area left ms-layer revealed' data-duration='300' data-ease='easeOutQuart' data-effect='right(90)' data-resize='false' data-type='text'>
+<h2 class='category_title'>
+Featured Destination
+</h2>
+<h1 class='media_feature_title'>
+<a href='/planets/jupiter'>
+Jupiter
+</a>
+<span class='arrow'></span>
+</h1>
+<div class='description'>
+<p>King of the planets. Only the Sun has more influence on our solar system.</p>
+
+<a class='detail_link' href='/planets/jupiter'>
+Explore Jupiter ›
+</a>
+<footer>
+<a class='big_button button' href='/planets/jupiter'>
+Explore Jupiter
+</a>
+</footer>
+</div>
+</div>
+
+<div class='gradient_container_bottom'></div>
+</article>
+
+<article class='dark_background left ms-slide revealed slide-4' data-body-class='Moon' data-delay='8' data-fill-mode='fill'>
+<div class='gradient_container_top'></div>
+<img alt='slide 4 - Color-enhanced view showing icy terrain on Enceladus.' data-src='/system/feature_items/images/596_Enceladus_720p-1041.jpg' src='/system/feature_items/images/596_Enceladus_720p-1041.jpg'>
+<video data-autopause='true' data-fill-mode='fill' data-loop='true' data-mute='true' muted>
+<source src='/system/feature_items/webm_videos/596_CAROUSEL_ONLY_Enceladus_720p30.webm' type='video/webm'>
+<source src='/system/feature_items/mp4_videos/596_CAROUSEL_ONLY_Enceladus_720p30.m4v' type='video/mp4'>
+<source src='/system/feature_items/ogv_videos/596_CAROUSEL_ONLY_Enceladus_720p30.ogv' type='video/ogg'>
+</video>
+<div class='floating_text_area left ms-layer revealed' data-duration='300' data-ease='easeOutQuart' data-effect='right(90)' data-resize='false' data-type='text'>
+<h2 class='category_title'>
+Featured Destination
+</h2>
+<h1 class='media_feature_title'>
+<a href='/moons/saturn-moons/enceladus/in-depth/'>
+Enceladus
+</a>
+<span class='arrow'></span>
+</h1>
+<div class='description'>
+<p>This tiny, icy moon harbors a hidden ocean that spews ice into a ring around Saturn.</p>
+
+<a class='detail_link' href='/moons/saturn-moons/enceladus/in-depth/'>
+Explore Enceladus ›
+</a>
+<footer>
+<a class='big_button button' href='/moons/saturn-moons/enceladus/in-depth/'>
+Explore Enceladus
+</a>
+</footer>
+</div>
+</div>
+
+<div class='gradient_container_bottom'></div>
+</article>
+
+<article class='dark_background left ms-slide revealed slide-5' data-body-class='Terrestrial Planet' data-delay='8' data-fill-mode='fill'>
+<div class='gradient_container_top'></div>
+<img alt='slide 5 - Image of planet cloaked in thick, brownish clouds.' data-src='/system/feature_items/images/577_venus_710.jpg' src='/system/feature_items/images/577_venus_710.jpg'>
+<video data-autopause='true' data-fill-mode='fill' data-loop='true' data-mute='true' muted>
+<source src='/system/feature_items/mp4_videos/577_venus_710.m4v' type='video/mp4'>
+</video>
+<div class='floating_text_area left ms-layer revealed' data-duration='300' data-ease='easeOutQuart' data-effect='right(90)' data-resize='false' data-type='text'>
+<h2 class='category_title'>
+Featured Destination
+</h2>
+<h1 class='media_feature_title'>
+<a href='/planets/venus/overview/'>
+Venus
+</a>
+<span class='arrow'></span>
+</h1>
+<div class='description'>
+<p><span>Super hot surface. Crushing atmosphere. Our solar system&#39;s planetary hot spot.</span></p>
+
+<a class='detail_link' href='/planets/venus/overview/'>
+Explore Venus ›
+</a>
+<footer>
+<a class='big_button button' href='/planets/venus/overview/'>
+Explore Venus
+</a>
+</footer>
+</div>
+</div>
+
+<div class='gradient_container_bottom'></div>
+</article>
+
+</div>
+</section>
+
+<!-- Or, if there is only one article use a conditional inside this partial -->
+<script src="/assets/public/dashboard-65e151466a7a57e21f8296268517a0675007855df739f2abbf34e1311ab8da39.js"></script>
+<section class='dashboard'>
+<div class='slide_container'>
+<li class='slide'>
+<div class='image_and_description_container'>
+<div class='readout'>
+<div class='title'>
+Planets in Our Solar System
+</div>
+<div class='value'>
+8
+
+</div>
+</div>
+</div>
+</li><li class='slide'>
+<div class='image_and_description_container'>
+<div class='readout'>
+<div class='title'>
+Moons in Our Solar System
+</div>
+<div class='value'>
+200+
+
+</div>
+</div>
+</div>
+</li><li class='slide'>
+<div class='image_and_description_container'>
+<div data-react-class="SolarSystemDashboard" data-react-props="{&quot;options&quot;:[{&quot;title&quot;:&quot;One Way Light Time to Voyager 1&quot;,&quot;from&quot;:&quot;EARTH&quot;,&quot;to&quot;:&quot;-31&quot;,&quot;type&quot;:&quot;api&quot;,&quot;request&quot;:&quot;one_way_light_time&quot;,&quot;decimals&quot;:4}],&quot;single_slide&quot;:true,&quot;theme_dashboard&quot;:false,&quot;slides_base&quot;:null,&quot;responsive&quot;:null}" data-react-cache-id="SolarSystemDashboard-0" class="solar_system_dashboard"></div>
+
+</div>
+</li><li class='slide'>
+<div class='image_and_description_container'>
+<p><span><script src="/assets/mbcms/vendor/moment.min-059b467d859707934be9246dba096f84208ae1de0373bace100340d6f3f13150.js"></script>
+<script src="/assets/mbcms/vendor/moment-precise-range-41fa4b38dcd2e8e8a79655a6f44f5c0cb9beeea53cbc0bc5434c9cee531bbab6.js"></script>
+<div data-react-class="Countdown" data-react-props="{&quot;date&quot;:&quot;2021-02-18T00:00:00.000-08:00&quot;,&quot;count_up&quot;:false,&quot;show_date&quot;:false,&quot;title&quot;:&quot;Mars 2020 Landing (Feb. 18, 2021)&quot;,&quot;subtitle&quot;:&quot;&quot;,&quot;klass&quot;:&quot;&quot;,&quot;date_label&quot;:&quot;&quot;,&quot;formatted_date&quot;:&quot;February 18, 2021&quot;}" data-react-cache-id="Countdown-0" class="countdown_module"></div></span></p>
+
+</div>
+</li>
+</div>
+</section>
+</section>
+<section class='more_bar'>
+<span>
+MORE
+</span>
+<div class='arrow_down'></div>
+</section>
+<!-- 'definition_teaser' -->
+<section class='image_grid_teaser module'>
+<header>
+10 THINGS
+<span>
+September 22
+</span>
+</header>
+<article>
+<h2 class='module_title'>
+The Roundup
+</h2>
+<h3 class='module_subtitle'>
+The latest from around your galactic neighborhood.
+</h3>
+<div class='wysiwyg_content'>
+<div data-react-class="ImageGridTeaser" data-react-props="{&quot;items&quot;:[{&quot;id&quot;:566,&quot;image_file_name&quot;:&quot;comet_northern_lights-800x600.gif&quot;,&quot;title&quot;:&quot;Comet Discovered to Have Its Own Northern Lights&quot;,&quot;body&quot;:&quot;\u003cp\u003e\u003cspan\u003eData from NASA instruments aboard the ESA (European Space Agency)\u0026nbsp;\u003c/span\u003e\u003ca href=\&quot;https://www.nasa.gov/rosetta\&quot; target=\&quot;_blank\&quot;\u003eRosetta\u003c/a\u003e\u003cspan\u003e\u0026nbsp;mission have helped reveal that comet 67P/Churyumov-Gerasimenko has its own far-ultraviolet aurora. It is the first time such electromagnetic emissions in the far-ultraviolet have been documented on a celestial object other than a planet or moon. A paper on the findings was released today in the journal Nature Astronomy.\u003c/span\u003e\u003c/p\u003e\n\n\u003cp\u003e\u003ca href=\&quot;https://www.nasa.gov/feature/jpl/comet-discovered-to-have-its-own-northern-lights\&quot; target=\&quot;_blank\&quot;\u003e\u003cb\u003eRead more\u003c/b\u003e\u003c/a\u003e\u003c/p\u003e\n&quot;,&quot;link_text&quot;:&quot;&quot;,&quot;link&quot;:&quot;&quot;,&quot;more_link_text&quot;:&quot;&quot;,&quot;more_link&quot;:&quot;&quot;,&quot;status&quot;:1,&quot;created_at&quot;:&quot;2019-07-12T07:47:32.203-07:00&quot;,&quot;updated_at&quot;:&quot;2020-09-21T09:56:12.691-07:00&quot;,&quot;theme&quot;:null,&quot;textbox_category_title&quot;:&quot;&quot;,&quot;textbox_brand_title&quot;:null,&quot;feature_type&quot;:&quot;image&quot;,&quot;image_alt&quot;:&quot;An animation of Comet 67P Churyumov Gerasimenko&quot;,&quot;webm_video_file_name&quot;:null,&quot;mp4_video_file_name&quot;:null,&quot;ogv_video_file_name&quot;:null,&quot;embed_video&quot;:&quot;&quot;,&quot;mobile_image_file_name&quot;:null,&quot;body_class&quot;:&quot;&quot;,&quot;schedule_date&quot;:&quot;2019-07-12T14:44:00.000-07:00&quot;,&quot;link_target&quot;:null,&quot;more_link_target&quot;:null,&quot;feature_links&quot;:[],&quot;category_names&quot;:&quot;left box homepage_ten_things&quot;,&quot;image_src&quot;:&quot;/system/feature_items/images/566_comet_northern_lights-800x600.gif&quot;,&quot;ogv_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;mp4_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;webm_video_src&quot;:&quot;/assets/public/missing.png&quot;},{&quot;id&quot;:569,&quot;image_file_name&quot;:&quot;OsirisRex_Bennu-800x600.jpg&quot;,&quot;title&quot;:&quot;OSIRIS-REx to Asteroid Bennu: &#39;You&#39;ve Got a Little Vesta on You&#39;&quot;,&quot;body&quot;:&quot;\u003cp\u003e\u003cspan\u003eIt appears some pieces of asteroid Vesta ended up on asteroid Bennu, according to observations from\u0026nbsp;\u003c/span\u003e\u003ca href=\&quot;https://www.nasa.gov/osiris-rex\&quot; target=\&quot;_blank\&quot;\u003eNASA\u0026rsquo;s OSIRIS-REx spacecraft\u003c/a\u003e\u003cspan\u003e. The new result sheds light on the intricate orbital dance of asteroids and on the violent origin of Bennu, which is a \u0026ldquo;rubble pile\u0026rdquo; asteroid that coalesced from the fragments of a massive collision.\u003c/span\u003e\u003c/p\u003e\n\n\u003cp\u003e\u003ca href=\&quot;https://www.nasa.gov/feature/goddard/2020/bennu-vesta-meteorites\&quot; target=\&quot;_blank\&quot;\u003e\u003cb\u003eRead more\u003c/b\u003e\u003c/a\u003e\u003c/p\u003e\n&quot;,&quot;link_text&quot;:&quot;&quot;,&quot;link&quot;:&quot;&quot;,&quot;more_link_text&quot;:&quot;&quot;,&quot;more_link&quot;:&quot;&quot;,&quot;status&quot;:1,&quot;created_at&quot;:&quot;2019-07-12T08:23:14.033-07:00&quot;,&quot;updated_at&quot;:&quot;2020-09-21T09:38:34.282-07:00&quot;,&quot;theme&quot;:null,&quot;textbox_category_title&quot;:&quot;&quot;,&quot;textbox_brand_title&quot;:null,&quot;feature_type&quot;:&quot;image&quot;,&quot;image_alt&quot;:&quot;Fragments of asteroid Vesta shown on asteroid Bennu’s surface&quot;,&quot;webm_video_file_name&quot;:null,&quot;mp4_video_file_name&quot;:null,&quot;ogv_video_file_name&quot;:null,&quot;embed_video&quot;:&quot;&quot;,&quot;mobile_image_file_name&quot;:null,&quot;body_class&quot;:&quot;&quot;,&quot;schedule_date&quot;:&quot;2019-07-12T15:19:00.000-07:00&quot;,&quot;link_target&quot;:null,&quot;more_link_target&quot;:null,&quot;feature_links&quot;:[],&quot;category_names&quot;:&quot;left box homepage_ten_things&quot;,&quot;image_src&quot;:&quot;/system/feature_items/images/569_OsirisRex_Bennu-800x600.jpg&quot;,&quot;ogv_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;mp4_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;webm_video_src&quot;:&quot;/assets/public/missing.png&quot;},{&quot;id&quot;:567,&quot;image_file_name&quot;:&quot;enceladus-800x600.jpg&quot;,&quot;title&quot;:&quot;Infrared Eyes on Enceladus: Hints of Fresh Ice in Northern Hemisphere&quot;,&quot;body&quot;:&quot;\u003cp\u003e\u003cspan\u003eNew composite images made from NASA\u0026#39;s Cassini spacecraft are the most detailed global infrared views ever produced of Saturn\u0026#39;s moon Enceladus. And data used to build those images provides strong evidence that the northern hemisphere of the moon has been resurfaced with ice from its interior.\u003c/span\u003e\u003c/p\u003e\n\n\u003cp\u003e\u003ca href=\&quot;https://solarsystem.nasa.gov/news/1503/infrared-eyes-on-enceladus-hints-of-fresh-ice-in-northern-hemisphere/\&quot; target=\&quot;_blank\&quot;\u003e\u003cb\u003eRead more\u003c/b\u003e\u003c/a\u003e\u003c/p\u003e\n&quot;,&quot;link_text&quot;:&quot;&quot;,&quot;link&quot;:&quot;&quot;,&quot;more_link_text&quot;:&quot;&quot;,&quot;more_link&quot;:&quot;&quot;,&quot;status&quot;:1,&quot;created_at&quot;:&quot;2019-07-12T07:57:03.811-07:00&quot;,&quot;updated_at&quot;:&quot;2020-09-18T13:38:26.484-07:00&quot;,&quot;theme&quot;:null,&quot;textbox_category_title&quot;:&quot;&quot;,&quot;textbox_brand_title&quot;:null,&quot;feature_type&quot;:&quot;image&quot;,&quot;image_alt&quot;:&quot;Detailed infrared images of Saturn&#39;s icy moon Enceladus&quot;,&quot;webm_video_file_name&quot;:null,&quot;mp4_video_file_name&quot;:null,&quot;ogv_video_file_name&quot;:null,&quot;embed_video&quot;:&quot;&quot;,&quot;mobile_image_file_name&quot;:null,&quot;body_class&quot;:&quot;&quot;,&quot;schedule_date&quot;:&quot;2019-07-12T14:53:00.000-07:00&quot;,&quot;link_target&quot;:null,&quot;more_link_target&quot;:null,&quot;feature_links&quot;:[],&quot;category_names&quot;:&quot;left box homepage_ten_things&quot;,&quot;image_src&quot;:&quot;/system/feature_items/images/567_enceladus-800x600.jpg&quot;,&quot;ogv_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;mp4_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;webm_video_src&quot;:&quot;/assets/public/missing.png&quot;},{&quot;id&quot;:564,&quot;image_file_name&quot;:&quot;sunspots_comparison-800x600.jpg&quot;,&quot;title&quot;:&quot;What Will Solar Cycle 25 Look Like?&quot;,&quot;body&quot;:&quot;\u003cp\u003e\u003cspan\u003eThe Sun is stirring from its latest slumber. As sunspots and flares, signs of\u0026nbsp;\u003c/span\u003e\u003ca href=\&quot;https://www.nasa.gov/feature/goddard/2020/new-sunspots-herald-increased-solar-activity-cycle-sdo/\&quot; target=\&quot;_blank\&quot;\u003ea new solar cycle\u003c/a\u003e\u003cspan\u003e, bubble from the Sun\u0026rsquo;s surface, scientists wonder what this next cycle will look like.\u003c/span\u003e\u003c/p\u003e\n\n\u003cp\u003e\u003ca href=\&quot;https://www.nasa.gov/feature/goddard/2020/what-will-solar-cycle-25-look-like-sun-prediction-model\&quot; target=\&quot;_blank\&quot;\u003e\u003cb\u003eRead more\u003c/b\u003e\u003c/a\u003e\u003c/p\u003e\n&quot;,&quot;link_text&quot;:&quot;&quot;,&quot;link&quot;:&quot;&quot;,&quot;more_link_text&quot;:&quot;&quot;,&quot;more_link&quot;:&quot;&quot;,&quot;status&quot;:1,&quot;created_at&quot;:&quot;2019-07-11T16:54:08.852-07:00&quot;,&quot;updated_at&quot;:&quot;2020-09-17T11:08:20.652-07:00&quot;,&quot;theme&quot;:null,&quot;textbox_category_title&quot;:&quot;&quot;,&quot;textbox_brand_title&quot;:null,&quot;feature_type&quot;:&quot;image&quot;,&quot;image_alt&quot;:&quot;Image of Sunspots during solar maximum in April 2014&quot;,&quot;webm_video_file_name&quot;:null,&quot;mp4_video_file_name&quot;:null,&quot;ogv_video_file_name&quot;:null,&quot;embed_video&quot;:&quot;&quot;,&quot;mobile_image_file_name&quot;:null,&quot;body_class&quot;:&quot;&quot;,&quot;schedule_date&quot;:&quot;2019-07-11T23:51:00.000-07:00&quot;,&quot;link_target&quot;:null,&quot;more_link_target&quot;:null,&quot;feature_links&quot;:[],&quot;category_names&quot;:&quot;left homepage_ten_things box&quot;,&quot;image_src&quot;:&quot;/system/feature_items/images/564_sunspots_comparison-800x600.jpg&quot;,&quot;ogv_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;mp4_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;webm_video_src&quot;:&quot;/assets/public/missing.png&quot;},{&quot;id&quot;:568,&quot;image_file_name&quot;:&quot;wd_1856-800x600.jpg&quot;,&quot;title&quot;:&quot;First Possible ‘Survivor&#39; Planet Spotted Hugging a White Dwarf Star&quot;,&quot;body&quot;:&quot;\u003cp\u003eAn international team of astronomers using NASA\u0026rsquo;s\u0026nbsp;\u003ca href=\&quot;https://www.nasa.gov/tess-transiting-exoplanet-survey-satellite\&quot; target=\&quot;_blank\&quot;\u003eTransiting Exoplanet Survey Satellite (TESS)\u003c/a\u003e\u0026nbsp;and retired\u0026nbsp;\u003ca href=\&quot;https://www.nasa.gov/mission_pages/spitzer/main/index.html\&quot; target=\&quot;_blank\&quot;\u003eSpitzer Space Telescope\u003c/a\u003e\u0026nbsp;has reported what may be the first intact planet found closely orbiting a white dwarf, the dense leftover of a Sun-like star, only 40% larger than Earth.\u0026nbsp;\u003c/p\u003e\n\n\u003cp\u003e\u003ca href=\&quot;https://www.nasa.gov/press-release/nasa-missions-spy-first-possible-survivor-planet-hugging-white-dwarf-star\&quot; target=\&quot;_blank\&quot;\u003e\u003cb\u003eRead more\u003c/b\u003e\u003c/a\u003e\u003c/p\u003e\n&quot;,&quot;link_text&quot;:&quot;&quot;,&quot;link&quot;:&quot;&quot;,&quot;more_link_text&quot;:&quot;&quot;,&quot;more_link&quot;:&quot;&quot;,&quot;status&quot;:1,&quot;created_at&quot;:&quot;2019-07-12T08:18:42.249-07:00&quot;,&quot;updated_at&quot;:&quot;2020-09-16T09:04:14.387-07:00&quot;,&quot;theme&quot;:null,&quot;textbox_category_title&quot;:&quot;&quot;,&quot;textbox_brand_title&quot;:null,&quot;feature_type&quot;:&quot;image&quot;,&quot;image_alt&quot;:&quot;Illustration of WD 1856 b orbiting a dim white dwarf&quot;,&quot;webm_video_file_name&quot;:null,&quot;mp4_video_file_name&quot;:null,&quot;ogv_video_file_name&quot;:null,&quot;embed_video&quot;:&quot;&quot;,&quot;mobile_image_file_name&quot;:null,&quot;body_class&quot;:&quot;&quot;,&quot;schedule_date&quot;:&quot;2019-07-12T15:14:00.000-07:00&quot;,&quot;link_target&quot;:null,&quot;more_link_target&quot;:null,&quot;feature_links&quot;:[],&quot;category_names&quot;:&quot;left box homepage_ten_things&quot;,&quot;image_src&quot;:&quot;/system/feature_items/images/568_wd_1856-800x600.jpg&quot;,&quot;ogv_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;mp4_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;webm_video_src&quot;:&quot;/assets/public/missing.png&quot;},{&quot;id&quot;:570,&quot;image_file_name&quot;:&quot;jupiter_moon_shadow-800x600.jpg&quot;,&quot;title&quot;:&quot;Moon Io Casts Shadow on Jupiter&quot;,&quot;body&quot;:&quot;\u003cp\u003e\u003cspan\u003eJupiter\u0026#39;s volcanically active moon Io casts its shadow on the planet in this dramatic image from NASA\u0026#39;s\u0026nbsp;\u003c/span\u003e\u003ca href=\&quot;https://www.nasa.gov/mission_pages/juno/main/index.html\&quot; target=\&quot;_blank\&quot;\u003eJuno\u003c/a\u003e\u003cspan\u003e\u0026nbsp;spacecraft. As with solar eclipses on the Earth, within the dark circle racing across Jupiter\u0026#39;s cloud tops one would witness a full solar eclipse as Io passes in front of the Sun.\u003c/span\u003e\u003c/p\u003e\n\n\u003cp\u003e\u003ca href=\&quot;https://www.nasa.gov/image-feature/moon-shadow-over-jupiter\&quot; target=\&quot;_blank\&quot;\u003e\u003cb\u003eRead more\u003c/b\u003e\u003c/a\u003e\u003c/p\u003e\n&quot;,&quot;link_text&quot;:&quot;&quot;,&quot;link&quot;:&quot;&quot;,&quot;more_link_text&quot;:&quot;&quot;,&quot;more_link&quot;:&quot;&quot;,&quot;status&quot;:1,&quot;created_at&quot;:&quot;2019-07-12T08:29:59.529-07:00&quot;,&quot;updated_at&quot;:&quot;2020-09-21T10:40:11.887-07:00&quot;,&quot;theme&quot;:null,&quot;textbox_category_title&quot;:&quot;&quot;,&quot;textbox_brand_title&quot;:null,&quot;feature_type&quot;:&quot;image&quot;,&quot;image_alt&quot;:&quot;Jupiter&#39;s moon Io casts its shadow on the planet&quot;,&quot;webm_video_file_name&quot;:null,&quot;mp4_video_file_name&quot;:null,&quot;ogv_video_file_name&quot;:null,&quot;embed_video&quot;:&quot;&quot;,&quot;mobile_image_file_name&quot;:null,&quot;body_class&quot;:&quot;&quot;,&quot;schedule_date&quot;:&quot;2019-07-12T15:26:00.000-07:00&quot;,&quot;link_target&quot;:null,&quot;more_link_target&quot;:null,&quot;feature_links&quot;:[],&quot;category_names&quot;:&quot;left box homepage_ten_things&quot;,&quot;image_src&quot;:&quot;/system/feature_items/images/570_jupiter_moon_shadow-800x600.jpg&quot;,&quot;ogv_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;mp4_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;webm_video_src&quot;:&quot;/assets/public/missing.png&quot;},{&quot;id&quot;:571,&quot;image_file_name&quot;:&quot;sdo_solar-gusher-800x600.jpg&quot;,&quot;title&quot;:&quot;NASA&#39;s IRIS Spots Nanojets: Shining Light On Heating the Solar Corona&quot;,&quot;body&quot;:&quot;\u003cp\u003e\u003cspan\u003eIn a\u0026nbsp;\u003c/span\u003epaper published Sept. 21, 2020, in Nature Astronomy,\u003cspan\u003e\u0026nbsp;researchers report the first ever clear images of nanojets \u003c/span\u003e\u0026ndash;\u003cspan\u003e\u0026nbsp;bright thin lights that travel perpendicular to the magnetic structures in the solar atmosphere, called the corona \u003c/span\u003e\u0026ndash;\u003cspan\u003e\u0026nbsp;in a process that reveals\u0026nbsp;one of the potential\u0026nbsp;\u003c/span\u003ecoronal heating\u003cspan\u003e\u0026nbsp;candidates: nanoflares.\u003c/span\u003e\u003c/p\u003e\n\n\u003cp\u003e\u003cb\u003e\u003ca href=\&quot;https://www.nasa.gov/feature/goddard/2020/nasa-s-iris-spots-nanojets-shining-light-on-heating-the-solar-corona\&quot; target=\&quot;_blank\&quot;\u003eR\u003c/a\u003e\u003c/b\u003e\u003ca href=\&quot;https://www.nasa.gov/feature/goddard/2020/nasa-s-iris-spots-nanojets-shining-light-on-heating-the-solar-corona\&quot; target=\&quot;_blank\&quot;\u003e\u003cb\u003eead more\u003c/b\u003e\u003c/a\u003e\u003c/p\u003e\n&quot;,&quot;link_text&quot;:&quot;&quot;,&quot;link&quot;:&quot;&quot;,&quot;more_link_text&quot;:&quot;&quot;,&quot;more_link&quot;:&quot;&quot;,&quot;status&quot;:1,&quot;created_at&quot;:&quot;2019-07-12T08:34:59.186-07:00&quot;,&quot;updated_at&quot;:&quot;2020-09-21T11:30:14.785-07:00&quot;,&quot;theme&quot;:null,&quot;textbox_category_title&quot;:&quot;&quot;,&quot;textbox_brand_title&quot;:null,&quot;feature_type&quot;:&quot;image&quot;,&quot;image_alt&quot;:&quot;An active region on the Sun shot out a flare and dark plasma on April 4, 2014&quot;,&quot;webm_video_file_name&quot;:null,&quot;mp4_video_file_name&quot;:null,&quot;ogv_video_file_name&quot;:null,&quot;embed_video&quot;:&quot;&quot;,&quot;mobile_image_file_name&quot;:null,&quot;body_class&quot;:&quot;&quot;,&quot;schedule_date&quot;:&quot;2019-07-12T15:30:00.000-07:00&quot;,&quot;link_target&quot;:null,&quot;more_link_target&quot;:null,&quot;feature_links&quot;:[],&quot;category_names&quot;:&quot;left box homepage_ten_things&quot;,&quot;image_src&quot;:&quot;/system/feature_items/images/571_sdo_solar-gusher-800x600.jpg&quot;,&quot;ogv_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;mp4_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;webm_video_src&quot;:&quot;/assets/public/missing.png&quot;},{&quot;id&quot;:565,&quot;image_file_name&quot;:&quot;hubble_NG_-2835-800x600.jpg&quot;,&quot;title&quot;:&quot;Locking Eyes With a Snake&quot;,&quot;body&quot;:&quot;\u003cp\u003e\u003cspan\u003eThe twisting patterns created by the spiral arms of NGC 2835 create the illusion of an eye. This is a fitting description, as this magnificent galaxy resides near the head of the southern constellation of\u0026nbsp;Hydra, the water snake. This stunning\u0026nbsp;barred spiral galaxy, with a width of just over half that of the Milky Way, is brilliantly featured in this image taken by the\u0026nbsp;NASA/ESA Hubble Space Telescope.\u0026nbsp;\u003c/span\u003e\u003c/p\u003e\n\n\u003cp\u003e\u003ca href=\&quot;https://www.nasa.gov/image-feature/goddard/2020/hubble-locks-eyes-with-a-snake\&quot; target=\&quot;_blank\&quot;\u003e\u003cb\u003eRead more\u003c/b\u003e\u003c/a\u003e\u003c/p\u003e\n&quot;,&quot;link_text&quot;:&quot;&quot;,&quot;link&quot;:&quot;&quot;,&quot;more_link_text&quot;:&quot;&quot;,&quot;more_link&quot;:&quot;&quot;,&quot;status&quot;:1,&quot;created_at&quot;:&quot;2019-07-12T07:43:33.366-07:00&quot;,&quot;updated_at&quot;:&quot;2020-09-18T07:33:54.526-07:00&quot;,&quot;theme&quot;:null,&quot;textbox_category_title&quot;:&quot;&quot;,&quot;textbox_brand_title&quot;:null,&quot;feature_type&quot;:&quot;image&quot;,&quot;image_alt&quot;:&quot;Hubble image of the spiral arms of NGC 2835&quot;,&quot;webm_video_file_name&quot;:null,&quot;mp4_video_file_name&quot;:null,&quot;ogv_video_file_name&quot;:null,&quot;embed_video&quot;:&quot;&quot;,&quot;mobile_image_file_name&quot;:null,&quot;body_class&quot;:&quot;&quot;,&quot;schedule_date&quot;:&quot;2019-07-12T14:36:00.000-07:00&quot;,&quot;link_target&quot;:null,&quot;more_link_target&quot;:null,&quot;feature_links&quot;:[],&quot;category_names&quot;:&quot;left box homepage_ten_things&quot;,&quot;image_src&quot;:&quot;/system/feature_items/images/565_hubble_NG_-2835-800x600.jpg&quot;,&quot;ogv_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;mp4_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;webm_video_src&quot;:&quot;/assets/public/missing.png&quot;},{&quot;id&quot;:562,&quot;image_file_name&quot;:&quot;hubble_jupiter_storms-800x600.jpg&quot;,&quot;title&quot;:&quot;Hubble Captures Crisp New Portrait of Jupiter&#39;s Storms&quot;,&quot;body&quot;:&quot;\u003cp\u003eThis latest Hubble\u0026nbsp;image of Jupiter was\u0026nbsp;taken on Aug. 25, 2020,\u0026nbsp; when the planet was 406 million miles from Earth. Hubble\u0026rsquo;s sharp view is giving researchers an updated weather report on the monster planet\u0026rsquo;s turbulent atmosphere, including a remarkable new storm brewing, and a cousin of the famous Great Red Spot region gearing up to change color \u0026ndash; again.\u003c/p\u003e\n\n\u003cp\u003e\u003ca href=\&quot;https://www.nasa.gov/feature/goddard/2020/hubble-captures-crisp-new-portrait-of-jupiters-storms/\&quot; target=\&quot;_blank\&quot;\u003e\u003cb\u003eRead more\u003c/b\u003e\u003c/a\u003e\u003c/p\u003e\n&quot;,&quot;link_text&quot;:&quot;&quot;,&quot;link&quot;:&quot;&quot;,&quot;more_link_text&quot;:&quot;&quot;,&quot;more_link&quot;:&quot;&quot;,&quot;status&quot;:1,&quot;created_at&quot;:&quot;2019-07-11T16:41:32.959-07:00&quot;,&quot;updated_at&quot;:&quot;2020-09-17T11:19:34.338-07:00&quot;,&quot;theme&quot;:null,&quot;textbox_category_title&quot;:&quot;&quot;,&quot;textbox_brand_title&quot;:null,&quot;feature_type&quot;:&quot;image&quot;,&quot;image_alt&quot;:&quot;Latest Hubble image of Jupiter taken on Aug. 25, 2020&quot;,&quot;webm_video_file_name&quot;:null,&quot;mp4_video_file_name&quot;:null,&quot;ogv_video_file_name&quot;:null,&quot;embed_video&quot;:&quot;&quot;,&quot;mobile_image_file_name&quot;:null,&quot;body_class&quot;:&quot;&quot;,&quot;schedule_date&quot;:&quot;2019-07-11T23:34:00.000-07:00&quot;,&quot;link_target&quot;:null,&quot;more_link_target&quot;:null,&quot;feature_links&quot;:[],&quot;category_names&quot;:&quot;left box homepage_ten_things&quot;,&quot;image_src&quot;:&quot;/system/feature_items/images/562_hubble_jupiter_storms-800x600.jpg&quot;,&quot;ogv_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;mp4_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;webm_video_src&quot;:&quot;/assets/public/missing.png&quot;},{&quot;id&quot;:563,&quot;image_file_name&quot;:&quot;1492_PIA23791_1280-800x600.jpg&quot;,&quot;title&quot;:&quot;Announcement About Research on Venus&#39;s Chemistry&quot;,&quot;body&quot;:&quot;\u003cp\u003e\u003cspan\u003eA paper about chemistry on Venus was published today\u0026nbsp;in Nature Astronomy.\u0026nbsp;NASA was not involved in the research and cannot comment directly on the findings; however, we trust in the scientific peer review process and look forward to the robust discussion that will follow its publication.\u0026nbsp;\u003c/span\u003e\u003c/p\u003e\n\n\u003cp\u003e\u003ca href=\&quot;https://solarsystem.nasa.gov/news/1492/announcement-about-research-on-venuss-chemistry/\&quot;\u003e\u003cb\u003eRead more\u003c/b\u003e\u003c/a\u003e\u003c/p\u003e\n&quot;,&quot;link_text&quot;:&quot;&quot;,&quot;link&quot;:&quot;&quot;,&quot;more_link_text&quot;:&quot;&quot;,&quot;more_link&quot;:&quot;&quot;,&quot;status&quot;:1,&quot;created_at&quot;:&quot;2019-07-11T16:50:10.886-07:00&quot;,&quot;updated_at&quot;:&quot;2020-09-14T12:27:23.009-07:00&quot;,&quot;theme&quot;:null,&quot;textbox_category_title&quot;:&quot;&quot;,&quot;textbox_brand_title&quot;:null,&quot;feature_type&quot;:&quot;image&quot;,&quot;image_alt&quot;:&quot;Image of Venus&quot;,&quot;webm_video_file_name&quot;:null,&quot;mp4_video_file_name&quot;:null,&quot;ogv_video_file_name&quot;:null,&quot;embed_video&quot;:&quot;&quot;,&quot;mobile_image_file_name&quot;:null,&quot;body_class&quot;:&quot;&quot;,&quot;schedule_date&quot;:&quot;2019-07-11T23:41:00.000-07:00&quot;,&quot;link_target&quot;:null,&quot;more_link_target&quot;:null,&quot;feature_links&quot;:[],&quot;category_names&quot;:&quot;homepage_ten_things left box&quot;,&quot;image_src&quot;:&quot;/system/feature_items/images/563_1492_PIA23791_1280-800x600.jpg&quot;,&quot;ogv_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;mp4_video_src&quot;:&quot;/assets/public/missing.png&quot;,&quot;webm_video_src&quot;:&quot;/assets/public/missing.png&quot;}],&quot;masonry&quot;:false,&quot;more_link&quot;:&quot;/news/?facet_categories%5B2%5D%5B%5D=198&quot;,&quot;collage_classes&quot;:[&quot;tall&quot;,&quot;short&quot;,&quot;grande&quot;,&quot;trenta&quot;,&quot;short&quot;,&quot;tall&quot;,&quot;short&quot;,&quot;short&quot;,&quot;tall&quot;,&quot;trenta&quot;],&quot;layout&quot;:&quot;c&quot;,&quot;title&quot;:null,&quot;description&quot;:null,&quot;mobile_more_text&quot;:&quot;Show All&quot;}" data-react-cache-id="ImageGridTeaser-0" class="collage_teaser_module full-bleed"></div>
+
+</div>
+</article>
+</section>
+
+<!-- Image of the Day Module -->
+<section class='media_feature module image_of_the_day'>
+<div class='gradient_container_top'></div>
+<div class='gradient_container_left'></div>
+<div class='window'>
+<div class='grid_layout'>
+<div class='floating_text_area'>
+<header>
+<a class='header_link' href='https://www.jpl.nasa.gov/spaceimages/details.php?id=PIA24096' target='_blank'>
+<h2 class='category_title'>
+Featured
+</h2>
+<h1 class='media_feature_title'>
+Next Stop: Jezero Crater
+</h1>
+</a>
+<div class='image_of_the_day_description'>
+<p>NASA&#39;s new Perseverance rover will explore the remains of this ancient delta in Jezero Crater for signs of <span>fossilized microbial life.</span></p>
+
+</div>
+<a class='multimedia_link' href='https://www.jpl.nasa.gov/spaceimages/details.php?id=PIA24096' target='_blank'>
+› Read more
+</a>
+</header>
+</div>
+</div>
+</div>
+<!-- converted to img via js imageScroll or mobile img in main -->
+<div data-image='/system/basic_html_elements/11861_Jezero_Crater_Mars_Express-1600.jpg' data-mobile-image='/system/basic_html_elements/11861_Jezero_Crater_Mars_Express-400x600.jpg' id='featured_image'></div>
+</section>
+<section class='homepage_video_module module'>
+<div class='grid_layout'>
+<header>
+<h1 class='module_title'>
+A Strange Sight
+</h1>
+<div class='subtitle'>
+
+</div>
+</header>
+<div class='video_area'>
+<p><span><figure class='lede'>
+<div class='video_embed_container'>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fDhG0ppvQ2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
+<div class='video_description'>
+<header>
+<h1>
+September
+</h1>
+<div class='year'>
+2020
+</div>
+</header>
+<div class='description'>
+NASA missions spot what may be a giant planet orbiting a small, dead star.
+</div>
+<div class='length'>
+Playlist
+</div>
+</div></span></p>
+
+</div>
+</div>
+</section>
+<script src="//script.crazyegg.com/pages/scripts/0070/1109.js" async="async"></script>
+
+</div>
+<footer id='site_footer'>
+<section class='upper_footer'>
+<section class='planet_teaser module'>
+<div class='grid_layout'>
+<header>
+<h2 class='module_title'>
+More Destinations
+</h2>
+</header>
+<section>
+<script>
+  $(document).ready(function(){
+    $("#planets_slick_slider_ak33hrti").slick({
+      dots: false,
+      infinite: false,
+      speed: 300,
+      slide: '#planets_slick_slider_ak33hrti .planet',
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      lazyLoad: 'ondemand',
+      centerMode: false,
+      arrows: true,
+      appendArrows: '#planets_slick_slider_ak33hrti .slick-nav',
+      appendDots: "#planets_slick_slider_ak33hrti .slick-nav",
+      responsive: [{"breakpoint":800,"settings":{"slidesToShow":2,"slidesToScroll":2,"centerMode":false}},{"breakpoint":480,"settings":{"slidesToShow":1,"slidesToScroll":1,"centerMode":false,"arrows":true}}]
+    });
+  
+    // SHIM: The slick slider doesn’t seem to respond to orientation changes on Android devices
+    // (possibly because there’s a delay while the browser is rendering the page)
+    window.addEventListener('orientationchange', function() {
+    var clock;
+  
+    // Refresh the slider every half second
+    clock = setInterval(function() {
+    // https://github.com/kenwheeler/slick/issues/429#issuecomment-57450725
+    $("#planets_slick_slider_ak33hrti")[0].slick.refresh();
+    }, 500);
+  
+    // Stop refreshing after 3 seconds
+    setTimeout(function() {
+    clearInterval(clock);
+    }, 3000);
+    });
+  });
+</script>
+<div class='planets' id='planets_slick_slider_ak33hrti'>
+<div class='planet slide'>
+<div class='image_and_description_container'>
+<a href='/planets/jupiter/overview'>
+<div class='rollover_description'>
+<div class='rollover_description_inner'>
+Click for more
+</div>
+<div class='overlay_arrow'>
+<img alt='More' src='/assets/overlay-arrow.png'>
+</div>
+</div>
+<img alt='Jupiter   ' class='img-lazy' data-lazy='/system/feature_items/images/16_jupiter_new.png' src='/assets/loading_320x240.png'>
+</a>
+</div>
+<div class='content_title'>
+<a href='/planets/jupiter/overview'>
+Jupiter
+</a>
+</div>
+</div>
+
+<div class='planet slide'>
+<div class='image_and_description_container'>
+<a href='/planets/earth/overview/'>
+<div class='rollover_description'>
+<div class='rollover_description_inner'>
+Click for more
+</div>
+<div class='overlay_arrow'>
+<img alt='More' src='/assets/overlay-arrow.png'>
+</div>
+</div>
+<img alt='Earth     ' class='img-lazy' data-lazy='/system/feature_items/images/17_earth.png' src='/assets/loading_320x240.png'>
+</a>
+</div>
+<div class='content_title'>
+<a href='/planets/earth/overview/'>
+Earth
+</a>
+</div>
+</div>
+
+<div class='planet slide'>
+<div class='image_and_description_container'>
+<a href='/planets/mercury/overview'>
+<div class='rollover_description'>
+<div class='rollover_description_inner'>
+Click for more
+</div>
+<div class='overlay_arrow'>
+<img alt='More' src='/assets/overlay-arrow.png'>
+</div>
+</div>
+<img alt='Mercury   ' class='img-lazy' data-lazy='/system/feature_items/images/18_mercury_new.png' src='/assets/loading_320x240.png'>
+</a>
+</div>
+<div class='content_title'>
+<a href='/planets/mercury/overview'>
+Mercury
+</a>
+</div>
+</div>
+
+<div class='planet slide'>
+<div class='image_and_description_container'>
+<a href='/planets/mars/overview'>
+<div class='rollover_description'>
+<div class='rollover_description_inner'>
+Click for more
+</div>
+<div class='overlay_arrow'>
+<img alt='More' src='/assets/overlay-arrow.png'>
+</div>
+</div>
+<img alt='Mars      ' class='img-lazy' data-lazy='/system/feature_items/images/19_mars.png' src='/assets/loading_320x240.png'>
+</a>
+</div>
+<div class='content_title'>
+<a href='/planets/mars/overview'>
+Mars
+</a>
+</div>
+</div>
+
+<div class='planet slide'>
+<div class='image_and_description_container'>
+<a href='/planets/venus/overview'>
+<div class='rollover_description'>
+<div class='rollover_description_inner'>
+Click for more
+</div>
+<div class='overlay_arrow'>
+<img alt='More' src='/assets/overlay-arrow.png'>
+</div>
+</div>
+<img alt='Venus     ' class='img-lazy' data-lazy='/system/feature_items/images/27_venus_jg.png' src='/assets/loading_320x240.png'>
+</a>
+</div>
+<div class='content_title'>
+<a href='/planets/venus/overview'>
+Venus
+</a>
+</div>
+</div>
+
+<div class='planet slide'>
+<div class='image_and_description_container'>
+<a href='/planets/saturn/overview/'>
+<div class='rollover_description'>
+<div class='rollover_description_inner'>
+Click for more
+</div>
+<div class='overlay_arrow'>
+<img alt='More' src='/assets/overlay-arrow.png'>
+</div>
+</div>
+<img alt='Saturn    ' class='img-lazy' data-lazy='/system/feature_items/images/28_saturn.png' src='/assets/loading_320x240.png'>
+</a>
+</div>
+<div class='content_title'>
+<a href='/planets/saturn/overview/'>
+Saturn
+</a>
+</div>
+</div>
+
+<div class='planet slide'>
+<div class='image_and_description_container'>
+<a href='/planets/uranus/overview'>
+<div class='rollover_description'>
+<div class='rollover_description_inner'>
+Click for more
+</div>
+<div class='overlay_arrow'>
+<img alt='More' src='/assets/overlay-arrow.png'>
+</div>
+</div>
+<img alt='Uranus    ' class='img-lazy' data-lazy='/system/feature_items/images/29_uranus.png' src='/assets/loading_320x240.png'>
+</a>
+</div>
+<div class='content_title'>
+<a href='/planets/uranus/overview'>
+Uranus
+</a>
+</div>
+</div>
+
+<div class='planet slide'>
+<div class='image_and_description_container'>
+<a href='/planets/neptune/overview'>
+<div class='rollover_description'>
+<div class='rollover_description_inner'>
+Click for more
+</div>
+<div class='overlay_arrow'>
+<img alt='More' src='/assets/overlay-arrow.png'>
+</div>
+</div>
+<img alt='Neptune   ' class='img-lazy' data-lazy='/system/feature_items/images/30_neptune.png' src='/assets/loading_320x240.png'>
+</a>
+</div>
+<div class='content_title'>
+<a href='/planets/neptune/overview'>
+Neptune
+</a>
+</div>
+</div>
+
+<div class='planet slide'>
+<div class='image_and_description_container'>
+<a href='/moons/earths-moon/overview'>
+<div class='rollover_description'>
+<div class='rollover_description_inner'>
+Click for more
+</div>
+<div class='overlay_arrow'>
+<img alt='More' src='/assets/overlay-arrow.png'>
+</div>
+</div>
+<img alt="Earth's Moon" class='img-lazy' data-lazy='/system/feature_items/images/31_earth_moon.png' src='/assets/loading_320x240.png'>
+</a>
+</div>
+<div class='content_title'>
+<a href='/moons/earths-moon/overview'>
+Earth's Moon
+</a>
+</div>
+</div>
+
+<div class='grid_layout'>
+<div class='slick-nav_container'>
+<div class='slick-nav'></div>
+</div>
+</div>
+</div>
+
+</section>
+</div>
+</section>
+<div class='share'>
+<h2>Stay Connected</h2>
+<div data-react-class="CherTools" data-react-props="{&quot;follow&quot;:[[&quot;Twitter&quot;,&quot;https://twitter.com/NASASolarSystem&quot;,&quot;/assets/twitter_icon@2x.png&quot;],[&quot;Facebook&quot;,&quot;https://www.facebook.com/nasasolarsystem&quot;,&quot;/assets/facebook_icon@2x.png&quot;],[&quot;Instagram&quot;,&quot;https://www.instagram.com/nasasolarsystem&quot;,&quot;/assets/instagram_icon@2x.png&quot;]]}" data-react-cache-id="CherTools-0"></div>
+
+</div>
+</section>
+<section class='sitemap'>
+<div class='grid_layout'>
+<div class='sitemap_directory' id='sitemap_directory'>
+<div class='sitemap_block'>
+<div class='footer_sitemap_item'>
+<h3 class='sitemap_title'>
+<a href="/solar-system/our-solar-system/">Solar System</a>
+</h3>
+<ul><li>
+<div class='global_subnav_container'>
+<ul class='subnav'>
+<li>
+<a href='/solar-system/our-solar-system/overview' target='_self'>Our Solar System</a>
+</li>
+<li>
+<a href='/solar-system/sun/overview' target='_self'>Sun</a>
+</li>
+<li>
+<a href='/solar-system/kuiper-belt/overview' target='_self'>Kuiper Belt</a>
+</li>
+<li>
+<a href='/solar-system/oort-cloud/overview' target='_self'>Oort Cloud</a>
+</li>
+<li>
+<a href='/solar-system/beyond/overview' target='_self'>Beyond Our Solar System</a>
+</li>
+
+</ul>
+</div>
+</li></ul>
+</div>
+</div>
+<div class='sitemap_block'>
+<div class='footer_sitemap_item'>
+<h3 class='sitemap_title'>
+<a href="/planets/overview">Planets</a>
+</h3>
+<ul><li>
+<div class='global_subnav_container'>
+<ul class='subnav'>
+<li>
+<a href='/planets/overview' target='_self'>About Planets</a>
+</li>
+
+</ul>
+</div>
+</li></ul>
+<h4 class='sitemap_title_subhead'>
+PLANETS
+</h4>
+<ul>
+<li>
+<div class='global_subnav_container'>
+<ul class='subnav'>
+<li class='nav_item'>
+<a href="/planets/mercury/overview">Mercury</a>
+</li>
+<li class='nav_item'>
+<a href="/planets/venus/overview">Venus</a>
+</li>
+<li class='nav_item'>
+<a href="/planets/earth/overview">Earth</a>
+</li>
+<li class='nav_item'>
+<a href="/planets/mars/overview">Mars</a>
+</li>
+<li class='nav_item'>
+<a href="/planets/jupiter/overview">Jupiter</a>
+</li>
+<li class='nav_item'>
+<a href="/planets/saturn/overview">Saturn</a>
+</li>
+<li class='nav_item'>
+<a href="/planets/uranus/overview">Uranus</a>
+</li>
+<li class='nav_item'>
+<a href="/planets/neptune/overview">Neptune</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+
+<h4 class='sitemap_title_subhead'>
+DWARF PLANETS
+</h4>
+<ul>
+<li>
+<div class='global_subnav_container'>
+<ul class='subnav'>
+<li class='nav_item'>
+<a href="/planets/dwarf-planets/pluto/overview">Pluto</a>
+</li>
+<li class='nav_item'>
+<a href="/planets/dwarf-planets/ceres/overview">Ceres</a>
+</li>
+<li class='nav_item'>
+<a href="/planets/dwarf-planets/makemake/in-depth">Makemake</a>
+</li>
+<li class='nav_item'>
+<a href="/planets/dwarf-planets/haumea/in-depth">Haumea</a>
+</li>
+<li class='nav_item'>
+<a href="/planets/dwarf-planets/eris/in-depth">Eris</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+
+<h4 class='sitemap_title_subhead'>
+HYPOTHETICAL
+</h4>
+<ul>
+<li>
+<div class='global_subnav_container'>
+<ul class='subnav'>
+<li class='nav_item'>
+<a href="/planets/hypothetical-planet-x/in-depth">Planet X</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+
+</div>
+</div>
+<div class='sitemap_block'>
+<div class='footer_sitemap_item'>
+<h3 class='sitemap_title'>
+<a href="/moons/overview">Moons</a>
+</h3>
+<ul><li>
+<div class='global_subnav_container'>
+<ul class='subnav'>
+<li>
+<a href='/moons/overview' target='_self'>About Moons</a>
+</li>
+
+</ul>
+</div>
+</li></ul>
+<h4 class='sitemap_title_subhead'>
+BY DESTINATION
+</h4>
+<ul>
+<li>
+<div class='global_subnav_container'>
+<ul class='subnav'>
+<li class='nav_item'>
+<a href="/moons/earths-moon/overview">Earth (1)</a>
+</li>
+<li class='nav_item'>
+<a href="/moons/mars-moons/overview">Mars (2)</a>
+</li>
+<li class='nav_item'>
+<a href="/moons/jupiter-moons/overview">Jupiter (79)</a>
+</li>
+<li class='nav_item'>
+<a href="/moons/saturn-moons/overview">Saturn (82)</a>
+</li>
+<li class='nav_item'>
+<a href="/moons/uranus-moons/overview">Uranus (27)</a>
+</li>
+<li class='nav_item'>
+<a href="/moons/neptune-moons/overview">Neptune (14)</a>
+</li>
+<li class='nav_item'>
+<a href="/moons/pluto-moons/overview">Pluto (5)</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+
+</div>
+</div>
+<div class='sitemap_block'>
+<div class='footer_sitemap_item'>
+<h3 class='sitemap_title'>
+<a href="/asteroids-comets-and-meteors/overview">Asteroids, Comets &amp; Meteors</a>
+</h3>
+<ul><li>
+<div class='global_subnav_container'>
+<ul class='subnav'>
+<li>
+<a href='/asteroids-comets-and-meteors/overview' target='_self'>About Asteroids, Comets &amp; Meteors</a>
+</li>
+
+</ul>
+</div>
+</li></ul>
+<h4 class='sitemap_title_subhead'>
+BY TYPE
+</h4>
+<ul>
+<li>
+<div class='global_subnav_container'>
+<ul class='subnav'>
+<li class='nav_item'>
+<a href="/asteroids-comets-and-meteors/meteors-and-meteorites/overview">Meteors &amp; Meteorites</a>
+</li>
+<li class='nav_item'>
+<a href="/asteroids-comets-and-meteors/asteroids/overview">Asteroids</a>
+</li>
+<li class='nav_item'>
+<a href="/asteroids-comets-and-meteors/comets/overview">Comets</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+
+</div>
+</div>
+<div class='sitemap_block'>
+<div class='footer_sitemap_item'>
+<h3 class='sitemap_title'>
+More
+</h3>
+<ul><li>
+<div class='global_subnav_container'>
+<ul class='subnav'>
+<li>
+<a href='/news' target='_self'>News</a>
+</li>
+<li>
+<a href='/whats-up-skywatching-tips-from-nasa' target='_self'>What's Up: Skywatching Tips from NASA</a>
+</li>
+<li>
+<a href='/resources' target='_self'>Resources</a>
+</li>
+<li>
+<a href='/raw-images/raw-image-viewer' target='_self'>Raw Images</a>
+</li>
+<li>
+<a href='/people' target='_self'>People</a>
+</li>
+<li>
+<a href='/missions' target='_self'>Missions</a>
+</li>
+<li>
+<a href='/science-goals' target='_self'>Science Goals</a>
+</li>
+<li>
+<a href='/technology-reports/2016-senior-review-of-operation-missions' target='_self'>Technology Reports</a>
+</li>
+<li>
+<a href='/kids' target='_self'>Kids</a>
+</li>
+<li>
+<a href='/interactives' target='_self'>Interactives</a>
+</li>
+<li>
+<a href='/basics' target='_self'>Basics of Space Flight</a>
+</li>
+<li>
+<a href='/solar-system-ambassadors/' target='_self'>Solar System Ambassadors</a>
+</li>
+<li>
+<a href='/scientist-for-a-day' target='_self'>Scientist for a Day</a>
+</li>
+
+</ul>
+</div>
+</li></ul>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<section class='lower_footer'>
+<div class='grid_layout'>
+<div class='nav_container'>
+<nav>
+<ul>
+<li>
+<a href='/about-us' target='_self'>About Us</a>
+</li>
+<li>
+<a href='/bibliography' target='_self'>Bibliography</a>
+</li>
+<li>
+<a href='/feedback' target='_self'>Feedback</a>
+</li>
+<li>
+<a href='https://www.nasa.gov/about/highlights/HP_Privacy.html' target='_blank'>Privacy</a>
+</li>
+<li>
+<a href='https://www.nasa.gov/multimedia/guidelines/index.html' target='_blank'>Image Use</a>
+</li>
+<li>
+<a href='http://science.nasa.gov/' target='_blank'>NASA SCIENCE MISSION DIRECTORATE</a>
+</li>
+<li>
+<a href='https://www.nasa.gov' target='_blank'>NASA Portal</a>
+</li>
+
+</ul>
+</nav>
+</div>
+<div class='credits'>
+<div class='footer_brands'>
+This site is maintained by the Planetary Science Communications team at
+<strong>NASA’s Jet Propulsion Laboratory</strong> for
+<a href="https://science.nasa.gov/" target="_blank" rel="noopener">NASA’s Science Mission Directorate</a>.
+</div>
+<div class='staff'>
+<p>
+Director, NASA Planetary Science Division: 
+Dr. Lori Glaze
+<br>
+NASA Official: 
+Kristen Erickson
+<br>
+Site Manager: 
+<a href="/feedback">Phillips Davis</a>
+<br>
+Science Writer: 
+Amanda Barnett
+<br>
+Social Media Lead: 
+Bill Dunford
+<br>
+</p>
+</div>
+</div>
+</div>
+</section>
+</footer>
+
+<input type="hidden" name="content_page_id" id="content_page_id" value="1" />
+</div>
+</div>
+<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA&subagency=JPL-Solar-System-Exploration &dclink=true&sp=search,s&pua=UA-4391123-16,UA-118212757-2&exts=tif,tiff,wav" type='text/javascript'></script>
+
+
+</body>
+</html>
