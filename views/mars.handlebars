@@ -1,104 +1,321 @@
-{{!-- This will be our container, and styling below will follow --}}
-
-<div class="jumbotron">
-  <h1 class="display-2 text-center">Welcome to Mars!</h1>
-
-</div>
-<hr style="border-width: 2px;">
-
 {{!-- Build out Mars API info here --}}
+
+<h3 class="display-2 text-center">Welcome to Mars!</h3>
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>InSight Mars Lander</title>
+  <title>Mars</title>
+  <link rel="stylesheet" href="/css/mars.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  {{!-- Mars landing countdown --}}
+  <script src="/js/moment-min.js"></script>
+  <script src="/js/moment-precise-range-min.js"></script>
+  <script src="/js/mars2020_landing.js"></script>
+
 </head>
 
+
+
+
+
+{{!-- This will be our container, and styling below will follow --}}
+<div class="jumbotron">
+  <div style="background-image: url('images/starspace.jpg');">
+
+    
+
+    <div class="text-center">
+      <div class="countdown_clock">
+        <span class="category-title">COUNTDOWN TO LANDING ON MARS</span>
+        <div class="countdown-container">
+
+          <span class="month">"February</span>
+          <span class="date">18</span>
+          <span class="year">2021"</span>
+        </div>
+        <div class="countdown_time" id="countdown_time_mars2020_landing">
+          <div class="time_days unit">148<span class="time_label">days</span></div>
+          <div class="time_hours unit">13<span class="time_label">hrs</span></div>
+          <div class="time_minutes unit">51<span class="time_label">mins</span></div>
+          <div class="time_seconds unit">39<span class="time_label">secs</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<header>
+    <img class="logo" src="/images/sv3.jpg" width="100" height="100" alt="logo">
+    <nav>
+      <ul class="nav_links">
+        <li><a href="/mars">Mars</a></li>
+        <li><a href="/solar">Planets</a></li>
+        <li><a class="home-link" href="/home">Home</a></li>
+        <li><a href="/iss">ISS</a></li>
+        <li><a href="/astronomy">APOTD</a></li>
+      </ul>
+    </nav>
+    <a class="cta" href="#"><button>Contact</button></a>
+  </header>
+
+<hr style="border-width: 2px;">
+
 <body>
-  <div class="text-center"><img src="./images/rover-1.gif"></div>
-  <div id="nasa_api_key" ></div>
-  <div id="buttons" >Click Sol to plot its Wind Direction distribution:<br><!-- Controls (buttons) will be inside this DIV --></div>
-  <div id="wd_plot" style="width: 480px; height: 480px;"><!-- Plotly chart will be drawn inside this DIV --></div>
-  <div id="wd_most_common"><!-- Most common wind direction will be inside this DIV --></div>
-  <div id="summary"></div>
-  {{!-- To view all the relevant data, uncheck the below div --}}
-  {{!-- <pre id="json"></pre> --}}
 
-  <script>
+  <div class="row">
+    <div class="column">
+      <div class="card">
 
-  const nasa_api_key = 'https://api.nasa.gov/insight_weather/?api_key=0uKX4xKAlZRAVq4uqHlrUTbiHmQ7et6zW7QvbAi6&feedtype=json&ver=1.0';
-  const cpoints = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
-  
-  var one_sol = false;
+        <div id="Quick-Facts" class="section">
+          <div class="rover">
+            <h3 class="subtitle">Perseverance would like to personally welcome you to mars, enjoy your stay!</h3>
 
-  // Retrieve Mars weather data from NASA API as JSON stream
-  // - Write data for each Sol
-  // - Write JSON stream
+            <div class="text-overlay right-box">
+              <ul class="noBullets">
+                <li>
+                  <span class="fact-title fontBold">Mission Name: </span>
+                  <span class="fact-text value">Mars 2020</span>
+                </li>
+                <li>
+                  <span class="fact-title fontBold">Rover Name: </span>
+                  <span class="fact-text value"><a
+                      href="https://mars.nasa.gov/news/8622/virginia-middle-school-student-earns-honor-of-naming-nasas-next-mars-rover/"
+                      target="_blank">Perseverance</a></span>
+                </li>
 
-  $.get(
-       `https://api.nasa.gov/insight_weather/?api_key=0uKX4xKAlZRAVq4uqHlrUTbiHmQ7et6zW7QvbAi6&feedtype=json&ver=1.0`,
-    data => {
-      data.sol_keys.forEach(sol => write_sol_data(sol, data[sol]));
-      $("#summary").append('<hr>');
-    }
-  ).always(
-    function(data) {
-      // Write JSON stream to #json PRE
-      $("#json").text(JSON.stringify(data, null, 2));
-      if (one_sol) {
-          plot_sol_data(one_sol, data[one_sol]);
-      }
-    }
-  );
+              </ul>
+            </div>
+          </div>
+        </div>
 
-  // Function to write data for one Sol
+      </div>
+    </div>
 
-  function write_sol_data(sol, sol_obj) {
-    // Summarize per-Sol temperature data to #summary DIV
-    $('#summary').append( `On Sol <b>${sol}</b> the temperatures ranged from <b>${Math.round(sol_obj.AT.mn)}&deg;C</b> to <b>${Math.round(sol_obj.AT.mx)}&deg;C</b> with an atmospheric pressure of <b>${Math.round(sol_obj.PRE.mn)} Pa</b> to <b>${Math.round(sol_obj.PRE.mx)} Pa</b>.<br>`);
-    one_sol = sol;
-    // Add per-Sol button to #buttons DIV
-    $('#buttons').append(
-        $('<button>')
-        .attr('id', sol)
-      .on('click', e => plot_sol_data(sol, sol_obj))
-      .text(sol)
-    );
-  }
+    <div class="column">
+      <div class="card">
 
-  // Plot Wind Direction (WD) data for one Sol to #wd_plot DIV
 
-  function plot_sol_data(Sol, sol_obj) {
-    var wd_obj = sol_obj.WD;   // Wind direction object for Sol
-    // fill compass points with sol data
-    var vals = (new Array(16)).fill(0).map((empty, idx) => wd_obj[idx] ? wd_obj[idx].ct : 0);
-    var wd_data = [{               // Load WD data as one-element array
-      r: vals,
-      t: cpoints,
-      name: `Sol ${Sol}`,
-      marker: {color: 'rgb(0,127,127)'},
-      type: 'area'
-    }];
-    var wd_layout = {              // Load WD plot layout
-      font: {size: 16},
-      title: `     Wind Direction Distribution on Sol ${Sol} at InSight Mars landing site`,
-      legend: {font: {size: 16}},
-      radialaxis: {ticksuffix: ''},
-      orientation: 270
-    };
-    Plotly.newPlot('wd_plot', wd_data, wd_layout);     // Plot wind rose
-    // Add most common wind direction
-    $('#wd_most_common').html(`Most common wind direction is ${wd_obj.most_common ? wd_obj.most_common.compass_point : 'undefined'}<hr>`)
-  }
-  </script>
+
+        <div id="nasa_api_key"></div>
+        <div id="buttons">Click Sol to plot its Wind Direction distribution:<br>
+          <!-- Controls (buttons) will be inside this DIV -->
+        </div>
+        <div id="wd_plot" style="width: 480px; height: 480px;">
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id="wd_most_common">
+          <!-- Most common wind direction will be inside this DIV -->
+        </div>
+        <div id="summary"></div>
+        {{!-- To view all the relevant data, uncheck the below div --}}
+        {{!-- <pre id="json"></pre> --}}
+
+        <script>
+
+          const nasa_api_key = 'https://api.nasa.gov/insight_weather/?api_key=0uKX4xKAlZRAVq4uqHlrUTbiHmQ7et6zW7QvbAi6&feedtype=json&ver=1.0';
+          const cpoints = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
+
+          var one_sol = false;
+
+          // Retrieve Mars weather data from NASA API as JSON stream
+          // - Write data for each Sol
+          // - Write JSON stream
+
+          $.get(
+            `https://api.nasa.gov/insight_weather/?api_key=0uKX4xKAlZRAVq4uqHlrUTbiHmQ7et6zW7QvbAi6&feedtype=json&ver=1.0`,
+            data => {
+              data.sol_keys.forEach(sol => write_sol_data(sol, data[sol]));
+              $("#summary").append('<hr>');
+            }
+          ).always(
+            function (data) {
+              // Write JSON stream to #json PRE
+              $("#json").text(JSON.stringify(data, null, 2));
+              if (one_sol) {
+                plot_sol_data(one_sol, data[one_sol]);
+              }
+            }
+          );
+
+          // Function to write data for one Sol
+
+          function write_sol_data(sol, sol_obj) {
+            // Summarize per-Sol temperature data to #summary DIV
+            $('#summary').append(`On Sol <b>${sol}</b> the temperatures ranged from <b>${Math.round(sol_obj.AT.mn)}&deg;C</b> to <b>${Math.round(sol_obj.AT.mx)}&deg;C</b> with an atmospheric pressure of <b>${Math.round(sol_obj.PRE.mn)} Pa</b> to <b>${Math.round(sol_obj.PRE.mx)} Pa</b>.<br>`);
+            one_sol = sol;
+            // Add per-Sol button to #buttons DIV
+            $('#buttons').append(
+              $('<button>')
+                .attr('id', sol)
+                .on('click', e => plot_sol_data(sol, sol_obj))
+                .text(sol)
+            );
+          }
+
+          // Plot Wind Direction (WD) data for one Sol to #wd_plot DIV
+
+          function plot_sol_data(Sol, sol_obj) {
+            var wd_obj = sol_obj.WD;   // Wind direction object for Sol
+            // fill compass points with sol data
+            var vals = (new Array(16)).fill(0).map((empty, idx) => wd_obj[idx] ? wd_obj[idx].ct : 0);
+            var wd_data = [{               // Load WD data as one-element array
+              r: vals,
+              t: cpoints,
+              name: `Sol ${Sol}`,
+              marker: { color: 'rgb(0,127,127)' },
+              type: 'area'
+            }];
+            var wd_layout = {              // Load WD plot layout
+              font: { size: 16 },
+              title: `     Wind Direction Distribution on Sol ${Sol} at InSight Mars landing site`,
+              legend: { font: { size: 16 } },
+              radialaxis: { ticksuffix: '' },
+              orientation: 270
+            };
+            Plotly.newPlot('wd_plot', wd_data, wd_layout);     // Plot wind rose
+            // Add most common wind direction
+            $('#wd_most_common').html(`Most common wind direction is ${wd_obj.most_common ? wd_obj.most_common.compass_point : 'undefined'}<hr>`)
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+
+      <img src="./images/rover-1.gif" height="520" width="1010">
+      <br>
+      <li>
+        <span class="fact-title fontBold">Main Job: </span>
+        <span class="fact-text value">The Perseverance rover will seek signs of ancient life and collect rock and
+          soil samples for possible return to Earth.
+        </span>
+      </li>
+      <li>
+        <span class="fact-title fontBold">Launched: </span>
+        <span class="fact-text value">July 30, 2020</span>
+      </li>
+      <li>
+        <span class="fact-title fontBold">Launch Location: </span>
+        <span class="fact-text value">Cape Canaveral Air Force Station, Florida</span>
+      </li>
+      <li>
+        <span class="fact-title fontBold">Landing: </span>
+        <span class="fact-text value">Feb. 18, 2021</span>
+      </li>
+      <li>
+        <span class="fact-title fontBold">Landing Site: </span>
+        <span class="fact-text value">Jezero Crater, Mars</span>
+      </li>
+      <li>
+        <span class="fact-title fontBold">Mission Duration: </span>
+        <span class="fact-text value">At least one Mars year (about 687 Earth days)</span>
+      </li>
+      <li>
+        <span class="fact-title fontBold">Tech Demo: </span>
+        <span class="fact-text value">The <a href="https://mars.nasa.gov/technology/helicopter" target="_blank">Mars
+            Helicopter</a>
+          is a technology demonstration, hitching a ride on the Perseverance rover.
+        </span>
+      </li>
+      <li>
+        <span class="fact-title fontBold"><a
+            href="https://www.jpl.nasa.gov/news/press_kits/mars_2020/download/mars_2020_launch_press_kit.pdf"
+            target="_blank">Launch Press Kit</a>
+        </span>
+      </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+  <div class="column">
+
+    <div class="card">
+
+      <div id="diagrams" class="diagram-background">
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img loading="lazy" width="760" height="300"
+              src="https://space-facts.com/wp/wp-content/uploads/mars-size.png" alt="Mars size compared to Earth">
+            <figcaption>
+              <span class="mars">Mars</span> size compared to <span class="earth">Earth</span></figcaption>
+          </figure>
+        </div>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img loading="lazy" width="760" height="50"
+              src="https://space-facts.com/wp/wp-content/uploads/mars-orbit.png" alt="Mars distance from the Sun">
+
+            <figcaption><span class="mars">Mars</span> distance from the <span class="sun">Sun</span> and orbital
+              eccentricity</figcaption>
+          </figure>
+
+        </div>
+        <table id="tablepress-comp-mars" class="aligncenter">
+          <thead>
+            <tr class="row-1">
+              <th class="column-1"><strong>Mars - Earth Comparison</strong></th>
+              <th class="column-2">
+                <span class="mars">Mars</span></th>
+              <th class="column-3"><span class="earth">Earth</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-2">
+              <td class="column-1">Diameter:</td>
+              <td class="column-2"><span class="mars-s">6,779 km</span></td>
+              <td class="column-3"><span class="earth-s">12,742 km</span></td>
+            </tr>
+            <tr class="row-3">
+              <td class="column-1">Mass:</td>
+              <td class="column-2"><span class="mars-s">6.39 × 10^23 kg</span></td>
+              <td class="column-3"><span class="earth-s">5.97 × 10^24 kg</span></td>
+            </tr>
+            <tr class="row-4">
+              <td class="column-1">Moons:</td>
+              <td class="column-2"><span class="mars-s">2</span></td>
+              <td class="column-3"><span class="earth-s">1</span></td>
+            </tr>
+            <tr class="row-5">
+              <td class="column-1">Distance from Sun:</td>
+              <td class="column-2"><span class="mars-s">227,943,824 km</span></td>
+              <td class="column-3"><span class="earth-s">149,598,262 km</span></td>
+            </tr>
+            <tr class="row-6">
+              <td class="column-1">Length of Year:</td>
+              <td class="column-2"><span class="mars-s">687 Earth days</span></td>
+              <td class="column-3"><span class="earth-s">365.24 days</span></td>
+            </tr>
+            <tr class="row-7">
+              <td class="column-1">Temperature:</td>
+              <td class="column-2"><span class="mars-s">-87 to -5 °C</span></td>
+              <td class="column-3"><span class="earth-s">-88 to 58°C</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+  </div>
 </body>
 
-<br>
+
+{{!-- <br>
 <footer>
   <div class="bg-dark">
     <div class="text-center text-light">Data and Images provided courtesy of NASA</div>
   </div>
-</footer>
-
+</footer> --}}
+{{!-- That's one small step for martians, one giant leap for martian kind --}}

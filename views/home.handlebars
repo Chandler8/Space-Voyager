@@ -1,27 +1,106 @@
 {{!-- This will be our container, and styling below will follow --}}
 {{!-- Leaflet, probably not needed here --}}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css">
 
-<div class="jumbotron">
+
+{{!-- <div class="jumbotron">
   <h1 class="display-2 text-center">Home Please</h1>
 
 </div>
-<hr style="border-width: 2px;">
+<hr style="border-width: 2px;"> --}}
 
 {{!-- Here we will put all of our home page stylings --}}
 {{!-- Just a little fun --}}
-<img src="./images/observatory1.jpg">
+{{!-- <img src="./images/observatory1.jpg"> --}}
 
-<br>
+{{!-- <br>
 <footer>
   <div class="bg-dark">
     <div class="text-center text-light">Data and Images provided courtesy of NASA</div>
   </div>
-</footer>
+</footer> --}}
 
-{{!-- Leaflet scripts - Probably won't need them here --}}
-<script src="http://code.jquery.com/jquery-2.0.3.min.js"> </script>
-<script src="map/iss-now.js"> </script>
-<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!-- when this file is being served by express, make sure favicon.io is directly inside of the public folder -->
+  <link rel="icon" href="/favicon.ico">
+  <!-- <link rel="stylesheet" type="text/css" href="assets/bulma.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+  <!-- this will break when express serves 'typed.js', so we need to make sure we have 'typed.js' somewhere in our public folder
+    so it gets a route from express.static(). (example: src="/js/typed.js") -->
+  <script type="text/javascript" src="/js/typed.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <title>Space Voyager 3.0</title>
+</head>
+
+<body>
+  <header>
+    <img class="logo" src="/images/sv3.jpg" width="100" height="100" alt="logo">
+    <nav>
+      <ul class="nav_links">
+        <li><a href="/mars">Mars</a></li>
+        <li><a href="/solar">Planets</a></li>
+        <li><a class="home-link" href="/home">Home</a></li>
+        <li><a href="/iss">ISS</a></li>
+        <li><a href="/astronomy">APOTD</a></li>
+      </ul>
+    </nav>
+    <a class="cta" href="#"><button>Contact</button></a>
+  </header>
+  <h1 class="type"></h1>
+  <h2 class="quote"></h2>
+  <div id="particles-js"></div>
+  <!--Page Wrapper-->
+  <div class="page-wrapper"></div>
+  <!--Footer-->
+  <footer>
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-section about"></div>
+        <div class="footer-section links">
+          <!-- <div class="social-media container has-text-centered"> -->
+          <a href="https://linkedin.com/in/xarroyo1/" target="_blank"><i class="fab fa-linkedin fa-4x"></i></a>
+          <a href="https://github.com/xarroyo1" target="_blank"><i class="fab fa-github-square fa-4x"></i></a>
+          <a href="https://twitter.com/x_ray75" target="_blank"><i class="fab fa-twitter-square fa-4x"></i></a>
+          <!-- </div> -->
+        </div>
+        <div class="footer-section contact-form"></div>
+      </div>
+      <div class="footer-bottom">
+        &copy; The Flawless Squirrels
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript">
+    var typed = new Typed('.type', {
+      strings: ["Welcome Aboard", "Space Voyager 3.0"],
+      typeSpeed: 150,
+      backSpeed: 50,
+      loop: false,
+      showCursor: false,
+      cursorChar: '|',
+      autoInsertCss: true,
+    });
+    var quote = new Typed('.quote', {
+      strings: ["“Space is for everybody. It’s not just for a few people in science or math, or for a select group of astronauts. That’s our new frontier out there, and it’s everybody’s business to know about space. – Christa McAuliffe”", "“Mankind is drawn to the heavens for the same reason we were once drawn into unknown lands and across the open sea. We choose to explore space because doing so improves our lives, and lifts our national spirit. So let us continue the journey.– George W. Bush'", "'The exploration of space will go ahead, whether we join in it or not, and it is one of the great adventures of all time, and no nation which expects to be the leader of other nations can expect to stay behind in the race for space.– John F. Kennedy'", "'“I know the sky is not the limit because there are footprints on the Moon — and I made some of them!– Buzz Aldrin'", "'Earth is a small town with many neighborhoods in a very big universe.– Ron Garan'", "'What everyone in the astronaut corps shares in common is not gender or ethnic background, but motivation, perseverance, and desire — the desire to participate in a voyage of discovery.– Ellen Ochoa'", "'Of course risk is part of spaceflight. We accept some of that to achieve greater goals in exploration and find out more about ourselves and the universe.– Lisa Nowak'", "'One of the basic rules of the universe is that nothing is perfect. Perfection simply doesn’t exist…..Without imperfection, neither you nor I would exist.– Stephen Hawking'", "'For every one billion particles of antimatter there were one billion and one particles of matter. And when the mutual annihilation was complete, one billionth remained – and that’s our present universe.– Albert Einstein'"],
+      typeSpeed: 50,
+      backSpeed: 5,
+      loop: true,
+      showCursor: false,
+      cursorChar: '|',
+      autoInsertCss: true,
+    });
+    particlesJS.load('particles-js', 'particles.json', function () {
+      console.log("particles.json loaded")
+    })
+  </script>
+</body>
+
+
 
 {{!-- Notes for work in progress --}}
+{{!-- Footer doesn't want to move down to the bottom, need to send me the particles.js files so we can incorporate that, looks great! --}}
