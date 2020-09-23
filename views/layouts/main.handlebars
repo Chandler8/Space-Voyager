@@ -10,6 +10,7 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
         <link rel="stylesheet" href="/css/solar.css">
+        <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -31,6 +32,14 @@
     <title>NASA TIME</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     {{!-- <script src="/assets/js/app.js"> </script> --}}
+
+<script src="map/iss-now.js"> </script>
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="/node_modules/leaflet/dist/leaflet-src.js"></script>
+ {{!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script> --}}
+
 
 </head>
 

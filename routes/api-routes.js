@@ -6,9 +6,9 @@ const nodemon = require('nodemon');
 const { request } = require('express');
 const planetList = ["EARTH", "SATURN", "MARS", "URANUS", "VENUS", "NEPTUNE", "JUPITER", "MERCURY"];
 const api_key = process.env.api_key;
-// const leaflet = require('leaflet');
-
-// Exporting of module to server 
+// const L = require('leaflet');
+// console.log(L);
+// Exporting of module to server //
 module.exports = function(app) {
 
 
@@ -16,13 +16,13 @@ module.exports = function(app) {
 
     //   Home GET route
   app.get('/home', (req, res) => {
-    res.render('home', results)
+    res.render('home')
 });
   
-  // Home POST route
-  app.post('/home', (req, res) => {
-    res.render('home', results)
-});
+//   // Home POST route
+//   app.post('/home', (req, res) => {
+//     res.render('home')
+// });
 
     // Astronomy pic of the day API w/ GET and POST routes
 function call_api(finishedAPI) {
@@ -166,35 +166,35 @@ function addImageURL(bodyObject) {
 
 // ISS API
 
-// var map = L.map('map').setView([0,0], 2);
+//var map = L.map('map').setView([0,0], 2);
 
 
-function moveISS () {
-    request('http://api.open-notify.org/iss-now.json?callback=?', function(data) {
-        var lat = data['iss_position']['latitude'];
-        var lon = data['iss_position']['longitude'];
+// function moveISS () {
+//     request('http://api.open-notify.org/iss-now.json?callback=?', function(data) {
+//         var lat = data['iss_position']['latitude'];
+//         var lon = data['iss_position']['longitude'];
 
-        iss.setLatLng([lat, lon]);
-        isscirc.setLatLng([lat, lon]);
-        map.panTo([lat, lon], animate=true);
-    });
-    setTimeout(moveISS, 5000); 
-}
+//         iss.setLatLng([lat, lon]);
+//         isscirc.setLatLng([lat, lon]);
+//         map.panTo([lat, lon], animate=true);
+//     });
+//     setTimeout(moveISS, 5000); 
+// }
 
-//   Grabbing parsed JSON
-const fetchIssInfo = async (url) => {
-    console.log(`Fetching ${url}`)
-    const issInfo = await axios(url)
-    return issInfo;
-  };
+// //   Grabbing parsed JSON
+// const fetchIssInfo = async (url) => {
+//     console.log(`Fetching ${url}`)
+//     const issInfo = await axios(url)
+//     return issInfo;
+//   };
   
-  const fetchIntInfo = async (tickers) => {
-    const url = `http://api.open-notify.org/iss-now.json?callback=?`
-    return fetchIssInfo(url)
-      .then((res) => {
-        return res
-      })
-  };
+//   const fetchIntInfo = async (tickers) => {
+//     const url = `http://api.open-notify.org/iss-now.json?callback=?`
+//     return fetchIssInfo(url)
+//       .then((res) => {
+//         return res
+//       })
+//   };
   
 // L.tileLayer('/images/map/tiles/{z}/{x}/{y}.png', {
 //     maxZoom: 4,
@@ -217,21 +217,21 @@ const fetchIssInfo = async (url) => {
 // moveISS();
 
   
-//   ISS GET route
-  app.get('/iss', (req, res) => {
-    const data = fetchIntInfo();
-    results.response = data;
-    console.log(results);
-    res.render('iss', results);
-  });
+// //   ISS GET route
+//   app.get('/iss', (req, res) => {
+//     const data = fetchIntInfo();
+//     results.response = data;
+//     console.log(results);
+//     res.render('iss', results);
+//   });
   
-  // ISS POST route
-  app.post('/iss', (req, res) => {
-    const data = fetchIntInfo(sp);
-    results.response = data;
-    console.log(results);
-    res.render('iss', results);
-  });
+//   // ISS POST route
+//   app.post('/iss', (req, res) => {
+//     const data = fetchIntInfo(sp);
+//     results.response = data;
+//     console.log(results);
+//     res.render('iss', results);
+//   });
 
 //   app.get'/*' (do at very end of routes.html page)
 
