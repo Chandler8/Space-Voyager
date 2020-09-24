@@ -1,6 +1,6 @@
 // Creating our User model
 module.exports = function(sequelize, DataTypes) {
-  let SpaceVisitors = sequelize.define("SpaceVisitors", {
+  let Users = sequelize.define("Users", {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -27,5 +27,5 @@ module.exports = function(sequelize, DataTypes) {
       
     
   });
-  return SpaceVisitors;
+  return Users;
 };

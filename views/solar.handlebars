@@ -1,5 +1,4 @@
-{{!-- This will be our container, and styling below will follow --}}
-<link rel="stylesheet" href="/css/style.css" type="text/css">
+
 
 {{!-- Build out APOTD API info here --}}
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -13,7 +12,7 @@
         {{/unless}}
         <img class="d-block rounded w-100" src={{image_url}} alt="Planets" />
         <div class="carousel-caption d-none d-md-block">
-          <h2>{{englishName}}</h2>
+          <h1>{{englishName}}</h1>
           <h3>Moons: {{moons.length}}</h3>
           <h3>Gravity: {{gravity}}</h3>
 
