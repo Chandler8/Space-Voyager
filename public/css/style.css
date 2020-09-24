@@ -15,7 +15,7 @@ li, a, button {
 
 header {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items:center;
     text-align: center;
     padding:30px 10%;
@@ -33,6 +33,7 @@ header {
 
 .nav_links {
     list-style:none;
+    /* padding-right: 280px; */
     
 }
 
@@ -71,18 +72,8 @@ button:hover {
     background-color: rgb(3, 4, 27);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-x: 20px;
 }
-
-/* h3 {
-    font-family:'Space Mono', monospace;
-    color: whitesmoke;
-    font-size: 50px;
-    text-shadow: 0 2px 5px rgba(0,0, 0, 5);
-    width: 100%;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-} */
 
 html, body {
     height: 100%;
@@ -153,24 +144,35 @@ h3 {
 }
 
 #footer {
-    background: black;
+    background-image: url("../images/moon.jpg");
     color: lightslategray;
     position: relative;
-    height: 100px;
+    height: 140px;
     margin-top: -100px;
     clear: both;
     text-align: center;
-    padding: 50px 30px;
+    background-position-y: 80px;
     
 }
 
 
-/* .social-media{
-    margin-top: 40px;
+.social-media{
+  padding-top: 20px;
+  padding-bottom: 10px;
     
  }
  
  .social-media a:hover,
  .column a:hover{
  color: rgb(125, 125, 125);
- } */
+ }
+
+.copyWrite.container {
+    padding-top: 50px;
+}
+
+.fa-user-astronaut {
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
