@@ -1,23 +1,7 @@
-/* iss */
 * {
     box-sizing: border-box;
     margin:0;
     padding:0;
-}
-
-body {
-    text-align: center;
-   margin: auto;
-   width: 75%;
-   padding: 10px;
-   font-family:'Space Mono', monospace;
-    color: whitesmoke;
-    font-size: 50px;
-    text-shadow: 0 2px 5px rgba(0,0, 0, 5);
-}
-
-map {
-    opacity: 40%;
 }
 
 li, a, button {
@@ -36,7 +20,7 @@ header {
     text-align: center;
     padding:30px 10%;
     background-color: #24252a;
-    background-image: url("/images/iss1.jpg");
+    background-image: url("/images/starspace.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -89,16 +73,6 @@ button:hover {
     background-size: cover;
 }
 
-/* h3 {
-    font-family:'Space Mono', monospace;
-    color: whitesmoke;
-    font-size: 50px;
-    text-shadow: 0 2px 5px rgba(0,0, 0, 5);
-    width: 100%;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-} */
 
 html, body {
     height: 100%;
@@ -113,7 +87,7 @@ html, body {
     padding-bottom: 100px;
 }
 
- h1 {
+h1 {
     position: absolute;
     top: 100%;
     transform: translateY(-50%);
@@ -142,6 +116,15 @@ h2 {
     text-shadow: 0 2px 5px rgba(0,0, 0, 5);
 }
 
+p2 {
+    
+    height: 12px;
+    font-family:'Space Mono', monospace;
+    font-style: italic;
+    color: whitesmoke;
+    font-size: 2px;
+    text-shadow: 0 2px 5px rgba(0,0, 0, 5);
+}
 
 .astro{
     max-width: 100%;
@@ -179,14 +162,3 @@ h3 {
     padding: 50px 30px;
     
 }
-
-
-/* .social-media{
-    margin-top: 40px;
-    
- }
- 
- .social-media a:hover,
- .column a:hover{
- color: rgb(125, 125, 125);
- } */

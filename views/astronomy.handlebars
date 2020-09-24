@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="/css/astro.css" type="text/css">
 
 <h3 class="display-2 text-center">Astronomy Picture of the Day</h3>
 
@@ -8,17 +8,23 @@
 
 <div class="jumbotron">
   <header>
-    <img class="logo" src="/images/sv3.jpg" width="100" height="100" alt="logo">
+    <br>
+    
     <nav>
       <ul class="nav_links">
+        <br>
+      <br>
         <li><a href="/mars">Mars</a></li>
         <li><a href="/solar">Planets</a></li>
         <li><a class="home-link" href="/home">Home</a></li>
         <li><a href="/iss">ISS</a></li>
         <li><a href="/astronomy">APOTD</a></li>
       </ul>
+      <br>
+      <br>
     </nav>
-    <a class="cta" href="#"><button>Contact</button></a>
+    
+    <br>
   </header>
 
 </div>
@@ -26,8 +32,6 @@
 <hr style="border-width: 2px;">
 
 <br>
-
-{{!-- Build out APOTD API info here --}}
 
 {{!-- Title of picture --}}
 {{#each response}}
@@ -46,16 +50,6 @@
 </div>
 {{/each}}
 
-{{!-- Paragraph detailing picture --}}
-{{#each response}}
-<div class="text-center">
-
-  {{this.explanation}}
-  <br>
-</div>
-{{/each}}
-
-
 
 {{!-- Rendered picture --}}
 <div class="text-center">
@@ -69,12 +63,18 @@
   {{/each}}
 </div>
 
+
+{{!-- Paragraph detailing picture --}}
+{{#each response}}
+<div class="text-center">
+<p2 class="display-2 text-center">
+  {{this.explanation}}</p2>
+  <br>
+</div>
+{{/each}}
+
 <br>
-<footer>
-  <div class="bg-dark">
-    <div class="text-center text-light">Data and Images provided courtesy of NASA</div>
-  </div>
-</footer>
+
 
 {{!-- Jack please help me get rid of the 5 extra blank images that keep persisting on my page because of the #each loop, thank you --}}
 {{!-- I could get rid of the style class but then my pic gets massive, I need it contained in this manner --}}
