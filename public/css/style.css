@@ -33,7 +33,7 @@ header {
 
 .nav_links {
     list-style:none;
-    padding-left: 150px;
+    /* padding-right: 280px; */
     
 }
 
@@ -110,6 +110,20 @@ body h2 {
     margin: 0;
     padding-right: 30%;
     padding-left: 30%;
+    font-family:'Space Mono', monospace;
+    font-style: italic;
+    color: whitesmoke;
+    font-size: 10px;
+    text-shadow: 0 2px 5px rgba(0,0, 0, 5);
+}
+
+
+.astro{
+    max-width: 100%;
+  }
+
+  
+h3 {
     font-family:'Space Mono', monospace;
     font-style: italic;
     color: whitesmoke;
