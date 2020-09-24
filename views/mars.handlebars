@@ -5,8 +5,10 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Mars</title>
-  <link rel="stylesheet" href="/css/mars.css" type="text/css">
   <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/mars.css" type="text/css">
+
+  {{!-- <link rel="stylesheet" href="/css/bulma.css" type="text/css"> --}}
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
@@ -20,54 +22,46 @@
 </head>
 
 
+<hr style="border-width: 2px;">
 
-
-
-{{!-- This will be our container, and styling below will follow --}}
-<div class="jumbotron">
-  <div style="background-image: url('images/starspace.jpg');">
-
-    
-
-    <div class="text-center">
-      <div class="countdown_clock">
-        <span class="category-title">COUNTDOWN TO LANDING ON MARS</span>
-        <div class="countdown-container">
-
-          <span class="month">"February</span>
-          <span class="date">18</span>
-          <span class="year">2021"</span>
-        </div>
-        <div class="countdown_time" id="countdown_time_mars2020_landing">
-          <div class="time_days unit">148<span class="time_label">days</span></div>
-          <div class="time_hours unit">13<span class="time_label">hrs</span></div>
-          <div class="time_minutes unit">51<span class="time_label">mins</span></div>
-          <div class="time_seconds unit">39<span class="time_label">secs</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
+{{!-- Container of clock, mars photo, and NAV --}}
 <header>
-    <img class="logo" src="/images/sv3.jpg" width="100" height="100" alt="logo">
-    <nav>
-      <ul class="nav_links">
-        <li><a href="/mars">Mars</a></li>
-        <li><a href="/solar">Planets</a></li>
-        <li><a class="home-link" href="/home">Home</a></li>
-        <li><a href="/iss">ISS</a></li>
-        <li><a href="/astronomy">APOTD</a></li>
-      </ul>
-    </nav>
-    <a class="cta" href="#"><button>Contact</button></a>
-  </header>
+
+  <div class="text-center">
+    <div class="countdown_clock">
+      <span class="category-title">COUNTDOWN TO LANDING ON MARS</span>
+      <div class="countdown-container">
+
+        <span class="month">"February</span>
+        <span class="date">18</span>
+        <span class="year">2021"</span>
+      </div>
+      <div class="countdown_time" id="countdown_time_mars2020_landing">
+        <div class="time_days unit">148<span class="time_label">days</span></div>
+        <div class="time_hours unit">13<span class="time_label">hrs</span></div>
+        <div class="time_minutes unit">51<span class="time_label">mins</span></div>
+        <div class="time_seconds unit">39<span class="time_label">secs</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <nav>
+    <ul class="nav_links">
+      <li><a href="/mars">Mars</a></li>
+      <li><a href="/solar">Planets</a></li>
+      <li><a class="home-link" href="/home">Home</a></li>
+      <li><a href="/iss">ISS</a></li>
+      <li><a href="/astronomy">APOTD</a></li>
+    </ul>
+  </nav>
+</header>
 
 <hr style="border-width: 2px;">
 
 <body>
 
+{{!-- Rover welcome card --}}
   <div class="row">
     <div class="column">
       <div class="card">
@@ -97,10 +91,9 @@
       </div>
     </div>
 
+{{!-- Sol plot card --}}
     <div class="column">
       <div class="card">
-
-
 
         <div id="nasa_api_key"></div>
         <div id="buttons">Click Sol to plot its Wind Direction distribution:<br>
@@ -187,10 +180,11 @@
     </div>
   </div>
 
+{{!-- Perserverance Rover with info card --}}
   <div class="column">
     <div class="card">
 
-      <img src="./images/rover-1.gif" height="520" width="1010">
+      <img src="./images/rover-2.gif" height="520" width="1010">
       <br>
       <li>
         <span class="fact-title fontBold">Main Job: </span>
@@ -236,7 +230,7 @@
   </div>
 
 
-
+  {{!-- Mars infographic card with images --}}
 
   <div class="column">
 
@@ -259,63 +253,67 @@
             <figcaption><span class="mars">Mars</span> distance from the <span class="sun">Sun</span> and orbital
               eccentricity</figcaption>
           </figure>
-
         </div>
-        <table id="tablepress-comp-mars" class="aligncenter">
-          <thead>
-            <tr class="row-1">
-              <th class="column-1"><strong>Mars - Earth Comparison</strong></th>
-              <th class="column-2">
-                <span class="mars">Mars</span></th>
-              <th class="column-3"><span class="earth">Earth</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="row-2">
-              <td class="column-1">Diameter:</td>
-              <td class="column-2"><span class="mars-s">6,779 km</span></td>
-              <td class="column-3"><span class="earth-s">12,742 km</span></td>
-            </tr>
-            <tr class="row-3">
-              <td class="column-1">Mass:</td>
-              <td class="column-2"><span class="mars-s">6.39 × 10^23 kg</span></td>
-              <td class="column-3"><span class="earth-s">5.97 × 10^24 kg</span></td>
-            </tr>
-            <tr class="row-4">
-              <td class="column-1">Moons:</td>
-              <td class="column-2"><span class="mars-s">2</span></td>
-              <td class="column-3"><span class="earth-s">1</span></td>
-            </tr>
-            <tr class="row-5">
-              <td class="column-1">Distance from Sun:</td>
-              <td class="column-2"><span class="mars-s">227,943,824 km</span></td>
-              <td class="column-3"><span class="earth-s">149,598,262 km</span></td>
-            </tr>
-            <tr class="row-6">
-              <td class="column-1">Length of Year:</td>
-              <td class="column-2"><span class="mars-s">687 Earth days</span></td>
-              <td class="column-3"><span class="earth-s">365.24 days</span></td>
-            </tr>
-            <tr class="row-7">
-              <td class="column-1">Temperature:</td>
-              <td class="column-2"><span class="mars-s">-87 to -5 °C</span></td>
-              <td class="column-3"><span class="earth-s">-88 to 58°C</span></td>
-            </tr>
-          </tbody>
-        </table>
+
+        <br>
+        <ul>
+          <li>
+            <span class="fact-title fontBold">Diameter: </span>
+            <span class="fact-text value"> Mars - 6,779 km | Earth - 12,742 km
+            </span>
+          </li>
+
+          <li>
+            <span class="fact-title fontBold">Mass: </span>
+            <span class="fact-text value">Mars - 6.39 × 10^23 kg | Earth - 5.97 × 10^24 kg</span>
+          </li>
+
+          <li>
+            <span class="fact-title fontBold">Moons: </span>
+            <span class="fact-text value">Mars - 2 | Earth - 1</span>
+          </li>
+
+          <li>
+            <span class="fact-title fontBold">Distance from Sun: </span>
+            <span class="fact-text value">Mars - 227,943,824 km | Earth - 149,598,262 km</span>
+          </li>
+
+          <li>
+            <span class="fact-title fontBold">Length of Year: </span>
+            <span class="fact-text value">Mars - 687 Earth days | Earth - 365.24 days</span>
+          </li>
+
+          <li>
+            <span class="fact-title fontBold">Temperature: </span>
+            <span class="fact-text value">Mars -87 to -5 °C | Earth -88 to 58°C</span>
+          </li>
+
+          <br>
+
+          <li>
+            <span class="fact-title fontBold">Fun Facts: </span>
+            <span class="fact-text value">One day Mars will have a ring.
+              In the next 20-40 million years Mars’ largest moon Phobos will be torn apart by gravitational forces
+              leading to the creation of a ring that could last up to 100 million years.</span>
+          </li>
+
+          <li>
+            <span class="fact-title fontBold"></span>
+            <span class="fact-text value">Sunsets on Mars are blue.
+              During the martian day the sky is pinkish-red, this is the opposite of the Earth’s skies.</span>
+          </li>
+
+          <li>
+            <span class="fact-title fontBold"></span>
+            <span class="fact-text value">Mars has the largest dust storms in the solar system.
+              They can last for months and cover the planet.</span>
+          </li>
+        </ul>
       </div>
-
     </div>
-
-  </div>
   </div>
 </body>
 
+{{!-- (.24 comes from NASA study about inaccuracies in the Georgian calender that keeps time) --}}
 
-{{!-- <br>
-<footer>
-  <div class="bg-dark">
-    <div class="text-center text-light">Data and Images provided courtesy of NASA</div>
-  </div>
-</footer> --}}
 {{!-- That's one small step for martians, one giant leap for martian kind --}}

@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="/css/bulma.css" type="text/css">
     <link rel="stylesheet" href="/css/mars.css" type="text/css">
     <link rel="stylesheet" href="/css/solar.css" type="text/css">
-    <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
@@ -35,7 +35,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     {{!-- <script src="/assets/js/app.js"> </script> --}}
 
-    <script src="map/iss-now.js"> </script>
+    {{!-- <script src="map/iss-now.js"> </script> --}}
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="/node_modules/leaflet/dist/leaflet-src.js"></script>
     {{!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
@@ -47,8 +47,15 @@
 
 
 <body>
-    {{!-- Nav bar, or put it in each handlebars page --}}
+    {{!-- Nav bar header to be applied to every page --}}
+
     {{{ body }}}
+
+
+{{!-- Footer to be applied to every page --}}
+ 
+
 </body>
+
 
 </html>
