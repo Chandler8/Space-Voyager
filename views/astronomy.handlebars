@@ -1,8 +1,10 @@
 <link rel="stylesheet" href="/css/style.css" type="text/css">
 
-  <h3 class="display-2 text-center">Astronomy Picture of the Day</h3>
+<h3 class="display-2 text-center">Astronomy Picture of the Day</h3>
 
+<hr style="border-width: 2px;">
 
+<br>
 
 <div class="jumbotron">
   <header>
@@ -20,43 +22,49 @@
   </header>
 
 </div>
+
 <hr style="border-width: 2px;">
+
 <br>
 
 {{!-- Build out APOTD API info here --}}
 
+{{!-- Title of picture --}}
 {{#each response}}
 
 <div class="text-center">
- <h2 class="display-2 text-center"> {{this.title}} </h2>
+  <h3 class="display-2 text-center"> {{this.title}} </h3>
 </div>
 {{/each}}
 
-   {{#each response}}
-<div class="text-center">
-   {{this.date}}
-   <br>
-   </div>
-   {{/each}}
-
-
+{{!-- Date --}}
 {{#each response}}
 <div class="text-center">
-   {{this.explanation}}
-   <br>
-   </div>
-   {{/each}}
+  <h3 class="display-2 text-center">
+    {{this.date}} </h3>
+  <br>
+</div>
+{{/each}}
 
-
+{{!-- Paragraph detailing picture --}}
+{{#each response}}
 <div class="text-center">
 
-<style>.astro{
-  max-width: 100%;
-}
-</style>
+  {{this.explanation}}
+  <br>
+</div>
+{{/each}}
 
-{{#each response}}
-  <img src={{this.hdurl}} class="astro">
+
+
+{{!-- Rendered picture --}}
+<div class="text-center">
+
+  {{!-- Remember to add this astro class if the pic is small, need to ask Jack about this one --}}
+  {{!-- class="astro" --}}
+
+  {{#each response}}
+  <img src={{this.hdurl}}>
   <br>
   {{/each}}
 </div>

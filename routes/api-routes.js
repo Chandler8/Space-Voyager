@@ -9,6 +9,7 @@ const api_key = process.env.api_key;
 // const L = require('leaflet');
 // console.log(L);
 // Exporting of module to server //
+
 module.exports = function(app) {
 
 
@@ -166,7 +167,7 @@ function addImageURL(bodyObject) {
 
 // ISS API
 
-//var map = L.map('map').setView([0,0], 2);
+// var map = L.map('map').setView([0,0], 2);
 
 
 // function moveISS () {
@@ -217,23 +218,23 @@ function addImageURL(bodyObject) {
 // moveISS();
 
   
-// //   ISS GET route
-//   app.get('/iss', (req, res) => {
-//     const data = fetchIntInfo();
-//     results.response = data;
-//     console.log(results);
-//     res.render('iss', results);
-//   });
+//   ISS GET route
+  app.get('/iss', (req, res) => {
+    // const data = fetchIntInfo();
+    // results.response = data;
+    // console.log(results);
+    res.render('iss');
+  });
   
-//   // ISS POST route
-//   app.post('/iss', (req, res) => {
-//     const data = fetchIntInfo(sp);
-//     results.response = data;
-//     console.log(results);
-//     res.render('iss', results);
-//   });
+  // // ISS POST route
+  // app.post('/iss', (req, res) => {
+  //   // const data = fetchIntInfo(sp);
+  //   // results.response = data;
+  //   // console.log(results);
+  //   res.render('iss');
+  // });
 
-//   app.get'/*' (do at very end of routes.html page)
+  // app.get'/*' (do at very end of routes.html page)
 
 // Mars Page
 

@@ -1,50 +1,88 @@
 {{!-- This will be our container, and styling below will follow --}}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css">
 <link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
 <div class="jumbotron">
-  <h1 class="display-2 text-center">ISS please</h1>
+  <h3 class="display-2 text-center">ISS please</h3>
 
 </div>
 <hr style="border-width: 2px;">
 
 {{!-- Build out APOTD API info here --}}
-
-{{#each response}}
-
-<div class="text-center">
- <h2 class="display-2 text-center"> {{this.title}} </h2>
+<div id="map"
+  style="width: 800px; height: 400px; position: relative; --darkreader-inline-outline: initial; outline: none;"
+  class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+  tabindex="0" data-darkreader-inline-outline="">
+  <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(103px, -22px, 0px);">
+    <div class="leaflet-pane leaflet-tile-pane">
+      <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+        <div class="leaflet-tile-container leaflet-zoom-animated"
+          style="z-index: 3; transform: translate3d(235px, 26px, 0px) scale(2);"></div>
+        <div class="leaflet-tile-container leaflet-zoom-animated"
+          style="z-index: 4; transform: translate3d(125px, -90px, 0px) scale(1);"><img alt=""
+            src="/images/map/tiles/2/0/0.png" class="leaflet-tile leaflet-tile-loaded"
+            style="width: 256px; height: 256px; transform: translate3d(-176px, -60px, 0px); opacity: 1;"><img alt=""
+            src="/images/map/tiles/2/1/0.png" class="leaflet-tile leaflet-tile-loaded"
+            style="width: 256px; height: 256px; transform: translate3d(80px, -60px, 0px); opacity: 1;"><img alt=""
+            src="/images/map/tiles/2/0/1.png" class="leaflet-tile leaflet-tile-loaded"
+            style="width: 256px; height: 256px; transform: translate3d(-176px, 196px, 0px); opacity: 1;"><img alt=""
+            src="/images/map/tiles/2/1/1.png" class="leaflet-tile leaflet-tile-loaded"
+            style="width: 256px; height: 256px; transform: translate3d(80px, 196px, 0px); opacity: 1;"><img alt=""
+            src="/images/map/tiles/2/3/0.png" class="leaflet-tile leaflet-tile-loaded"
+            style="width: 256px; height: 256px; transform: translate3d(-432px, -60px, 0px); opacity: 1;"><img alt=""
+            src="/images/map/tiles/2/2/0.png" class="leaflet-tile leaflet-tile-loaded"
+            style="width: 256px; height: 256px; transform: translate3d(336px, -60px, 0px); opacity: 1;"><img alt=""
+            src="/images/map/tiles/2/3/1.png" class="leaflet-tile leaflet-tile-loaded"
+            style="width: 256px; height: 256px; transform: translate3d(-432px, 196px, 0px); opacity: 1;"><img alt=""
+            src="/images/map/tiles/2/2/1.png" class="leaflet-tile leaflet-tile-loaded"
+            style="width: 256px; height: 256px; transform: translate3d(336px, 196px, 0px); opacity: 1;"><img alt=""
+            src="/images/map/tiles/2/0/2.png" class="leaflet-tile leaflet-tile-loaded"
+            style="width: 256px; height: 256px; transform: translate3d(-176px, 452px, 0px); opacity: 1;"><img alt=""
+            src="/images/map/tiles/2/1/2.png" class="leaflet-tile leaflet-tile-loaded"
+            style="width: 256px; height: 256px; transform: translate3d(80px, 452px, 0px); opacity: 1;"><img alt=""
+            src="/images/map/tiles/2/3/2.png" class="leaflet-tile leaflet-tile-loaded"
+            style="width: 256px; height: 256px; transform: translate3d(-432px, 452px, 0px); opacity: 1;"><img alt=""
+            src="/images/map/tiles/2/2/2.png" class="leaflet-tile leaflet-tile-loaded"
+            style="width: 256px; height: 256px; transform: translate3d(336px, 452px, 0px); opacity: 1;"></div>
+      </div>
+    </div>
+    <div class="leaflet-pane leaflet-shadow-pane"><img src="/images/map/ISSIcon_shadow.png"
+        class="leaflet-marker-shadow leaflet-zoom-animated"
+        style="margin-left: -30px; margin-top: -15px; width: 60px; height: 40px; transform: translate3d(297px, 222px, 0px);">
+    </div>
+    <div class="leaflet-pane leaflet-overlay-pane"><svg pointer-events="none" class="leaflet-zoom-animated" width="960"
+        height="480" viewBox="-183 -18 960 480" style="transform: translate3d(-183px, -18px, 0px);">
+        <g>
+          <path class="leaflet-interactive" stroke="#c22" stroke-opacity="0.3" stroke-width="1" stroke-linecap="round"
+            stroke-linejoin="round" fill="#c22" fill-opacity="0.1" fill-rule="evenodd"
+            d="M217.09770666666668,207.80128306931022a80,83 0 1,0 160,0 a80,83 0 1,0 -160,0 "
+            data-darkreader-inline-fill="" data-darkreader-inline-stroke=""
+            style="--darkreader-inline-fill:#a31b1b; --darkreader-inline-stroke:#e04444;"></path>
+        </g>
+      </svg></div>
+    <div class="leaflet-pane leaflet-marker-pane"><img src="/images/map/ISSIcon.png"
+        class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0"
+        style="margin-left: -25px; margin-top: -15px; width: 50px; height: 30px; transform: translate3d(297px, 222px, 0px); z-index: 222;">
+    </div>
+    <div class="leaflet-pane leaflet-tooltip-pane"></div>
+    <div class="leaflet-pane leaflet-popup-pane"></div>
+    <div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(348px, 372px, 0px) scale(2);"></div>
+  </div>
+  <div class="leaflet-control-container">
+    <div class="leaflet-top leaflet-left">
+      <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#"
+          title="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out">-</a></div>
+    </div>
+    <div class="leaflet-top leaflet-right"></div>
+    <div class="leaflet-bottom leaflet-left"></div>
+    <div class="leaflet-bottom leaflet-right">
+      <div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com"
+          title="A JS library for interactive maps">Leaflet</a></div>
+    </div>
+  </div>
 </div>
-{{/each}}
 
-   {{#each response}}
-<div class="text-center">
-   {{this.date}}
-   <br>
-   </div>
-   {{/each}}
-
-
-{{#each response}}
-<div class="text-center">
-   {{this.explanation}}
-   <br>
-   </div>
-   {{/each}}
-
-
-<div class="text-center">
-
-<style>.astro{
-  max-width: 100%;
-}
-</style>
-
-{{#each response}}
-  <img src={{this.hdurl}} class="astro">
-  <br>
-  {{/each}}
-</div>
 
 <br>
 <footer>
@@ -54,3 +92,40 @@
 </footer>
 
 {{!-- Notes for work in progress --}}
+<script>
+  var map = L.map('map').setView([0,0], 2);
+  console.log(L);
+
+function moveISS () {
+    $.getJSON('http://api.open-notify.org/iss-now.json?callback=?', function(data) {
+        var lat = data['iss_position']['latitude'];
+        var lon = data['iss_position']['longitude'];
+
+        iss.setLatLng([lat, lon]);
+        isscirc.setLatLng([lat, lon]);
+        map.panTo([lat, lon], animate=true);
+    });
+    setTimeout(moveISS, 5000); 
+}
+
+L.tileLayer('/Open-Notify-API/map/tiles/{z}/{x}/{y}.png', {
+    maxZoom: 4,
+}).addTo(map);
+
+var ISSIcon = L.icon({
+    iconUrl: '/images/map/ISSIcon.png',
+    iconSize: [50, 30],
+    iconAnchor: [25, 15],
+    popupAnchor: [50, 25],
+    shadowUrl: '/images/map/ISSIcon_shadow.png',
+    shadowSize: [60, 40],
+    shadowAnchor: [30, 15]
+});
+
+
+var iss = L.marker([0, 0], {icon: ISSIcon}).addTo(map);
+var isscirc = L.circle([0,0], 2200e3, {color: "#c22", opacity: 0.3, weight:1, fillColor: "#c22", fillOpacity: 0.1}).addTo(map); 
+
+moveISS();
+
+</script>
