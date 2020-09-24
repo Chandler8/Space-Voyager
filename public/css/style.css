@@ -33,7 +33,8 @@ header {
 
 .nav_links {
     list-style:none;
-    /* padding-right: 280px; */
+    margin-left: 100px;
+    padding-right: 280px;
     
 }
 
@@ -54,19 +55,6 @@ header {
 .nav_links li a:hover {
     color: rgb(29, 41, 216);
 }
-button {
-    padding: 9px 25px;
-    background: rgb(29, 41, 216);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-
-}
-
-button:hover {
-    background-color: rgba(0,136,169,0.8);
-}
 
 #particles-js {
     background-color: rgb(3, 4, 27);
@@ -77,6 +65,7 @@ button:hover {
 
 html, body {
     height: 100%;
+    background-color: black;
 }
 
 #container {
@@ -121,15 +110,6 @@ body h2 {
 .astro{
     max-width: 100%;
   }
-
-  
-h3 {
-    font-family:'Space Mono', monospace;
-    font-style: italic;
-    color: whitesmoke;
-    font-size: 10px;
-    text-shadow: 0 2px 5px rgba(0,0, 0, 5);
-}
 
 .type {
     top: 50%;
