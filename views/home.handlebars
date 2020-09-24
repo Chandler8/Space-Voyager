@@ -49,32 +49,25 @@
         <li><a href="/astronomy">APOTD</a></li>
       </ul>
     </nav>
-    <a class="cta" href="#"><button>Contact</button></a>
+
   </header>
-  <h1 class="type"></h1>
-  <h2 class="quote"></h2>
-  <div id="particles-js"></div>
-  <!--Page Wrapper-->
-  <div class="page-wrapper"></div>
+
+  <div id="container">
+    <div id="main">
+      <h1 class="type"></h1>
+      <h2 class="quote"></h2>
+      <div id="particles-js"></div>
+    </div>
+  </div>
+
   <!--Footer-->
   <footer>
-    <div class="footer">
-      <div class="footer-content">
-        <div class="footer-section about"></div>
-        <div class="footer-section links">
-          <!-- <div class="social-media container has-text-centered"> -->
-          <a href="https://linkedin.com/in/xarroyo1/" target="_blank"><i class="fab fa-linkedin fa-4x"></i></a>
-          <a href="https://github.com/xarroyo1" target="_blank"><i class="fab fa-github-square fa-4x"></i></a>
-          <a href="https://twitter.com/x_ray75" target="_blank"><i class="fab fa-twitter-square fa-4x"></i></a>
-          <!-- </div> -->
-        </div>
-        <div class="footer-section contact-form"></div>
-      </div>
-      <div class="footer-bottom">
-        &copy; The Flawless Squirrels
-      </div>
+    <div id="footer">
+      &copy;
+      <script>document.write(new Date().getFullYear());</script>, The Flawless Squirrels
     </div>
   </footer>
+
   <script type="text/javascript">
     var typed = new Typed('.type', {
       strings: ["Welcome Aboard", "Space Voyager 3.0"],
@@ -97,6 +90,7 @@
     particlesJS.load('particles-js', 'particles.json', function () {
       console.log("particles.json loaded")
     })
+
   </script>
 </body>
 
