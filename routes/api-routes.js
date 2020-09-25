@@ -12,13 +12,13 @@ const db = require('../models')
 // console.log(L);
 // Exporting of module to server //
 
-module.exports = function(app) {
+module.exports = function (app) {
 
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
-      email: req.users.email,
-      id: req.users.id
+      email: req.user.email,
+      id: req.user.id
     });
   });
 
@@ -31,7 +31,7 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(() => {
-        res.send(307, "home");
+        res.redirect("home");
       })
       .catch(err => {
         res.status(401).json(err);
@@ -53,33 +53,33 @@ module.exports = function(app) {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
-        email: req.users.email,
-        id: req.users.id
+        email: req.user.email,
+        id: req.user.id
       });
     }
   });
 
 
-// Home Page
+  // Home Page
 
-    // //   Home GET route
-    // app.get('/', (req, res) => {
-    //   res.redirect('/register');
-    // });
-  
-//   app.get('/register', (req, res) => {
-//     res.render('register')
-// });
+  // //   Home GET route
+  // app.get('/', (req, res) => {
+  //   res.redirect('/register');
+  // });
 
-// // Register Route
-  
-// // Register GET route
-//   app.get('/home', (req, res) => {
-//     res.render('home')
-// });
+  //   app.get('/register', (req, res) => {
+  //     res.render('register')
+  // });
 
-    // Astronomy pic of the day API w/ GET and POST routes
-function call_api(finishedAPI) {
+  // // Register Route
+
+  // // Register GET route
+  //   app.get('/home', (req, res) => {
+  //     res.render('home')
+  // });
+
+  // Astronomy pic of the day API w/ GET and POST routes
+  function call_api(finishedAPI) {
     request('https://api.nasa.gov/planetary/apod?api_key=0uKX4xKAlZRAVq4uqHlrUTbiHmQ7et6zW7QvbAi6&hd=false', { json: true }, (err, res, body) => {
       if (err) { return console.log(err); }
       if (res.statusCode === 200) {
@@ -87,13 +87,13 @@ function call_api(finishedAPI) {
       };
     });
   };
-//   Grabbing parsed JSON
-    const fetchApiInfo = async (url) => {
+  //   Grabbing parsed JSON
+  const fetchApiInfo = async (url) => {
     console.log(`Fetching ${url}`)
     const astroInfo = await axios(url)
     return astroInfo;
   };
-  
+
   const fetchAstroInfo = async (tickers) => {
     const url = `https://api.nasa.gov/planetary/apod?api_key=0uKX4xKAlZRAVq4uqHlrUTbiHmQ7et6zW7QvbAi6&hd=false`
     return fetchApiInfo(url)
@@ -101,8 +101,8 @@ function call_api(finishedAPI) {
         return res
       })
   };
-  
-//   Astro GET route
+
+  //   Astro GET route
   app.get('/astronomy', async function (req, res) {
     const data = await fetchAstroInfo();
     const results = {};
@@ -110,7 +110,7 @@ function call_api(finishedAPI) {
     console.log(results);
     res.render('astronomy', results);
   });
-  
+
   // Astro POST route
   app.post('/astronomy', async function (req, res) {
     var sp = await req.body.astroSearch.split(",");
@@ -121,10 +121,10 @@ function call_api(finishedAPI) {
     res.render('astronomy', results);
   });
 
-  
+
   //Solar system API w/ GET and POST routes
 
-function solarSystem_api(solarApi) {
+  function solarSystem_api(solarApi) {
     request('https://api.le-systeme-solaire.net/rest/bodies', { json: true }, (err, res, body) => {
       if (err) { return console.log(err); }
       if (res.statusCode === 200) {
@@ -132,14 +132,14 @@ function solarSystem_api(solarApi) {
       };
     });
   };
-  
-//   Grabbing parsed JSON
+
+  //   Grabbing parsed JSON
   const fetchSolarSystemInfo = async (url) => {
     console.log(`Fetching ${url}`)
     const solarInfo = await axios(url)
     return solarInfo;
   };
-  
+
   const fetchSolarInfo = async (tickers) => {
     const url = `https://api.le-systeme-solaire.net/rest/bodies`
     return fetchSolarSystemInfo(url)
@@ -151,63 +151,63 @@ function solarSystem_api(solarApi) {
       }
       )
   }
-  
-//   Solar GET route
+
+  //   Solar GET route
   app.get('/solar', async function (req, res) {
     const data = await fetchSolarInfo();
     const results = {};
-  
+
     //it would still help us GREATLY if we could figure out how to use url parameters instead of .filter to only get planets
     results.bodies = data.data.bodies
       .filter(body => body.isPlanet && planetList.includes(body.englishName.toUpperCase()))
       .map(body => addImageURL(body));
     //we can order our array (for example, by distance from the sun) any way we want before the below line of code
     results.bodies[0].active = true;
-  
+
     console.log(results.bodies);
-  
+
     res.render('solar', results);
-  
+
   });
 
   // Solar switch case
 
-function addImageURL(bodyObject) {
-  let route;
-  switch (bodyObject.englishName.toUpperCase()) {
-    case "EARTH":
-      route = "/images/earth.jpg"
-      break;
-    case "MARS":
-      route = "/images/mars-1.jpg"
-      break;
-    case "SATURN":
-      route = "/images/saturn.jpg"
-      break;
-    case "URANUS":
-      route = "/images/uranus.webp"
-      break;
-    case "NEPTUNE":
-      route = "/images/neptune.jpg"
-      break;
-    case "JUPITER":
-      route = "/images/jupiter-1.jpg"
-      break;
-    case "VENUS":
-      route = "/images/venus.jpg"
-      break;
-    case "MERCURY":
-      route = "/images/mercury-1.jpg"
-      break;
+  function addImageURL(bodyObject) {
+    let route;
+    switch (bodyObject.englishName.toUpperCase()) {
+      case "EARTH":
+        route = "/images/earth.jpg"
+        break;
+      case "MARS":
+        route = "/images/mars-1.jpg"
+        break;
+      case "SATURN":
+        route = "/images/saturn.jpg"
+        break;
+      case "URANUS":
+        route = "/images/uranus.webp"
+        break;
+      case "NEPTUNE":
+        route = "/images/neptune.jpg"
+        break;
+      case "JUPITER":
+        route = "/images/jupiter-1.jpg"
+        break;
+      case "VENUS":
+        route = "/images/venus.jpg"
+        break;
+      case "MERCURY":
+        route = "/images/mercury-1.jpg"
+        break;
+    }
+
+    bodyObject.image_url = route;
+
+    return bodyObject;
   }
 
-  bodyObject.image_url = route;
 
-  return bodyObject;
-}
 
-  
-  
   // Solar POST route
   app.post('/solar', async function (req, res) {
     var sp = await req.body.solarSearch.split(",");
@@ -220,20 +220,20 @@ function addImageURL(bodyObject) {
   });
 
 
-// ISS API
-  
-//   ISS GET route
+  // ISS API
+
+  //   ISS GET route
   app.get('/iss', (req, res) => {
     // const data = fetchIntInfo();
     // results.response = data;
     // console.log(results);
     res.render('iss');
   });
-  
 
-// Mars Page
 
-function mars_api(marsAPI) {
+  // Mars Page
+
+  function mars_api(marsAPI) {
     request('https://api.nasa.gov/insight_weather/?api_key=0uKX4xKAlZRAVq4uqHlrUTbiHmQ7et6zW7QvbAi6&feedtype=json&ver=1.0', { json: true }, (err, res, body) => {
       if (err) { return console.log(err); }
       if (res.statusCode === 200) {
@@ -241,13 +241,13 @@ function mars_api(marsAPI) {
       };
     });
   };
-//   Grabbing parsed JSON
-    const fetchMarsInfo = async (url) => {
+  //   Grabbing parsed JSON
+  const fetchMarsInfo = async (url) => {
     console.log(`Fetching ${url}`)
     const marsInfo = await axios(url)
     return marsInfo;
   };
-  
+
   const fetchMartianInfo = async (tickers) => {
     const url = `https://api.nasa.gov/insight_weather/?api_key=0uKX4xKAlZRAVq4uqHlrUTbiHmQ7et6zW7QvbAi6&feedtype=json&ver=1.0`
     return fetchMarsInfo(url)
@@ -255,8 +255,8 @@ function mars_api(marsAPI) {
         return res
       })
   };
-  
-//   Mars GET route
+
+  //   Mars GET route
   app.get('/mars', async function (req, res) {
     const data = await fetchMartianInfo();
     const results = {};
@@ -264,7 +264,7 @@ function mars_api(marsAPI) {
     console.log(results);
     res.render('mars', results);
   });
-  
+
   // Mars POST route
   app.post('/mars', async function (req, res) {
     var sp = await req.body.marsSearch.split(",");
@@ -276,8 +276,8 @@ function mars_api(marsAPI) {
   });
 
 
-// 5th feature page (Maybe NASA image gallery page, or the models page, TBD)
-function photo_api(picAPI) {
+  // 5th feature page (Maybe NASA image gallery page, or the models page, TBD)
+  function photo_api(picAPI) {
     request('https://images-api.nasa.gov/search?q={q}', { json: true }, (err, res, body) => {
       if (err) { return console.log(err); }
       if (res.statusCode === 200) {
@@ -285,13 +285,13 @@ function photo_api(picAPI) {
       };
     });
   };
-//   Grabbing parsed JSON
-    const fetchPhotographInfo = async (url) => {
+  //   Grabbing parsed JSON
+  const fetchPhotographInfo = async (url) => {
     console.log(`Fetching ${url}`)
     const pngInfo = await axios(url)
     return pngInfo;
   };
-  
+
   const fetchPicInfo = async (tickers) => {
     const url = `https://images-api.nasa.gov/search?q={q}`
     return fetchPhotographInfo(url)
@@ -299,8 +299,8 @@ function photo_api(picAPI) {
         return res
       })
   };
-  
-//   Gallery GET route
+
+  //   Gallery GET route
   app.get('/gallery', async function (req, res) {
     const data = await fetchPicInfo();
     const results = {};
@@ -308,7 +308,7 @@ function photo_api(picAPI) {
     console.log(results);
     res.render('gallery', results);
   });
-  
+
   // Gallery POST route
   app.post('/gallery', async function (req, res) {
     var sp = await req.body.marsSearch.split(",");
