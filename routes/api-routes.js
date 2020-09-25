@@ -6,30 +6,77 @@ const nodemon = require('nodemon');
 const { request } = require('express');
 const planetList = ["EARTH", "SATURN", "MARS", "URANUS", "VENUS", "NEPTUNE", "JUPITER", "MERCURY"];
 const api_key = process.env.api_key;
+const passport = require("../config/passport");
+const db = require('../models')
 // const L = require('leaflet');
 // console.log(L);
 // Exporting of module to server //
 
 module.exports = function(app) {
 
+  app.post("/api/login", passport.authenticate("local"), (req, res) => {
+    // Sending back a password, even a hashed password, isn't a good idea
+    res.json({
+      email: req.users.email,
+      id: req.users.id
+    });
+  });
+
+  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
+  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
+  // otherwise send back an error
+  app.post("/api/signup", (req, res) => {
+    db.Users.create({
+      email: req.body.email,
+      password: req.body.password
+    })
+      .then(() => {
+        res.send(307, "home");
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
+  });
+
+  // Route for logging user out
+  app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
+  });
+
+  // Route for getting some data about our user to be used client side
+  app.get("/api/user_data", (req, res) => {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      res.json({
+        email: req.users.email,
+        id: req.users.id
+      });
+    }
+  });
+};
 
 // Home Page
 
-    //   Home GET route
-    app.get('/', (req, res) => {
-      res.redirect('/register');
-    });
+    // //   Home GET route
+    // app.get('/', (req, res) => {
+    //   res.redirect('/register');
+    // });
   
-  app.get('/register', (req, res) => {
-    res.render('register')
-});
+//   app.get('/register', (req, res) => {
+//     res.render('register')
+// });
 
-// Register Route
+// // Register Route
   
-// Register GET route
-  app.get('/home', (req, res) => {
-    res.render('home')
-});
+// // Register GET route
+//   app.get('/home', (req, res) => {
+//     res.render('home')
+// });
 
     // Astronomy pic of the day API w/ GET and POST routes
 function call_api(finishedAPI) {
@@ -281,6 +328,6 @@ function photo_api(picAPI) {
   //   res.render('404')
   // });
 
-}
+
 
 // "https://images-api.nasa.gov/search?q=apollo%2011&description=moon%20landing&media_type=image"
