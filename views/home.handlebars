@@ -1,63 +1,80 @@
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-  <!-- when this file is being served by express, make sure favicon.io is directly inside of the public folder -->
-  <link rel="icon" href="images/favicon.ico">
-  <!-- <link rel="stylesheet" type="text/css" href="assets/bulma.css"> -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
-  <!-- this will break when express serves 'typed.js', so we need to make sure we have 'typed.js' somewhere in our public folder
-    so it gets a route from express.static(). (example: src="/js/typed.js") -->
+<div id="overlay" class="overlay || js-loader">
+  <span class="loader">
+    <span class="loader__rocket">
+      <svg width="164" height="164">
+        <circle class="loader__circle" cx="78" cy="82" r="77" transform="rotate(-90, 80, 80)" />
+      </svg>
+      <i class="loader__icon">
+        <svg class="loader__svg">
+          <polygon
+            points="21 26.24 15.15 21.04 15.15 6.22 10.51 0 5.86 6.22 5.86 17.46 5.85 21.04 0 26.24 0 36 5.86 30.79 5.86 32.39 10.51 32.39 15.15 32.39 15.15 30.8 21 36 21 26.24" />
+        </svg>
+      </i>
+    </span>
+  </span>
+</div>
 
-  <title>Space Voyager 3.0</title>
-</head>
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="icon" href="images/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
-  <header>
-    <img class="logo" src="/images/sv3.jpg" width="100" height="100" alt="logo">
-    <nav>
-      <ul class="nav_links">
-        <li><a href="/mars">Mars</a></li>
-        <li><a href="/solar">Planets</a></li>
-        <li><a class="home-link" href="/home">Home</a></li>
-        <li><a href="/iss">ISS</a></li>
-        <li><a href="/astronomy">APOTD</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <img class="logo" src="/images/sv3.jpg" width="100" height="100" alt="logo">
+  <nav>
+    <ul class="nav_links">
+      <li><a href="/mars">Mars</a></li>
+      <li><a href="/solar">Planets</a></li>
+      <li><a class="home-link" href="/home">Home</a></li>
+      <li><a href="/iss">ISS</a></li>
+      <li><a href="/astronomy">APOTD</a></li>
+    </ul>
+  </nav>
+</header>
 
-<body>
- 
-  <div id="container">
-    <div id="main">
-      <h1 class="type"></h1>
-      <h2 class="quote"></h2>
-      <div id="particles-js"></div>
-    </div>
+<div id="container">
+  <div id="main">
+    <h1 class="type"></h1>
+    <h2 class="quote"></h2>
+    <div id="particles-js"></div>
   </div>
+</div>
 
-  <!--Footer-->
-  <footer>
-     <div id="footer">
-      
-          <div class="social-media container has-text-centered">
-          <a href="https://github.com/Chandler8/Space-Voyager" target="_blank"><i class="fab fa-github-square fa-4x"></i></a>
-          <a href="https://www.nasa.gov/" target="_blank"><i class="fas fa-user-astronaut fa-3x"></i></a>
-          <a href="" target="_blank"><i class="fab fa-reddit-square fa-4x"></i></a>
-        </div>
+<footer>
+  <div id="footer">
 
-        <div class="copyWrite-container">
-        &copy;
-      <script>document.write(new Date().getFullYear());</script>, The Flawless Squirrels
-      </div>
-
+    <div class="social-media container has-text-centered">
+      <a href="https://github.com/Chandler8/Space-Voyager" target="_blank"><i
+          class="fab fa-github-square fa-4x"></i></a>
+      <a href="https://www.nasa.gov/" target="_blank"><i class="fas fa-user-astronaut fa-3x"></i></a>
+      <a href="" target="_blank"><i class="fab fa-reddit-square fa-4x"></i></a>
     </div>
-  </footer>
 
-  <script type="text/javascript">
-    var typed = new Typed('.type', {
+    <div class="copyWrite-container">
+      &copy;
+      <script>document.write(new Date().getFullYear());</script>, The Flawless Squirrels
+    </div>
+
+  </div>
+</footer>
+
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<link rel="stylesheet" href="css/animate.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" cross-origin="anonymous"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<script type="text/javascript">
+  particlesJS.load('particles-js', '/particles-config/particles.json', function () {
+    console.log("particles.json loaded")
+  })
+</script>
+<script type="text/javascript">
+  $(window).load(function () {
+      $("#overlay").hide();
+      var typed = new Typed('.type', {
       strings: ["Welcome Aboard", "Space Voyager 3.0"],
       typeSpeed: 150,
       backSpeed: 50,
@@ -75,23 +92,5 @@
       cursorChar: '|',
       autoInsertCss: true,
     });
-    particlesJS.load('particles-js', 'particles.json', function () {
-      console.log("particles.json loaded")
-    })
-
-  </script>
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <link rel="stylesheet" href="css/animate.css">
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" cross-origin="anonymous"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-  {{!-- <script type="text/javascript" src="/js/typed.js"></script> --}}
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="particles.js"></script>
-</body>
-
-
-
-{{!-- Notes for work in progress --}}
-{{!-- Footer doesn't want to move down to the bottom, need to send me the particles.js files so we can incorporate that, looks great! --}}
+  });
+</script>
