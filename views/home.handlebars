@@ -30,6 +30,7 @@
       <li><a href="/iss">ISS</a></li>
       <li><a href="/astronomy">APOTD</a></li>
     </ul>
+    <div class="navbar-item" id="user-name"></div>
   </nav>
 </header>
 
@@ -94,3 +95,24 @@
     });
   });
 </script>
+
+
+  {{!-- local storage --}}
+  <script>
+
+
+    //check for user email in localStorage
+    //if exists, use email to call getUserData and display first/last name in our div
+    //else, redirect to sign up page (window.location)
+
+    function getUserData(email) {
+      // GET request to figure out which user is logged in
+      // and update the HTML on the page
+      if (email) {
+        $.get("/api/users/" + email).then(function (data) {
+          $("#user-name").text(data.name, data.lastname);
+        });
+      }
+    }
+
+  </script>

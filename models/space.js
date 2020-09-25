@@ -23,7 +23,19 @@ module.exports = function(sequelize, DataTypes) {
          msg: "Please provide your lastname"
        },
      }
-    } 
+    },
+    
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isEmail: true,
+        notEmpty: {
+          args: true,
+          msg: "Please provide your email"
+        },
+      }
+    }
       
     
   });
