@@ -13,6 +13,22 @@ li, a, button {
 
 }
 
+#big {
+    color: 	#282828;
+    background-color: #282828;
+    text-align: right;
+}
+
+#bottom {
+    font-stretch: expanded;
+   font-size: 100%;
+    font-family:'Space Mono', monospace;
+    color: whitesmoke;
+    font-size: 10px;
+    text-shadow: 0 2px 5px rgba(0,0, 0, 5);
+
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -67,11 +83,6 @@ button:hover {
     background-color: rgba(0,136,169,0.8);
 }
 
-#particles-js {
-    background-color: rgb(3, 4, 27);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 
 html, body {
@@ -97,7 +108,7 @@ h1 {
     padding: 0;
     font-family:'Space Mono', monospace;
     color: whitesmoke;
-    font-size: 50px;
+    font-size: 10px;
     text-shadow: 0 2px 5px rgba(0,0, 0, 5);
 }
 
@@ -112,7 +123,7 @@ h2 {
     font-family:'Space Mono', monospace;
     font-style: italic;
     color: whitesmoke;
-    font-size: 10px;
+    font-size: 5px;
     text-shadow: 0 2px 5px rgba(0,0, 0, 5);
 }
 
@@ -135,7 +146,7 @@ h3 {
     font-family:'Space Mono', monospace;
     font-style: italic;
     color: whitesmoke;
-    font-size: 10px;
+    font-size: 5px;
     text-shadow: 0 2px 5px rgba(0,0, 0, 5);
 }
 
@@ -151,14 +162,4 @@ h3 {
     font-size: 30px;;
 }
 
-#footer {
-    background: black;
-    color: lightslategray;
-    position: relative;
-    height: 100px;
-    margin-top: -100px;
-    clear: both;
-    text-align: center;
-    padding: 50px 30px;
-    
-}
+
