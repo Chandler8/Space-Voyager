@@ -1,29 +1,37 @@
-const express = require('express');
-const app = express();
-const axios = require('axios');
+// Requiring necessary npm packages
+const express = require("express");
+const session = require("express-session");
 const nodemon = require('nodemon');
-const planetList = ["EARTH", "SATURN", "MARS", "URANUS", "VENUS", "NEPTUNE", "JUPITER", "MERCURY"];
-const api_key = process.env.api_key;
-const db = require('./models');
+// Requiring passport as we've configured it
+const passport = require("./config/passport");
 require('dotenv').config();
-require("./routes/api-routes.js")(app);
 
-// Blast off!
-app.use(express.static('public'));
+// Setting up port and requiring models for syncing
+const PORT = process.env.PORT || 8080;
+const db = require("./models");
 
-// Parse the body as JSON
+// Creating express app and configuring middleware needed for authentication
+const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
+// We need to use sessions to keep track of our user's login status
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Bring in Handlebars
 const exphbs = require('express-handlebars');
 
+
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-// Allow server to grab any port, but set 7000 as standard default
-const PORT = process.env.PORT || 8080;
-
+// Requiring our routes
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 // Start Server
 db.sequelize.sync({ force: true }).then(function () {
