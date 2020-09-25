@@ -58,7 +58,7 @@ module.exports = function(app) {
       });
     }
   });
-};
+
 
 // Home Page
 
@@ -319,6 +319,7 @@ function photo_api(picAPI) {
     res.render('gallery', results);
   });
 
+};
 
   // FOR THE LOVE OF GOD AND ALL THAT IS HOLY, DONT DO THIS!!!!!!
 
