@@ -3,3 +3,328 @@
 *{
     opacity: 70%;
 }; */
+
+
+
+/* Trying to fix position of table contents but it only moves the pic, not the table info */
+.aligncenter {
+    opacity: 100%;
+      /* text-align: center; */
+  }
+  
+  /* Need the items to move from left to right instead of bunching on the right! */
+  .tbody, .row-1, .row-2, .row-3, .row-4, .row-5, .row-6, .row-7 {
+      height: 2.6em;
+      /* display: flex;
+      align-items: center;
+      justify-content: left;
+      text-align: center;
+          /* text-align: center; */
+      /* float: right; */
+  }
+  
+  
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    text-align: center;
+    padding:30px 10%;
+    background-color: #24252a;
+    background-image: url("/images/starspace.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  
+  /* Countdown */
+  .countdown_clock {
+    font-family:'Space Mono', monospace;	
+    color: whitesmoke;
+    width: auto;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 200%;
+    text-shadow: 1px 1px 2px rgba(102, 102, 102, 0.8);
+    display: inline-block;
+    vertical-align: top;
+  
+  }
+  .countdown_clock .date {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    line-height: 33px;
+    padding: 0 20px 0 10px;
+    border-right: rgba(255, 255, 255, 0.5) solid 1px;
+    color: #dcc5aa;
+  }
+  .countdown_clock .month {
+    letter-spacing: -3px;
+  }
+  .countdown_clock .countdown-container {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto !important;
+  }
+  .countdown_clock .date span {
+    font-weight: 600;
+    display: block;
+  }
+  .countdown_clock .countdown_time {
+    padding: 0;
+  }
+  .countdown_clock .countdown_time .unit {
+    font-size: 1.3em;
+    font-weight: 500;
+  }
+  .countdown_clock .countdown_title {
+    color: white !important;
+  }
+  .countdown_clock .countdown_title {
+    margin: 0;
+    padding: 5px 0 3px;
+  }
+  .header-more {
+    width: 100%;
+    position: absolute;
+    padding: 10px 0 5px;
+    bottom: 0;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    z-index: 11;
+  }
+  .header-more.blink {
+    animation: blink 5s linear infinite;
+  }
+  
+  
+  #buttons {
+  color: whitesmoke;
+  }
+  
+  button {
+    color: #2372cc;
+  }
+  
+  body h1 {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family:'Space Mono', monospace;
+    color: whitesmoke;
+    font-size: 50px;
+    text-shadow: 0 2px 5px rgba(0,0, 0, 5);
+  }
+  
+  
+  #whoa {
+    color: whitesmoke;
+  }
+  
+  #cap {
+    color: whitesmoke;
+  }
+  body h2 {
+    position: absolute;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding-right: 30%;
+    padding-left: 30%;
+    font-family:'Space Mono', monospace;
+    font-style: italic;
+    color: whitesmoke;
+    font-size: 15px;
+  }
+  
+  #plotly {
+    position: absolute;
+    text-align: center;
+    margin: 0;
+    font-family:'Space Mono', monospace;
+    font-style: italic;
+    color: whitesmoke;
+    text-shadow: 0 2px 5px rgba(0,0, 0, 5);
+  }
+  
+  
+  h3 {	
+    font-family:'Space Mono', monospace;	
+    color: whitesmoke;	
+    font-size: 50px;	
+    text-shadow: 0 2px 5px rgba(0,0, 0, 5);	
+    width: 100%;	
+    text-align: center;	
+    margin: 0;	
+    padding: 0;	
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  /* Box sizing/cards */
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {
+    margin: 0 -5px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: 	#282828;
+  }
+  
+  .tablepress-comp-mars {
+    opacity: 34%;
+  }
+  
+  
+  /* Facts Card */
+  #Quick-Facts {
+    background-image: url("/images/mars-rover-ground5.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-attachment: fixed;
+  
+  }
+  #Quick-Facts {
+    background-image: url("/images/mars-rover-ground5.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-attachment: fixed;
+    background-image: none;
+  }
+  #Quick-Facts .subtitle {
+    z-index: 12;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #Quick-Facts .rover {
+    background-image: url("/images/mars-rover-ground5.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    min-height: 800px;
+    max-width: 1800px;
+    width: 100%;
+    background-position: bottom left;
+  }
+  #Quick-Facts .rover {
+    background-image: url("/images/mars-rover-ground5.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 800px;
+    width: 100%;
+    min-width: 100%;
+    background-position: bottom left;
+    margin-top: 75px;
+    position: relative;
+  }
+  #Quick-Facts ul {
+    max-width: 600px;
+    transition: transform 500ms ease 0s;
+  }
+  #Quick-Facts ul li {
+    margin-bottom: 3%;
+    font-size: 17px;
+  }
+  
+  #Quick-Facts .text-overlay.right-box {
+   float: left;
+  }
+  @media only screen and (min-width: 1350px) {
+    #Quick-Facts ul {
+      left: 10%;
+      position: relative;
+    }
+    .home_dashboard {
+      margin-top: -145px;
+      height: 150px;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    #Quick-Facts .rover {
+      min-height: 700px;
+    }
+    #Quick-Facts .text-overlay.right-box {
+      width: calc(100% - 480px);
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    #Quick-Facts .rover {
+      height: 100vh;
+      min-height: 740px;
+    }
+    #Quick-Facts .factsheet a {
+      background-color: transparent;
+      color: #2372cc !important;
+      text-transform: capitalize;
+      text-align: left;
+    }
+    #Quick-Facts .text-overlay.right-box {
+      width: 100%;
+      padding: 100px 20px 20px;
+      background: rgba(255, 255, 255, 0.8);
+      /* background: linear-gradient(to top, white 0%, rgba(255, 255, 255, 0.7) 35%, rgba(255, 255, 255, 0.5) 47%, rgba(255, 255, 255, 0.382) 56.6%, rgba(255, 255, 255, 0.278) 65%, rgba(255, 255, 255, 0.25) 75%, rgba(255, 255, 255, 0.18) 80%, rgba(255, 255, 255, 0.13) 86%, rgba(255, 255, 255, 0.08) 89%, rgba(255, 255, 255, 0.05) 91%, rgba(255, 255, 255, 0.03) 95.2%, rgba(255, 255, 255, 0.002) 98.2%, transparent 100%); */
+      height: 100%;
+      top: 0;
+      font-size: 1.2em;
+    }
+    #Quick-Facts ul li {
+      margin-bottom: 3%;
+    }
+    #Quick-Facts ul {
+      left: 0;
+    }
+  }
+  
