@@ -7,6 +7,8 @@ const api_key = process.env.api_key;
 const db = require('./models');
 require('dotenv').config();
 require("./routes/api-routes.js")(app);
+require("./routes/user-routes.js")(app);
+
 
 // Blast off!
 app.use(express.static('public'));

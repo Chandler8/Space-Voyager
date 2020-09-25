@@ -1,2 +1,90 @@
 {{!-- This will be our container, and styling below will follow --}}
-<link rel="stylesheet" href="/css/style.css" type="text/css">
+{{!-- <link rel="stylesheet" href="/css/style.css" type="text/css"> --}}
+
+<link rel="stylesheet" href="/css/register.css" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Hammersmith+One&display=swap" rel="stylesheet">
+​
+​
+<div class="button">
+    <button><span>Become A Space Voyager</span></button>
+</div>
+​
+<div class="popup">
+    <div class="content">
+        <div class="container">
+            <div class="circles">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                ​
+            </div>
+            <span class="closebtn">&#9932;</span>
+
+            <div class="title">
+                <h1>Become A Space Voyager</h1>
+            </div>
+
+            <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg" alt="Car">
+
+            <div class="subscribe">
+                <h1>Register To Become A Space Voyager <span>Today!</span></h1>
+
+                <form class="signup">
+                    <div class="form-row align-items-center">
+                        <div class="col-sm-3 my-1">
+                            <label class="sr-only" for="user-input">First Name</label>
+                            <input type="text" class="form-control" id="user-input" placeholder="Jonathan">
+                        </div>
+                        <br>
+                        <br>
+                        <br> <br>
+
+                        <div class="col-sm-3 my-1">
+                            <label class="sr-only" for="lastname-input">Last Name</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+
+                                    <input type="text" class="form-control" id="lastname-input"
+                                        placeholder="Davila">
+                                </div>
+                            </div>
+                        </div>
+
+                           <div class="col-sm-3 my-1">
+                            <label class="sr-only" for="email-input">Email</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+
+                                    <input type="text" class="form-control" id="email-input"
+                                        placeholder="Davila101@gmail.com">
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-auto my-">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script>
+
+    $('button').click(function () {
+        $('.popup').addClass('open');
+    });
+
+    $('.popup .closebtn').click(function () {
+        $('.popup').removeClass('open');
+    });
+
+</script>
+​

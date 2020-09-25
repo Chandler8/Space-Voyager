@@ -24,7 +24,8 @@ module.exports = function(sequelize, DataTypes) {
        },
      }
     } 
-      
+      // Add an email field
+      // Update user route
     
   });
   return Users;
