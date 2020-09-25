@@ -5,6 +5,11 @@
     padding:0;
 }
 
+#copy {
+opacity: 40%;
+font-size: 45%;
+}
+
 body {
     text-align: center;
    margin: auto;

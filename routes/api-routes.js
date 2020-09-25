@@ -16,14 +16,20 @@ module.exports = function(app) {
 // Home Page
 
     //   Home GET route
+    app.get('/', (req, res) => {
+      res.redirect('/register');
+    });
+  
+  app.get('/register', (req, res) => {
+    res.render('register')
+});
+
+// Register Route
+  
+// Register GET route
   app.get('/home', (req, res) => {
     res.render('home')
 });
-  
-//   // Home POST route
-//   app.post('/home', (req, res) => {
-//     res.render('home')
-// });
 
     // Astronomy pic of the day API w/ GET and POST routes
 function call_api(finishedAPI) {
@@ -117,6 +123,8 @@ function solarSystem_api(solarApi) {
   
   });
 
+  // Solar switch case
+
 function addImageURL(bodyObject) {
   let route;
   switch (bodyObject.englishName.toUpperCase()) {
@@ -166,57 +174,6 @@ function addImageURL(bodyObject) {
 
 
 // ISS API
-
-// var map = L.map('map').setView([0,0], 2);
-
-
-// function moveISS () {
-//     request('http://api.open-notify.org/iss-now.json?callback=?', function(data) {
-//         var lat = data['iss_position']['latitude'];
-//         var lon = data['iss_position']['longitude'];
-
-//         iss.setLatLng([lat, lon]);
-//         isscirc.setLatLng([lat, lon]);
-//         map.panTo([lat, lon], animate=true);
-//     });
-//     setTimeout(moveISS, 5000); 
-// }
-
-// //   Grabbing parsed JSON
-// const fetchIssInfo = async (url) => {
-//     console.log(`Fetching ${url}`)
-//     const issInfo = await axios(url)
-//     return issInfo;
-//   };
-  
-//   const fetchIntInfo = async (tickers) => {
-//     const url = `http://api.open-notify.org/iss-now.json?callback=?`
-//     return fetchIssInfo(url)
-//       .then((res) => {
-//         return res
-//       })
-//   };
-  
-// L.tileLayer('/images/map/tiles/{z}/{x}/{y}.png', {
-//     maxZoom: 4,
-// }).addTo(map);
-
-// var ISSIcon = L.icon({
-//     iconUrl: '/images/map/ISSIcon.png',
-//     iconSize: [50, 30],
-//     iconAnchor: [25, 15],
-//     popupAnchor: [50, 25],
-//     shadowUrl: '/images/map/ISSIcon_shadow.png',
-//     shadowSize: [60, 40],
-//     shadowAnchor: [30, 15]
-// });
-
-
-// var iss = L.marker([0, 0], {icon: ISSIcon}).addTo(map);
-// var isscirc = L.circle([0,0], 2200e3, {color: "#c22", opacity: 0.3, weight:1, fillColor: "#c22", fillOpacity: 0.1}).addTo(map); 
-
-// moveISS();
-
   
 //   ISS GET route
   app.get('/iss', (req, res) => {
@@ -226,15 +183,6 @@ function addImageURL(bodyObject) {
     res.render('iss');
   });
   
-  // // ISS POST route
-  // app.post('/iss', (req, res) => {
-  //   // const data = fetchIntInfo(sp);
-  //   // results.response = data;
-  //   // console.log(results);
-  //   res.render('iss');
-  // });
-
-  // app.get'/*' (do at very end of routes.html page)
 
 // Mars Page
 
@@ -324,6 +272,14 @@ function photo_api(picAPI) {
     res.render('gallery', results);
   });
 
+
+  // FOR THE LOVE OF GOD AND ALL THAT IS HOLY, DONT DO THIS!!!!!!
+
+  // app.get('*', (req, res) => {
+  //   //if the user types in a route that doesn't exist, send a 404 page
+  //   //(we need to create a 404.handlebars file)
+  //   res.render('404')
+  // });
 
 }
 
