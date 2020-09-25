@@ -34,7 +34,7 @@ header {
 .nav_links {
     list-style:none;
     margin-left: 100px;
-    padding-right: 280px;
+    padding-right: 290px;
     
 }
 
@@ -57,7 +57,7 @@ header {
 }
 
 #particles-js {
-    background-color: black;
+    background-image: url("../images/starspace.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: 20px;
@@ -102,7 +102,7 @@ body h2 {
     font-family:'Space Mono', monospace;
     font-style: italic;
     color: whitesmoke;
-    font-size: 10px;
+    font-size: 15px;
     text-shadow: 0 2px 5px rgba(0,0, 0, 5);
 }
 
