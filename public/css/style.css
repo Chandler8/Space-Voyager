@@ -16,7 +16,7 @@ li, a, button {
 
 header {
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items:center;
     text-align: center;
     padding:30px 10%;
@@ -34,8 +34,7 @@ header {
 
 .nav_links {
     list-style:none;
-    margin-left: 100px;
-    padding-right: 290px;
+
     
 }
 
@@ -135,6 +134,15 @@ body h2 {
     text-align: center;
     background-position-y: 80px;
     
+}
+
+
+button {
+  padding: 9px 25px;
+  background-color: #24252a;
+  border: none;
+  border-radius: 50px;
+  cursor: url(“../images/rocket.png”), auto;
 }
 
 

@@ -10,6 +10,11 @@ opacity: 40%;
 font-size: 45%;
 }
 
+#grey {
+    background-color: #24252a;
+
+}
+
 body {
     text-align: center;
    margin: auto;
