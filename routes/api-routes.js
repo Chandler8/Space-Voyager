@@ -8,9 +8,7 @@ const planetList = ["EARTH", "SATURN", "MARS", "URANUS", "VENUS", "NEPTUNE", "JU
 const api_key = process.env.api_key;
 const passport = require("../config/passport");
 const db = require('../models')
-// const L = require('leaflet');
-// console.log(L);
-// Exporting of module to server //
+
 
 module.exports = function (app) {
 
@@ -61,23 +59,6 @@ module.exports = function (app) {
   });
 
 
-  // Home Page
-
-  // //   Home GET route
-  // app.get('/', (req, res) => {
-  //   res.redirect('/register');
-  // });
-
-  //   app.get('/register', (req, res) => {
-  //     res.render('register')
-  // });
-
-  // // Register Route
-
-  // // Register GET route
-  //   app.get('/home', (req, res) => {
-  //     res.render('home')
-  // });
 
   // Astronomy pic of the day API w/ GET and POST routes
   function call_api(finishedAPI) {
