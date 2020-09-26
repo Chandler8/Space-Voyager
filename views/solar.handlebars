@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="/css/solar.css" type="text/css">
 {{!-- <link rel="stylesheet" href="/css/style.css" type="text/css"> --}}
-
 <header>
   <img class="logo" src="/images/sv3.jpg" width="100" height="100" alt="logo">
   <nav>
@@ -13,7 +12,6 @@
     </ul>
   </nav>
 </header>
-
 {{!-- Build out Solar API info here --}}
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
@@ -26,32 +24,29 @@
         {{/unless}}
         <img class="d-block rounded w-100" src={{image_url}} alt="Planets" />
         <div class="carousel-caption d-none d-md-block">
-          <h1>{{englishName}}</h1>
-          <h3>Moons: {{moons.length}}</h3>
-          <h3>Gravity: {{gravity}}</h3>
-
-
+          <h2 id="name">{{englishName}}</h2>
+          <h3 id="moons">Moons: {{moons.length}}</h3>
+          <h3 id="gravity">Gravity: {{gravity}}</h3>
         </div>
       </div>
       {{/each}}
       <div class="carousel-item">
         <img class="d-block rounded w-100" src="/images/moon.jpg" alt="The Moon" />
         <div class="carousel-caption d-none d-md-block">
-          <h2>The Moon</h2>
+          <h2 id="moon">The Moon</h2>
         </div>
       </div>
-
       <div class="carousel-item">
         <img class="d-block rounded w-100" src="/images/sun.jpg" alt="The Sun" />
         <div class="carousel-caption d-none d-md-block">
-          <h2>The Sun</h2>
+          <h2 id="sun">The Sun</h2>
         </div>
       </div>
     </div>
     <div class="carousel-item">
       <img class="d-block rounded w-100" src="/images/pluto.jpg" alt="Pluto" />
       <div class="carousel-caption d-none d-md-block">
-        <h2>Pluto</h2>
+        <h2 id="pluto">Pluto</h2>
       </div>
     </div>
   </div>
@@ -64,140 +59,144 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
 <br>
 <br>
-
 <br>
 <br>
 
 
 {{!-- Cards layout goes below --}}
-​
-<!--Earth-->
+​<!--Earth-->
 <div class="container">
   <div class="row">
-    <div class="col-lg-5">
+    <div class="col col-md-6">
       <div class="card">
         <img src="/images/earth.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Earth "Our Home Planet"</h5>
-          <p class="card-text">Our home planet is the third planet from the Sun, and the only place we know of so far
-            that’s inhabited by living things.</p>
-          <ul>
-            <li>The Earth’s rotation is gradually slowing.</li>
+          <h5 class="card-title">
+            <center>Earth "Our Home Planet"
+          </h5>
+          </center>
+          <ul class="card-text">
+            <li>The Earth's rotation is gradually slowing.</li>
             <li>The Earth was once believed to be the center of the universe.</li>
             <li>Earth has a powerful magnetic field.</li>There is only one natural satellite of the planet Earth.</li>
             <li>Earth is the only planet not named after a god.</li>
             <li>The Earth is the densest planet in the Solar System.</li>
           </ul>
-          <a href="https://solarsystem.nasa.gov/planets/earth/overview/" target="_blank" class="btn btn-primary">Explore
-            More...</a>
+          <center><a href="https://solarsystem.nasa.gov/planets/earth/overview/" target="_blank"
+              class="btn btn-primary explore">Explore
+              More...</a></center>
         </div>
       </div>
     </div>
-
     <!--Mars-->
-    <div class="col-lg-5">
+    <div class="col col-md-6">
       <div class="card">
         <img src="/images/mars-1.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Mars "The Red Planet"</h5>
+          <h5 class="card-title">
+            <center>Mars "The Red Planet"
+          </h5>
+          </center>
           <ul class="card-text">
-
             <li>Mars and Earth have approximately the same landmass.</li>
             <li>Mars is home to the tallest mountain in the solar system.</li>
             <li>Only 26 out of 56 missions to Mars have been successful.</li>
             <li>Mars has the largest dust storms in the solar system.</li>
             <li>Pieces of Mars have fallen to Earth.</li>
           </ul>
-          <a href="https://solarsystem.nasa.gov/planets/mars/overview/" target="_blank" class="btn btn-primary">Explore
-            More...</a>
+          <center><a href="https://solarsystem.nasa.gov/planets/mars/overview/" target="_blank"
+              class="btn btn-primary explore">Explore
+              More...</a></center>
         </div>
       </div>
     </div>
-
-<br>
-<br>
-
-    <!--Mercury-->
-    <div class="row">
-      <div class="col-lg-5">
-        <div class="card">
-          <img src="/images/mercury-2.jpg" height="500px" width="380px" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Mercury "The Swiftest Planet"</h5>
-            <ul class="card-text">
-              <li>Mercury does not have any moons or rings.</li>
-              <li>Mercury is the smallest planet.</li>
-              <li>Mercury is the closest planet to the Sun.</li>
-              <li>A day on the surface of Mercury lasts 176 Earth days.</li>
-              <li>A year on Mercury takes 88 Earth days.</li>
-            </ul>
-
-            <a href="https://solarsystem.nasa.gov/planets/mercury/overview/" target="_blank"
-              class="btn btn-primary">Explore More...</a>
-          </div>
+  </div>
+  <br>
+  <br>
+  <!--Mercury-->
+  <div class="row">
+    <div class="col col-md-6">
+      <div class="card">
+        <img src="/images/mercury-1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+            <center>Mercury "The Swiftest Planet"
+          </h5>
+          </center>
+          <ul class="card-text">
+            <li>Mercury does not have any moons or rings.</li>
+            <li>Mercury is the smallest planet.</li>
+            <li>Mercury is the closest planet to the Sun.</li>
+            <li>A day on the surface of Mercury lasts 176 Earth days.</li>
+            <li>A year on Mercury takes 88 Earth days.</li>
+          </ul>
+          <center> <a href="https://solarsystem.nasa.gov/planets/mercury/overview/" target="_blank"
+              class="btn btn-primary explore">Explore More...</a></center>
         </div>
       </div>
     </div>
-
     <!--Venus-->
-    <div class="col-lg-5">
+    <div class="col col-md-6">
       <div class="card">
         <img src="/images/venus.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Venus "Planetary Hot Spot"</h5>
+          <h5 class="card-title">
+            <center>Venus "Planetary Hot Spot"
+          </h5>
+          </center>
           <ul class="card-text">
-
             <li>Venus does not have any moons or rings.</li>
             <li>Venus is nearly as big as the Earth with a diameter of 12,104 km.</li>
             <li>Venus is thought to be made up of a central iron core, rocky mantle and silicate crust.</li>
             <li>A day on the surface of Venus, a solar day, would appear to take 117 Earth days.</li>
             <li>The surface temperature on Venus can reach 471 °C.</li>
           </ul>
-          <a href="https://solarsystem.nasa.gov/planets/venus/overview/" target="_blank" class="btn btn-primary">Explore
-            More...</a>
+          <center><a href="https://solarsystem.nasa.gov/planets/venus/overview/" target="_blank"
+              class="btn btn-primary explore">Explore
+              More...</a></center>
         </div>
       </div>
     </div>
   </div>
-
-<br>
-<br>
-
+  <br>
+  <br>
   <!--Saturn-->
   <div class="row">
-    <div class="col-lg-5">
+    <div class="col col-md-6">
       <div class="card">
         <img src="/images/saturn.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Saturn "Jewel of Our Solar System"</h5>
+          <h5 class="card-title">
+            <center>Saturn "Jewel of Our Solar System"
+          </h5>
+          </center>
           <ul class="card-text">
-
-            <li>Saturn takes about 10.7 hours to rotate on itsaxis once—a Saturn “day”—and 29
+            <li>Saturn takes about 10.7 hours to rotate on itsaxis once—a Saturn "day"—and 29
               Earth years to orbit the sun.</li>
-            <li>Saturn is a gas-giant planet and therefore does not have a solid surface like Earth’s.</li>
+            <li>Saturn is a gas-giant planet and therefore does not have a solid surface like Earth's.</li>
             <li>Saturn has the most spectacular ring system, with seven rings and several gaps and divisions between
               them.</li>
             <li>Saturn has 53 known moons with an additional 29 moons awaiting confirmation of their discovery—that is
               a total of 82 moons.</li>
             <li>Four spacecraft have visited Saturn</li>
           </ul>
-          <a href="https://solarsystem.nasa.gov/planets/saturn/overview/" target="_blank"
-            class="btn btn-primary">Explore More...</a>
+          <center><a href="https://solarsystem.nasa.gov/planets/saturn/overview/" target="_blank"
+              class="btn btn-primary explore">Explore More...</a></center>
         </div>
       </div>
     </div>
-
     <!--Uranus-->
-    <div class="col-lg-5">
+    <div class="col col-md-6">
       <div class="card">
         <img src="/images/uranus.webp" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Uranus "The Sideways Planet"</h5>
+          <h5 class="card-title">
+            <center>Uranus "The Sideways Planet"
+          </h5>
+          </center>
           <ul class="card-text">
-
             <li>Uranus was officially discovered by Sir William Herschel in 1781.</li>
             <li>Voyager 2 is the only spacecraft to fly by Uranus. No spacecraft has orbited this distant planet to
               study it at length and up close.</li>
@@ -205,109 +204,108 @@
             <li>Uranus has 27 known moons, and they are named after characters from the works of William Shakespeare and
               Alexander Pope.</li>
             <li>Uranus hits the coldest temperatures of any planet.</li>
+            <li>Uranus makes one trip around the Sun every 84 Earth years.</li>
           </ul>
-          <a href="https://solarsystem.nasa.gov/planets/uranus/overview/" target="_blank"
-            class="btn btn-primary">Explore More...</a>
+          <center><a href="https://solarsystem.nasa.gov/planets/uranus/overview/" target="_blank"
+              class="btn btn-primary explore">Explore More...</a></center>
         </div>
       </div>
     </div>
-
-
-<br>
-<br>
-
-    <!--Neptune-->
-    <div class="row">
-      <div class="col-lg-5">
-        <div class="card">
-          <img src="/images/neptune.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Neptune "The Windiest Planet" </h5>
-            <ul class="card-text">
-
-              <li>Neptune is about four times wider than Earth. If Earth were a large apple, Neptune would be the size
-                of a basketball.</li>
-              <li>Neptune is the most distant planet from the Sun.</li>
-              <li>Neptune is the smallest gas giant.</li>
-              <li>A year on Neptune lasts 165 Earth years.</li>
-              <li>Neptune is named after the Roman god of the sea.</li>
-            </ul>
-            <a href="https://solarsystem.nasa.gov/planets/neptune/overview/" class="btn btn-primary">Explore More...</a>
-          </div>
+  </div>
+  <br>
+  <br>
+  <!--Neptune-->
+  <div class="row">
+    <div class="col col-md-6">
+      <div class="card">
+        <img src="/images/neptune.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+            <center>Neptune "The Windiest Planet"
+          </h5>
+          </center>
+          <ul class="card-text">
+            <li>Neptune is about four times wider than Earth. If Earth were a large apple, Neptune would be the size
+              of a basketball.</li>
+            <li>Neptune is the most distant planet from the Sun.</li>
+            <li>Neptune is the smallest gas giant.</li>
+            <li>A year on Neptune lasts 165 Earth years.</li>
+            <li>Neptune is named after the Roman god of the sea.</li>
+          </ul>
+          <center><a href="https://solarsystem.nasa.gov/planets/neptune/overview/" class="btn btn-primary explore">Explore
+              More...</a></center>
         </div>
       </div>
     </div>
-
-
     <!--Jupiter-->
-    <div class="col-lg-5">
+    <div class="col col-md-6">
       <div class="card">
         <img src="/images/jupiter-1.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Jupiter "The Largest Planet"</h5>
+          <h5 class="card-title">
+            <center>Jupiter "The Largest Planet"
+          </h5>
+          </center>
           <ul class="card-text">
             <li>Jupiter is the biggest planet in our solar system.</li>
-            <li> It’s similar to a star, but it never got big enough to start burning.</li>
-            <li>Eleven Earths could fit across Jupiter’s equator.</li>
+            <li> It's similar to a star, but it never got big enough to start burning.</li>
+            <li>Eleven Earths could fit across Jupiter's equator.</li>
             <li>If Earth were the size of a grape, Jupiter would be the size of a basketball.</li>
             <li>Jupiter has more than 75 moons.</li>
           </ul>
-          <a href="https://solarsystem.nasa.gov/planets/earth/overview/" target="_blank" class="btn btn-primary">Explore
-            More...</a>
+          <center><a href="https://solarsystem.nasa.gov/planets/earth/overview/" target="_blank"
+              class="btn btn-primary explore">Explore
+              More...</a></center>
         </div>
       </div>
     </div>
-
-
-    <!--Pluto-->
-    {{!-- RIP --}}
-
-
+  </div>
 <br>
 <br>
-
-    <!--Earth's Moon-->
-    <div class="row">
-      <div class="col-lg-5">
-        <div class="card">
-          <img src="/images/moon.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Earth's Moon "Our Natural Satellite"</h5>
-            <ul class="card-text">
-              <li>The dark side of the moon is a myth.</li>
-              <li>The rise and fall of the tides on Earth is caused by the Moon.</li>
-              <li>The Moon is drifting away from the Earth.</li>
-              <li>The Moon has only been walked on by 12 people; all American men.</li>
-              <li>The first spacecraft to reach the Moon was Luna 1 in 1959</li>
-            </ul>
-            <a href="https://solarsystem.nasa.gov/moons/earths-moon/overview/" target="_blank"
-              class="btn btn-primary">Explore More...</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!--The Sun-->
-    <div class="col-lg-5">
+  <!--Earth's Moon-->
+  <div class="row">
+    <div class="col col-md-6">
       <div class="card">
-        <img src="/images/sun.png" class="card-img-top" alt="...">
+        <img src="/images/moon.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">The Sun "Our Star"</h5>
+          <h5 class="card-title">
+            <center>Earth's Moon "Our Natural Satellite"
+          </h5>
+          </center>
           <ul class="card-text">
-            <li>The Sun is all the colors mixed together this appears white to our eyes.</li>
+            <li>The dark side of the moon is a myth.</li>
+            <li>The rise and fall of the tides on Earth is caused by the Moon.</li>
+            <li>The Moon is drifting away from the Earth.</li>
+            <li>The Moon has only been walked on by 12 people; all American men.</li>
+            <li>The first spacecraft to reach the Moon was Luna 1 in 1959</li>
+          </ul>
+          <center><a href="https://solarsystem.nasa.gov/moons/earths-moon/overview/" target="_blank"
+              class="btn btn-primary explore">Explore More...</a></center>
+        </div>
+      </div>
+    </div>
+    <!--The Sun-->
+    <div class="col col-md-6">
+      <div class="card">
+        <img src="/images/sun.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+            <center>The Sun "Our Star"
+          </h5>
+          </center>
+          <ul class="card-text">
             <li>The Sun is composed of hydrogen 70% and Helium 28%.</li>
             <li>The Sun is 109 times wider than the Earth and 330,000 times as massive.</li>
             <li>One million Earths could fit inside the Sun.</li>
             <li>The distance between the Earth and the Sun is an Astronomical Unit</li>
+            <li>One million Earths could fit inside the Sun.</li>
           </ul>
-          <a href="https://solarsystem.nasa.gov/solar-system/sun/overview/" target="_blank"
-            class="btn btn-primary">Explore More...</a>
+          <center><a href="https://solarsystem.nasa.gov/solar-system/sun/overview/" target="_blank"
+              class="btn btn-primary explore">Explore More...</a></center>
         </div>
       </div>
     </div>
-  </div>​
-
+  </div>
   {{!-- Card Layout --}}
 
   <br>
@@ -318,18 +316,15 @@
   {{!-- Footer --}}
   <footer>
     <div id="footer">
-
       <div class="social-media container has-text-centered">
         <a href="https://github.com/Chandler8/Space-Voyager" target="_blank"><i
             class="fab fa-github-square fa-4x"></i></a>
         <a href="https://www.nasa.gov/" target="_blank"><i class="fas fa-user-astronaut fa-3x"></i></a>
         <a href="" target="_blank"><i class="fab fa-reddit-square fa-4x"></i></a>
       </div>
-
       <div class="copyWrite-container">
         &copy;
         <script>document.write(new Date().getFullYear());</script>, The Flawless Squirrels
       </div>
-
     </div>
   </footer>
