@@ -1,9 +1,11 @@
-# The Flawless Squirrels 
+# Space Voyager 3.0
 
-1. Concept - 
+##Description
 
-    - This application allows the user to locate and view any part of the solar system you desire using the NASA API which will integrate Earth's weather patterns such as climate, storm tracking, etc. in your local area in real time. This is an environmental type app that provides solar system imagery along with helping you stay current on weather events near or around your chosen area, keeping you safe and up to date. 
-    (also currently known as, *THE NASA PLUG, by Jack)
+    Become a space voyager with this fun and interactive application. This website allows the user to register to become on official member of SV3. When the user registers it will then take them to the home page which will guide them to different sites including a page dedicated to life on Mars, a Planet Page which provides different information regarding the star, moon, & planets of our solar system, an ISS (international space station) Page that allows the user to view the location of where it is in real time, and the astronomy picture of the day (APOTD) page. 
+
+    While this application 
+
 
 2. API's - 
     - main API: NASA API 

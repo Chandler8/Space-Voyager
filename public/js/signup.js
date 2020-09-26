@@ -1,87 +1,43 @@
-$(document).ready(function () {
-
-  let signUpForm = $('form.signup')
-  let nameInput = $('#user-input');
-  let lastnameInput = $('#lastname-input');
-  let emailInput = $('#email-input');
-
-
+$(document).ready(() => {
+  // Getting references to our form and input
+  const signUpForm = $("form.signup");
+  const emailInput = $("input#email-input");
+  const passwordInput = $("input#password-input");
 
   // When the signup button is clicked, we validate the email and password are not blank
-  signUpForm.on("submit", function (event) {
+  signUpForm.on("submit", event => {
     event.preventDefault();
-    var userData = {
-      name: nameInput.val().trim(),
-      lastname: lastnameInput.val().trim(),
-      email: emailInput.val().trim()
+    const userData = {
+      email: emailInput.val().trim(),
+      password: passwordInput.val().trim()
     };
 
-    //if empty return
-    if (!userData.name || !userData.lastname || !userData.email) {
+    if (!userData.email || !userData.password) {
       return;
     }
-    // If we have a name and lastname, run function
-    registerUser(userData.name, userData.lastname, userData.email);
-    nameInput.val("");
-    lastnameInput.val("");
+    // If we have an email and password, run the signUpUser function
+    signUpUser(userData.email, userData.password);
     emailInput.val("");
+    passwordInput.val("");
   });
 
-  // Post to the signup route. If successful, we are redirected to the home page
-  function registerUser(name, lastname, email) {
+  // Does a post to the signup route. If successful, we are redirected to the members page
+  // Otherwise we log any errors
+  function signUpUser(email, password) {
     $.post("/api/signup", {
-      name: name,
-      lastname: lastname,
-      email: email
+      email: email,
+      password: password
     })
-
-      .then(function (data) {
-      
-        //add email to localStorage
-        // localStorage.setItem
+      .then(() => {
+        console.log("success");
         window.location.replace("/home");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
-
+      .catch(handleLoginErr);
   }
-  
-  renderLastRegistered();
-  function displayMessage(type, message) {
-    msgDiv.textContent = message;
-    msgDiv.setAttribute("class", type);
-  }
-  function renderLastRegistered() {
-    var email = localStorage.getItem("email");
-  
-    if (!email) {
-      return;
-    }
-    userEmailSpan.textContent = email;
 
+  function handleLoginErr(err) {
+    $("#alert .msg").text(err.responseJSON);
+    $("#alert").fadeIn(500);
   }
-  signUpButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    var email = document.querySelector("#email").value;
-    
-    if (email === "") {
-      displayMessage("error", "Email cannot be blank");
-    } 
-    
-    else {
-      displayMessage("success", "Registered successfully");
-      localStorage.setItem("email", email);
-      renderLastRegistered();
-    }
-  });
-
 });
-
-
-    //BONUS: create a button / link for "Skip registration"
-    //onCLick of skip registration, 
-    //add some some special value that represents a "guest" user to local storage
-    //manually create a database entry for "guest" user with an email matching the above special value
-    //that way we will fool our /api/users/:email route into thinking the current user exists
-
-    // Signup.js is setting our items in local storage
-    // The script we added into home.handlebars is what is getting that item via local storage and then displaying it
